@@ -2,7 +2,7 @@
 
 #header-section {
   position: fixed;
-  overflow: hidden;
+  // overflow: hidden;
   top: 0;
   z-index: 500;
   width: 100%;
@@ -37,7 +37,7 @@
 
     .icon {
       padding: 0 1rem;
-      font-size: $font-size-lg;
+      font-size: $font-size-xl;
       cursor: pointer;
       border: none;
       background-color: transparent;
