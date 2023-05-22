@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaShoppingCart, FaSearch } from 'react-icons/fa';
 import Cart from './Cart';
 import NavBar from './NavBar';
@@ -39,7 +40,7 @@ const Header = () => {
           <div className="content d-flex">
             {/* Logo */}
             <div className="logo">
-              <a href="#">Furniq</a>
+              <Link to="/">Furniq</Link>
             </div>
 
             {/* <!--NAV BUTTONS--> */}

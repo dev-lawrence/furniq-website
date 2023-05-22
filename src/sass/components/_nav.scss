@@ -1,9 +1,9 @@
 @use '../abstracts' as *;
 
 .toggle-menu {
-  font-size: var(--font-size-xl);
-  cursor: pointer;
   z-index: 100;
+  cursor: pointer;
+  font-size: $font-size-xl;
 
   @include extra-large {
     display: none;
@@ -40,13 +40,13 @@
   background-color: var(--light-color);
   height: 100vh;
   width: 60%;
-  padding: 2rem 2rem 1.625rem;
+  padding: 4rem 2rem 1.625rem;
 
   @include extra-large {
     height: 100%;
     width: 100%;
     @include flex(center, flex-end);
-    padding: 1rem 0;
+    padding-block: 0;
   }
 
   @include small {
@@ -55,7 +55,7 @@
 
   li {
     text-transform: capitalize;
-    margin-bottom: 0.773rem;
+    margin-bottom: 1rem;
 
     @include extra-large {
       margin-bottom: 0;
@@ -65,14 +65,8 @@
 
   a {
     color: var(--dark-color);
-    font-size: 1.2rem;
+    font-size: $font-size-base;
     transition: color 0.2s ease-in-out;
-    font-weight: 400;
-
-    @include extra-large {
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-    }
+    font-weight: 500;
   }
 }

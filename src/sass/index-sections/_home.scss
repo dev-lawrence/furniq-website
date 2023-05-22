@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+.home {
+  position: relative;
+
+  .hero {
+    z-index: 1;
+
+    .content {
+      max-width: 600px;
+      margin-right: auto;
+      padding-top: 6.5rem;
+      color: var(--black);
+
+      h1 {
+        font-size: $font-size-h1;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+
+        @include extra-large {
+          font-size: 3.125rem;
+        }
+      }
+
+      p {
+        margin-bottom: 1rem;
+        max-width: 400px;
+        margin-right: auto;
+      }
+    }
+  }
+
+  // Not in use at the moment
+  //   .overlay {
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     background-color: rgba($color: #000000, $alpha: 0.3);
+  //     z-index: -1;
+  //   }
+}

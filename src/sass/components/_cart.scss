@@ -10,6 +10,7 @@
   overflow: auto;
   transform: translateX(80.25rem);
   transition: transform 0.5s ease-in-out;
+  z-index: 100;
 
   .cart {
     background-color: var(--light-color);
@@ -20,9 +21,11 @@
       padding: 2rem;
     }
 
-    .close-icon {
-      font-size: $font-size-xl;
-      cursor: pointer;
+    .close {
+      a {
+        color: var(--dark-color);
+        font-weight: 500;
+      }
     }
 
     .content {

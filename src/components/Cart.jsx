@@ -6,11 +6,14 @@ const Cart = ({ cartClick, handleCartClick }) => {
       <div className={`cart-container ${cartClick ? 'showCart' : ''}`}>
         <div className="cart">
           <div className="d-flex title">
-            <h2>Your Cart</h2>
-
+            <div className="close" onClick={handleCartClick}>
+              <a href="#">Back to store 🏃‍♂️</a>
+            </div>
+            {/* <h2>Your Cart</h2> */}
+            {/* 
             <div className="close-icon">
               <FaTimes onClick={handleCartClick} />
-            </div>
+            </div> */}
           </div>
 
           <div className="content">

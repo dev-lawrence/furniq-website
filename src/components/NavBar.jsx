@@ -1,26 +1,28 @@
+import { NavLink } from 'react-router-dom';
+
 const Navbar = ({ navClick }) => {
   return (
     <>
       <nav className={`nav ${navClick ? 'showMenu' : ''}`}>
         <ul className="menu">
           <li>
-            <a href="#">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
 
           <li>
-            <a href="#">Shop</a>
+            <NavLink to="/shop">Shop</NavLink>
           </li>
 
           <li>
-            <a href="#">Blog</a>
+            <NavLink to="/">Blog</NavLink>
           </li>
 
           <li>
-            <a href="#">About</a>
+            <NavLink to="/">About</NavLink>
           </li>
 
           <li>
-            <a href="#">Contact</a>
+            <NavLink to="/">Contact</NavLink>
           </li>
         </ul>
       </nav>

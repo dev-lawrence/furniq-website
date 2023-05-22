@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+.pt-section {
+  padding-top: 5rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+}

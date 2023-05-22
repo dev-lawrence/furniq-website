@@ -1,11 +1,12 @@
 :root {
-  --primary-color: hsl(0, 0%, 0%);
+  --primary-color: #000000;
   --secondary-color: hsl(29, 42%, 63%);
   --accent-color: hsl(145, 10%, 33%);
   --text-color: hsl(0, 0%, 20%);
-  --card-color: hsl(0, 0%, 94%);
-  --bg-color: hsl(0, 0%, 97%);
-  --light-color: hsl(0, 0%, 100%);
+  --white: #fff;
+  --black: #000;
+  --bg-color: #f7f7f7;
+  --light-color: #f0f0f0;
   --dark-color: hsl(0, 0%, 11%);
   --link-color: hsl(201, 56%, 36%);
   --success-color: hsl(120, 100%, 25%);

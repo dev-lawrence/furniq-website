@@ -15,6 +15,12 @@ img {
   display: block;
 }
 
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 ul,
 li {
   list-style: none;
