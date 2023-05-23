@@ -2,9 +2,8 @@
 
 <!-- HERO SECTION -->
 
-- Add a video as bg or also try picture and see what works
-- Add hero text and cta button
 <!-- HEADER AND NAVIGATION SECTION -->
+
 - Add image to show when the cart is empty.
 - remove continue shopping button
 - style the nav menu

@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaTimes, FaShoppingCart, FaSearch } from 'react-icons/fa';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import Cart from './Cart';
 import NavBar from './NavBar';
 const Header = () => {
@@ -32,7 +35,7 @@ const Header = () => {
         >
           <input type="text" placeholder="Search Items" />
           <button className="icon">
-            <FaSearch />
+            <SearchRoundedIcon />
           </button>
         </div>
 
@@ -46,18 +49,25 @@ const Header = () => {
             {/* <!--NAV BUTTONS--> */}
             <div className="menu-buttons">
               <button
-                className="toggle-search icon"
+                className="toggle-search icon-btn"
                 onClick={handleToggleSearch}
               >
-                <FaSearch />
+                <SearchRoundedIcon className="icon" />
               </button>
 
-              <button className="toggle-cart icon" onClick={handleCartClick}>
-                <FaShoppingCart />
+              <button
+                className="toggle-cart icon-btn"
+                onClick={handleCartClick}
+              >
+                <LocalMallRoundedIcon className="icon" />
               </button>
 
-              <button className="toggle-menu icon" onClick={handleNavClick}>
-                {navClick ? <FaTimes /> : <FaBars />}
+              <button className="toggle-menu icon-btn" onClick={handleNavClick}>
+                {navClick ? (
+                  <CloseRoundedIcon className="icon-close" />
+                ) : (
+                  <MenuRoundedIcon className="icon-bar" />
+                )}
               </button>
             </div>
 

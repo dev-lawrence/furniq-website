@@ -1,17 +1,11 @@
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import { FaShoppingCart } from 'react-icons/fa';
-import FeaturedImg1 from '../assets/img/furni1.webp';
-import FeaturedImg2 from '../assets/img/furni2.webp';
-import FeaturedImg3 from '../assets/img/furni3.webp';
-import FeaturedImg4 from '../assets/img/furni4.webp';
-import FeaturedImg5 from '../assets/img/furni5.webp';
-import FeaturedImg6 from '../assets/img/furni6.webp';
 import BannerImg from '../assets/img/hero-bg4.webp';
 import Service1 from '../assets/img/services1.svg';
 import Service2 from '../assets/img/services2.svg';
 import Service3 from '../assets/img/services3.svg';
 import Service4 from '../assets/img/services4.svg';
+import FeaturedProducts from '../components/FeaturedProducts';
 
 const Home = () => {
   return (
@@ -68,111 +62,7 @@ const Home = () => {
           </div>
 
           {/* Featured Products */}
-          <section className="featured-product pt-section">
-            <div className="title">
-              <h2>Featured Products</h2>
-              <p>Elevate Your Home with our Handpicked Favorites.</p>
-            </div>
-
-            {/* product 1 */}
-            <div className="products">
-              <div className="product">
-                <img src={FeaturedImg1} alt="chair" />
-
-                <div className="description">
-                  <div className="description-content">
-                    <h5 className="name">Little Armchair Sheepskin</h5>
-                    <h4 className="price">$74</h4>
-                  </div>
-
-                  <a className="cart" href="#">
-                    <FaShoppingCart />
-                  </a>
-                </div>
-              </div>
-
-              {/* product 2 */}
-              <div className="product">
-                <img src={FeaturedImg2} alt="chair" />
-
-                <div className="description">
-                  <div className="description-content">
-                    <h5 className="name">Little Armchair Sheepskin</h5>
-                    <h4 className="price">$74</h4>
-                  </div>
-
-                  <a className="cart" href="#">
-                    <FaShoppingCart />
-                  </a>
-                </div>
-              </div>
-
-              {/* product 3 */}
-              <div className="product">
-                <img src={FeaturedImg3} alt="chair" />
-
-                <div className="description">
-                  <div className="description-content">
-                    <h5 className="name">Little Armchair Sheepskin</h5>
-                    <h4 className="price">$74</h4>
-                  </div>
-
-                  <a className="cart" href="#">
-                    <FaShoppingCart />
-                  </a>
-                </div>
-              </div>
-
-              {/* product 4 */}
-              <div className="product">
-                <img src={FeaturedImg4} alt="chair" />
-
-                <div className="description">
-                  <div className="description-content">
-                    <h5 className="name">Little Armchair Sheepskin</h5>
-                    <h4 className="price">$74</h4>
-                  </div>
-
-                  <a className="cart" href="#">
-                    <FaShoppingCart />
-                  </a>
-                </div>
-              </div>
-
-              {/* product 5 */}
-              <div className="product">
-                <img src={FeaturedImg5} alt="chair" />
-
-                <div className="description">
-                  <div className="description-content">
-                    <h5 className="name">Little Armchair Sheepskin</h5>
-                    <h4 className="price">$74</h4>
-                  </div>
-
-                  <a className="cart" href="#">
-                    <FaShoppingCart />
-                  </a>
-                </div>
-              </div>
-
-              {/* product 6 */}
-              <div className="product">
-                <img src={FeaturedImg6} alt="chair" />
-
-                <div className="description">
-                  <div className="description-content">
-                    <h5 className="name">Little Armchair Sheepskin</h5>
-                    <h4 className="price">$74</h4>
-                  </div>
-
-                  <a className="cart" href="#">
-                    <FaShoppingCart />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-
+          <FeaturedProducts />
           {/* Banner section */}
           <section className="banner pt-section">
             <div className="banner-container">

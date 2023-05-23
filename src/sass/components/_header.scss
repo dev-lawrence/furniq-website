@@ -33,19 +33,23 @@
   .menu-buttons {
     @include flex(center, space-between);
 
-    .toggle-search,
-    .toggle-cart {
-      font-size: $font-size-xl;
-    }
-
-    .icon {
-      margin: 0 1rem;
+    .icon-btn {
+      margin: 0 0.7rem;
       border: none;
       background-color: transparent;
       cursor: pointer;
 
       &:last-child {
         margin-right: 0;
+      }
+
+      .icon {
+        font-size: $font-size-xl + 0.2;
+      }
+
+      .icon-close,
+      .icon-bar {
+        font-size: $font-size-xxl;
       }
     }
 

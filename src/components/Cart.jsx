@@ -1,5 +1,3 @@
-import { FaTimes } from 'react-icons/fa';
-
 const Cart = ({ cartClick, handleCartClick }) => {
   return (
     <>
@@ -9,11 +7,6 @@ const Cart = ({ cartClick, handleCartClick }) => {
             <div className="close" onClick={handleCartClick}>
               <a href="#">Back to store 🏃‍♂️</a>
             </div>
-            {/* <h2>Your Cart</h2> */}
-            {/* 
-            <div className="close-icon">
-              <FaTimes onClick={handleCartClick} />
-            </div> */}
           </div>
 
           <div className="content">

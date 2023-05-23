@@ -34,6 +34,10 @@
     &-container {
       @include flex(center, center);
       text-align: center;
+
+      @include medium {
+        display: block;
+      }
     }
 
     img {
