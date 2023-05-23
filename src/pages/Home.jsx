@@ -8,6 +8,10 @@ import FeaturedImg4 from '../assets/img/furni4.webp';
 import FeaturedImg5 from '../assets/img/furni5.webp';
 import FeaturedImg6 from '../assets/img/furni6.webp';
 import BannerImg from '../assets/img/hero-bg4.webp';
+import Service1 from '../assets/img/services1.svg';
+import Service2 from '../assets/img/services2.svg';
+import Service3 from '../assets/img/services3.svg';
+import Service4 from '../assets/img/services4.svg';
 
 const Home = () => {
   return (
@@ -32,6 +36,37 @@ const Home = () => {
         </div>
 
         <div className="container">
+          {/* Services */}
+          <div className="services pt-section">
+            <div className="services-container">
+              <div className="services-content">
+                {/* Service card */}
+                <div className="service">
+                  <img src={Service1} alt="Fast & Free Delivery" />
+                  <h3>Fast & Free Delivery</h3>
+                </div>
+
+                {/* Service card */}
+                <div className="service">
+                  <img src={Service2} alt="Secure Payment" />
+                  <h3>Secure Payment</h3>
+                </div>
+
+                {/* Service card */}
+                <div className="service">
+                  <img src={Service3} alt="Money Back Guarantee" />
+                  <h3>Money Back Guarantee</h3>
+                </div>
+
+                {/* Service card */}
+                <div className="service">
+                  <img src={Service4} alt="online support" />
+                  <h3>Online Support</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Featured Products */}
           <section className="featured-product pt-section">
             <div className="title">

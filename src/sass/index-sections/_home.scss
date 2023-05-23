@@ -30,14 +30,50 @@
     }
   }
 
-  // Not in use at the moment
-  //   .overlay {
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     background-color: rgba($color: #000000, $alpha: 0.3);
-  //     z-index: -1;
-  //   }
+  .services {
+    &-container {
+      @include flex(center, center);
+      text-align: center;
+    }
+
+    img {
+      background-color: transparent;
+      height: 90px;
+      width: 90px;
+      padding: 0.7rem 1rem;
+      margin-inline: auto;
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .service {
+      h3 {
+        font-size: $font-size-h3;
+        font-weight: 500;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+        background-color: var(--white);
+        border-radius: $radius-rounded;
+      }
+    }
+  }
+}
+
+// Breakpoints for the services
+@include medium {
+  .services-content {
+    @include grid(repeat(2, 1fr), 1rem);
+  }
+}
+
+@include large {
+  .services-content {
+    @include grid(repeat(4, 1fr), 1.5rem);
+  }
 }
