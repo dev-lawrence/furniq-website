@@ -12,23 +12,17 @@
 
   .product {
     position: relative;
-    transition: box-shadow 0.3s ease-in;
+    transition: all 0.3s ease-in;
     color: var(--black);
 
     &:not(:last-child) {
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
     }
 
-    @include large {
+    @include medium {
       &:not(:last-child) {
-        margin-bottom: 3rem;
+        margin-bottom: 0;
       }
-    }
-
-    &:hover {
-      box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.08);
-      border-bottom-right-radius: $radius-sm;
-      border-bottom-left-radius: $radius-sm;
     }
 
     img {
@@ -67,18 +61,28 @@
       border-radius: $radius-rounded;
       font-size: $font-size-base;
     }
+
+    // Hover states
+    &:hover {
+      box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.08);
+      border-bottom-right-radius: $radius-sm;
+      border-bottom-left-radius: $radius-sm;
+    }
   }
 }
 
 // Breakpoints for the products
+
 @include medium {
   .products {
-    @include grid(repeat(2, 1fr), 1.5rem);
+    @include grid(repeat(2, 1fr), map-get($gap-map, 'gap-6'));
+    column-gap: map-get($gap-map, 'gap-2');
   }
 }
 
 @include large {
   .products {
-    @include grid(repeat(3, 1fr), 1.5rem);
+    @include grid(repeat(3, 1fr), map-get($gap-map, 'gap-6'));
+    column-gap: map-get($gap-map, 'gap-2');
   }
 }

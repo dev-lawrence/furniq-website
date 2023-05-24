@@ -60,6 +60,12 @@
         margin-bottom: 2.5rem;
       }
 
+      @include medium {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+
       &:hover img {
         transform: scale(1.1);
         background-color: var(--white);
@@ -72,12 +78,14 @@
 // Breakpoints for the services
 @include medium {
   .services-content {
-    @include grid(repeat(2, 1fr), 1rem);
+    @include grid(repeat(2, 1fr), map-get($gap-map, 'gap-3'));
+    column-gap: map-get($gap-map, 'gap-1');
   }
 }
 
 @include large {
   .services-content {
-    @include grid(repeat(4, 1fr), 1.5rem);
+    @include grid(repeat(4, 1fr), map-get($gap-map, 'gap-3'));
+    column-gap: map-get($gap-map, 'gap-1');
   }
 }

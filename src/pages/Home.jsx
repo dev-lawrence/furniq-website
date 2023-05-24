@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import BannerImg from '../assets/img/hero-bg4.webp';
 import Service1 from '../assets/img/services1.svg';
 import Service2 from '../assets/img/services2.svg';
@@ -88,6 +89,7 @@ const Home = () => {
           <div className="pt-section"></div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

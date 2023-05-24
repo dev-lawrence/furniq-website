@@ -5,9 +5,10 @@ const Card = ({ item }) => {
 
   return (
     <>
-      <Link className="product" to="/shop">
-        {/* <div className="product"> */}
-        <img src={img} alt={alt} />
+      <div className="product">
+        <Link to="/shop">
+          <img src={img} alt={alt} />
+        </Link>
 
         <div className="description">
           <div className="description-content">
@@ -15,12 +16,11 @@ const Card = ({ item }) => {
             <h4 className="price">${price}</h4>
           </div>
 
-          <span className="cart" href="#">
-            {icon}
-          </span>
+          <Link>
+            <span className="cart">{icon}</span>
+          </Link>
         </div>
-        {/* </div> */}
-      </Link>
+      </div>
     </>
   );
 };
