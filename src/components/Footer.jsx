@@ -1,9 +1,35 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 const Footer = () => {
+  const [showScrollArrow, setShowScrollArrow] = useState(false);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scroll = window.scrollY;
+
+      if (scroll > 1300) {
+        setShowScrollArrow(true);
+      } else {
+        setShowScrollArrow(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <section id="footer-section">
@@ -72,9 +98,10 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="page-up">
-          <Link to="#">
-            <i className="fas fa-angle-double-up"></i>
+
+        <div onClick={handleScrollToTop} className="page-up">
+          <Link to="#" className={showScrollArrow ? 'showArrow' : ''}>
+            <KeyboardDoubleArrowUpIcon className="up-icon" />
           </Link>
         </div>
       </section>
