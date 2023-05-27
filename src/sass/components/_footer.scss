@@ -120,7 +120,26 @@
   //MEDIA QUERY
   @include medium {
     .grid {
+      @include grid(repeat(2, 1fr), 2rem);
+    }
+
+    .other-links {
+      margin-left: 0;
+    }
+  }
+
+  @include large {
+    .grid {
       @include grid(repeat(4, 1fr), 2rem);
+    }
+
+    .quick-menu,
+    .other-links {
+      justify-self: flex-end;
+    }
+
+    .social-links {
+      justify-self: flex-end;
     }
   }
 }
