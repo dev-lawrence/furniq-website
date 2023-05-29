@@ -7,6 +7,7 @@ import Service2 from '../assets/img/services2.svg';
 import Service3 from '../assets/img/services3.svg';
 import Service4 from '../assets/img/services4.svg';
 import FeaturedProducts from '../components/FeaturedProducts';
+import Trending from '../components/Trending';
 
 const Home = () => {
   return (
@@ -85,6 +86,8 @@ const Home = () => {
               </div>
             </div>
           </section>
+
+          <Trending />
 
           <div className="pt-section"></div>
         </div>

@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+.trending {
+  .title {
+    margin-bottom: 0;
+  }
+
+  .d-flex {
+    @include flex(center, space-between);
+    margin-bottom: 3rem;
+  }
+
+  button {
+    margin-left: 0.5rem;
+    border: none;
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    .icon {
+      font-size: $font-size-lg;
+    }
+
+    &:hover {
+      background-color: var(--black);
+    }
+  }
+
+  .carousel-container {
+    display: flex;
+    gap: 2.2rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    position: relative;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .row-container::-webkit-scrollbar {
+    display: none;
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

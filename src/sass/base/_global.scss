@@ -2,6 +2,10 @@
 
 h2 {
   font-size: $font-size-h2;
+
+  @include small {
+    font-size: $font-size-lg;
+  }
 }
 
 .pt-section {
@@ -11,4 +15,77 @@ h2 {
 .title {
   text-align: center;
   margin-bottom: 3rem;
+}
+
+// products
+.product {
+  position: relative;
+  transition: all 0.3s ease-in;
+  color: var(--black);
+  background-color: var(--white);
+  border-radius: $radius-sm;
+
+  .status {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 0.5rem;
+    padding: 0.3rem 1rem;
+    font-size: $font-size-sm;
+    user-select: none;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  @include medium {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    border-top-right-radius: $radius-sm;
+    border-top-left-radius: $radius-sm;
+    object-fit: cover;
+  }
+
+  .description {
+    @include flex(center, space-between);
+    padding: 0 1rem;
+
+    &-content {
+      padding: 1rem 0;
+    }
+  }
+
+  .name {
+    padding-top: 0.438rem;
+    font-size: $font-size-md;
+    font-weight: 500;
+  }
+
+  .price {
+    font-weight: 700;
+    font-size: $font-size-lg;
+    font-weight: 500;
+  }
+
+  .cart {
+    @include flex(center, center);
+    background-color: var(--black);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-rounded;
+    font-size: $font-size-base;
+  }
+
+  // Hover states
+  &:hover {
+    box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.08);
+  }
 }

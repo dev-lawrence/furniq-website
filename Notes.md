@@ -1,6 +1,7 @@
 <!-- HOME PAGE-->
 
-- Adjust the last div in the footer section
-- Add trending page section
+- redo the featured page again
+- add filter option
 - Add blog section
 - Add category section
+- make changes to the featured section

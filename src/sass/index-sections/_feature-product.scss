@@ -1,6 +1,10 @@
 @use '../abstracts' as *;
 
 .featured-product {
+  .title {
+    margin-bottom: 1.5rem;
+  }
+
   .products {
     max-width: 400px;
     margin-inline: auto;
@@ -9,70 +13,9 @@
       max-width: 100%;
     }
   }
-
-  .product {
-    position: relative;
-    transition: all 0.3s ease-in;
-    color: var(--black);
-
-    &:not(:last-child) {
-      margin-bottom: 4rem;
-    }
-
-    @include medium {
-      &:not(:last-child) {
-        margin-bottom: 0;
-      }
-    }
-
-    img {
-      border-top-right-radius: $radius-sm;
-      border-top-left-radius: $radius-sm;
-      height: 400px;
-      width: 400px;
-      object-fit: cover;
-    }
-
-    .description {
-      @include flex(center, space-between);
-      padding: 0 1rem;
-
-      &-content {
-        padding: 1rem 0;
-      }
-    }
-
-    .name {
-      padding-top: 0.438rem;
-      font-size: $font-size-md;
-    }
-
-    .price {
-      font-weight: 700;
-      font-size: $font-size-xl;
-    }
-
-    .cart {
-      @include flex(center, center);
-      background-color: var(--black);
-      color: var(--white);
-      width: 40px;
-      height: 40px;
-      border-radius: $radius-rounded;
-      font-size: $font-size-base;
-    }
-
-    // Hover states
-    &:hover {
-      box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.08);
-      border-bottom-right-radius: $radius-sm;
-      border-bottom-left-radius: $radius-sm;
-    }
-  }
 }
 
 // Breakpoints for the products
-
 @include medium {
   .products {
     @include grid(repeat(2, 1fr), map-get($gap-map, 'gap-6'));

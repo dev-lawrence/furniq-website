@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 
 const Card = ({ item }) => {
-  const { img, alt, title, price, icon } = item;
+  const { img, alt, title, price, icon, isNew } = item;
 
   return (
     <>
       <div className="product">
+        {isNew && <span className="status">New</span>}
+
         <Link to="/shop">
           <img src={img} alt={alt} />
         </Link>
