@@ -9,7 +9,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
       <div className="filter-products">
         <div className="d-flex">
           <button
-            className={`filter-product ${
+            className={`filter-btn ${
               selectedProduct === 'all' ? 'active' : ''
             }`}
             onClick={() => handleFilterChange('all')}
@@ -17,7 +17,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             all
           </button>
           <button
-            className={`filter-product ${
+            className={`filter-btn ${
               selectedProduct === 'chair' ? 'active' : ''
             }`}
             onClick={() => handleFilterChange('chair')}
@@ -25,7 +25,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             chairs
           </button>
           <button
-            className={`filter-product ${
+            className={`filter-btn ${
               selectedProduct === 'table' ? 'active' : ''
             }`}
             onClick={() => handleFilterChange('table')}
@@ -33,7 +33,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             tables
           </button>
           <button
-            className={`filter-product ${
+            className={`filter-btn ${
               selectedProduct === 'couch' ? 'active' : ''
             }`}
             onClick={() => handleFilterChange('couch')}
@@ -41,7 +41,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             couch
           </button>
           <button
-            className={`filter-product ${
+            className={`filter-btn ${
               selectedProduct === 'bed' ? 'active' : ''
             }`}
             onClick={() => handleFilterChange('bed')}
