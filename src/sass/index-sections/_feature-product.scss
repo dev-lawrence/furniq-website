@@ -18,14 +18,10 @@
 // Breakpoints for the products
 @include medium {
   .products {
-    @include grid(repeat(2, 1fr), map-get($gap-map, 'gap-6'));
-    column-gap: map-get($gap-map, 'gap-2');
-  }
-}
-
-@include large {
-  .products {
-    @include grid(repeat(3, 1fr), map-get($gap-map, 'gap-6'));
+    @include grid(
+      repeat(auto-fit, minmax(250px, 1fr)),
+      map-get($gap-map, 'gap-6')
+    );
     column-gap: map-get($gap-map, 'gap-2');
   }
 }

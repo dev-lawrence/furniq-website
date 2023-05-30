@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+.filter-products {
+  margin-bottom: 2rem;
+
+  .d-flex {
+    @include flex(center, center);
+  }
+
+  .filter-product {
+    @include flex(center, center);
+    border: none;
+    font-family: inherit;
+    flex-direction: column;
+    background-color: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    margin-left: 1rem;
+    text-transform: capitalize;
+
+    &.active {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+  }
+}

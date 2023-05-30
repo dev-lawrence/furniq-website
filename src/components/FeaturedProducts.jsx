@@ -1,13 +1,19 @@
+import { useState } from 'react';
 import { items } from '../data/AllProductsData';
 import Card from './Card';
-import BedIcon from '@mui/icons-material/Bed';
-import WeekendIcon from '@mui/icons-material/Weekend';
-import EventSeatIcon from '@mui/icons-material/EventSeat';
-import TableRestaurantIcon from '@mui/icons-material/TableRestaurant';
-import { Link } from 'react-router-dom';
+import FilterProducts from './FilterProducts';
 
 const FeaturedProducts = () => {
-  const filteredItems = items.filter((item) => item.id <= 6);
+  const [selectedProduct, setSelectedProduct] = useState('all');
+  const handleFilterChange = (category) => {
+    setSelectedProduct(category);
+  };
+
+  const filteredItems =
+    selectedProduct === 'all'
+      ? items.filter((item) => item.id <= 9)
+      : items.filter((item) => item.category === selectedProduct);
+
   return (
     <>
       <section className="featured-product pt-section">
@@ -16,26 +22,10 @@ const FeaturedProducts = () => {
           <p>Elevate Your Home with our Handpicked Favorites.</p>
         </div>
 
-        <div className="categories">
-          <div className="d-flex">
-            <Link className="category">
-              <EventSeatIcon className="icon" />
-              <p>chairs</p>
-            </Link>
-            <Link className="category">
-              <TableRestaurantIcon className="icon" />
-              <p>tables</p>
-            </Link>
-            <Link className="category">
-              <WeekendIcon className="icon" />
-              <p>couch</p>
-            </Link>
-            <Link className="category">
-              <BedIcon className="icon" />
-              <p>bed</p>
-            </Link>
-          </div>
-        </div>
+        <FilterProducts
+          handleFilterChange={handleFilterChange}
+          selectedProduct={selectedProduct}
+        />
 
         <div className="products">
           {filteredItems.map((item) => {

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
 const Card = ({ item }) => {
   const { img, alt, title, price, icon, isNew } = item;
@@ -8,7 +9,9 @@ const Card = ({ item }) => {
       <div className="product">
         {isNew && <span className="status">New</span>}
 
-        <Link to="/shop">
+        <Link to="/shop" className="preview">
+          <div className="overlay"></div>
+          <RemoveRedEyeIcon className="eye" />
           <img src={img} alt={alt} />
         </Link>
 
