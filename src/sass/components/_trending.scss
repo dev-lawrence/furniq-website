@@ -10,7 +10,13 @@
     margin-bottom: 3rem;
   }
 
-  button {
+  .splide__arrows {
+    position: absolute;
+    top: -4.5rem;
+    right: 0;
+  }
+
+  .splide__arrow {
     margin-left: 0.5rem;
     border: none;
     background-color: var(--dark-color);
@@ -18,34 +24,15 @@
     padding: 0.5rem;
     border-radius: 0.2rem;
     cursor: pointer;
+    font-size: $font-size-sm;
     transition: background-color 0.3s ease-in-out;
-
-    .icon {
-      font-size: $font-size-lg;
-    }
 
     &:hover {
       background-color: var(--black);
     }
   }
 
-  .carousel-container {
-    display: flex;
-    width: 100%;
-    gap: 2.2rem;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    position: relative;
-  }
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .row-container::-webkit-scrollbar {
-    display: none;
-
-    /* Hide scrollbar for IE, Edge and Firefox */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .splide__arrow--prev {
+    left: -6rem;
   }
 }

@@ -2,19 +2,11 @@ import { items } from '../data/AllProductsData';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import Card from './Card';
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
 
 const Trending = () => {
   const filteredItems = items.filter((item) => item.id >= 7);
-
-  const slideLeft = () => {
-    let slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft - 320;
-  };
-
-  const slideRight = () => {
-    let slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft + 335;
-  };
 
   return (
     <>
@@ -24,29 +16,42 @@ const Trending = () => {
             <h2>Trending Now</h2>
           </div>
 
+          {/* 
           <div className="buttons">
-            <button
-              title="scroll left"
-              onClick={slideLeft}
-              className="prev-btn"
-            >
+            <button title="scroll left" className="prev-btn">
               <ArrowBackRoundedIcon className="icon" />
             </button>
-            <button
-              title="scroll right"
-              onClick={slideRight}
-              className="next-btn"
-            >
+            <button title="scroll right" className="next-btn">
               <ArrowForwardRoundedIcon className="icon" />
             </button>
-          </div>
+          </div> */}
         </div>
 
-        <div className="carousel-container" id="slider">
+        <Splide
+          options={{
+            perPage: 1,
+            pagination: false,
+            gap: '2rem',
+            mediaQuery: 'min',
+            breakpoints: {
+              768: {
+                perPage: 3,
+              },
+
+              1200: {
+                perPage: 4,
+              },
+            },
+          }}
+        >
           {filteredItems.map((item) => {
-            return <Card item={item} key={item.id} />;
+            return (
+              <SplideSlide key={item.id}>
+                <Card item={item} />
+              </SplideSlide>
+            );
           })}
-        </div>
+        </Splide>
       </section>
     </>
   );
