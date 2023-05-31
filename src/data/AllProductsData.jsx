@@ -183,7 +183,7 @@ export const items = [
   {
     id: 17,
     category: 'table',
-    img: Img9,
+    img: Img16,
     title: 'Dining Table',
     icon: <ShoppingCartRoundedIcon />,
     alt: 'table',
