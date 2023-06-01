@@ -9,6 +9,7 @@ import Service4 from '../assets/img/services4.svg';
 import FeaturedProducts from '../components/FeaturedProducts';
 import Trending from '../components/Trending';
 import Event from '../components/Event';
+import Newsletter from '../components/Newsletter';
 
 const Home = () => {
   return (
@@ -94,9 +95,12 @@ const Home = () => {
 
           {/* Events Section */}
           <Event />
-
-          <div className="pt-section"></div>
         </div>
+
+        {/* Newsletter Section */}
+        <Newsletter />
+
+        <div className="pt-section"></div>
       </section>
       <Footer />
     </>

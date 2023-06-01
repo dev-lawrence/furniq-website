@@ -28,6 +28,10 @@
 
     &:not(:last-child) {
       margin-bottom: 3rem;
+
+      @include medium {
+        margin-bottom: 0;
+      }
     }
 
     .img {
@@ -68,9 +72,9 @@
           top: 0.6rem;
           right: -0.7rem;
           background-color: var(--accent-color);
-          height: 4px;
-          width: 4px;
-          border-radius: 50%;
+          height: 0.25rem;
+          width: 0.25rem;
+          border-radius: $radius-500;
         }
       }
 
@@ -97,10 +101,4 @@
       );
     }
   }
-
-  //   @include large {
-  //     .grid {
-  //       @include grid(repeat(3, 1fr), 2rem);
-  //     }
-  //   }
 }

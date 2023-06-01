@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.newsletter {
+  background: var(--white) url(../assets/img/newsletter.webp);
+  object-fit: cover;
+  margin-top: 5rem;
+
+  .content {
+    max-width: 37.5rem;
+    margin-inline: auto;
+    padding: 3rem 2rem;
+  }
+
+  form {
+    @include flex(center, space-between);
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    input {
+      height: 2.875rem;
+      padding-left: 0.5rem;
+      border-radius: $radius-400;
+      border: 1.5px solid var(--dark-color);
+    }
+  }
+}

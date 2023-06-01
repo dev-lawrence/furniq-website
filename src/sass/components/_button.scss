@@ -3,8 +3,15 @@
 .btn {
   background-color: var(--black);
   color: var(--white);
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1.5rem;
   font-size: $font-size-md;
   border-radius: 0.6rem;
   font-weight: 600;
+  text-transform: capitalize;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
 }

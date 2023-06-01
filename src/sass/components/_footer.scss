@@ -97,7 +97,7 @@
       line-height: 0;
       text-align: center;
       @include flex(center, center);
-      border-radius: $radius-rounded;
+      border-radius: $radius-500;
       transition: opacity 0.2s ease-in, background-color 0.2s ease-in;
 
       .up-icon {

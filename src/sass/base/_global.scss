@@ -16,6 +16,15 @@ p {
   padding-top: 5rem;
 }
 
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
 .mb-100 {
   margin-bottom: 1rem;
 }
@@ -26,11 +35,6 @@ p {
 
 .mb-200 {
   margin-bottom: 2rem;
-}
-
-.title {
-  text-align: center;
-  margin-bottom: 3rem;
 }
 
 // products
@@ -141,7 +145,7 @@ p {
     color: var(--white);
     width: 40px;
     height: 40px;
-    border-radius: $radius-rounded;
+    border-radius: $radius-500;
     font-size: $font-size-base;
   }
 
