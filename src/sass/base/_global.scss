@@ -8,8 +8,24 @@ h2 {
   }
 }
 
+p {
+  font-size: $font-size-md;
+}
+
 .pt-section {
   padding-top: 5rem;
+}
+
+.mb-100 {
+  margin-bottom: 1rem;
+}
+
+.mb-150 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-200 {
+  margin-bottom: 2rem;
 }
 
 .title {

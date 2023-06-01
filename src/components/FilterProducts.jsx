@@ -1,8 +1,3 @@
-import BedIcon from '@mui/icons-material/Bed';
-import WeekendIcon from '@mui/icons-material/Weekend';
-import EventSeatIcon from '@mui/icons-material/EventSeat';
-import TableRestaurantIcon from '@mui/icons-material/TableRestaurant';
-import HomeIcon from '@mui/icons-material/Home';
 const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
   return (
     <>

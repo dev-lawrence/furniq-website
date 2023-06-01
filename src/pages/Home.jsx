@@ -8,6 +8,7 @@ import Service3 from '../assets/img/services3.svg';
 import Service4 from '../assets/img/services4.svg';
 import FeaturedProducts from '../components/FeaturedProducts';
 import Trending from '../components/Trending';
+import Event from '../components/Event';
 
 const Home = () => {
   return (
@@ -65,7 +66,8 @@ const Home = () => {
 
           {/* Featured Products */}
           <FeaturedProducts />
-          {/* Banner section */}
+
+          {/* Banner Section */}
           <section className="banner pt-section">
             <div className="banner-container">
               <div className="content">
@@ -87,7 +89,11 @@ const Home = () => {
             </div>
           </section>
 
+          {/* Trending Section */}
           <Trending />
+
+          {/* Events Section */}
+          <Event />
 
           <div className="pt-section"></div>
         </div>

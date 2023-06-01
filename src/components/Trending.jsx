@@ -15,16 +15,6 @@ const Trending = () => {
           <div className="title">
             <h2>Trending Now</h2>
           </div>
-
-          {/* 
-          <div className="buttons">
-            <button title="scroll left" className="prev-btn">
-              <ArrowBackRoundedIcon className="icon" />
-            </button>
-            <button title="scroll right" className="next-btn">
-              <ArrowForwardRoundedIcon className="icon" />
-            </button>
-          </div> */}
         </div>
 
         <Splide
@@ -32,6 +22,7 @@ const Trending = () => {
             perPage: 1,
             pagination: false,
             gap: '2rem',
+            drag: 'free',
             mediaQuery: 'min',
             breakpoints: {
               768: {
