@@ -10,6 +10,7 @@ import FeaturedProducts from '../components/FeaturedProducts';
 import Trending from '../components/Trending';
 import Event from '../components/Event';
 import Newsletter from '../components/Newsletter';
+import Category from '../components/Category';
 
 const Home = () => {
   return (
@@ -34,6 +35,37 @@ const Home = () => {
         </div>
 
         <div className="container">
+          {/* Category */}
+          <Category />
+
+          {/* Featured Products */}
+          <FeaturedProducts />
+
+          {/* Banner Section */}
+          <section className="banner pt-section">
+            <div className="banner-container">
+              <div className="content">
+                <div className="text">
+                  <h2>Creative harmonious living</h2>
+                  <p>
+                    Furniq Products are all made to standard sizes so that you
+                    can mix and match them freely.
+                  </p>
+                  <Link className="btn cta" to="/">
+                    Shop Now
+                  </Link>
+                </div>
+
+                <div className="img">
+                  <img src={BannerImg} alt="sofa" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Trending Section */}
+          <Trending />
+
           {/* Services */}
           <div className="services pt-section">
             <div className="services-container">
@@ -64,34 +96,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-
-          {/* Featured Products */}
-          <FeaturedProducts />
-
-          {/* Banner Section */}
-          <section className="banner pt-section">
-            <div className="banner-container">
-              <div className="content">
-                <div className="text">
-                  <h2>Creative harmonious living</h2>
-                  <p>
-                    Furniq Products are all made to standard sizes so that you
-                    can mix and match them freely.
-                  </p>
-                  <Link className="btn cta" to="/">
-                    Shop Now
-                  </Link>
-                </div>
-
-                <div className="img">
-                  <img src={BannerImg} alt="sofa" />
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Trending Section */}
-          <Trending />
 
           {/* Events Section */}
           <Event />

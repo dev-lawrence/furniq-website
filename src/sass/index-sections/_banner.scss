@@ -3,12 +3,12 @@
 .banner {
   &-container {
     background-color: var(--white);
-    border-radius: $radius-md;
+    border-radius: $radius-300;
     height: 400px;
 
     @include large {
-      border-top-left-radius: $radius-md;
-      border-bottom-left-radius: $radius-md;
+      border-top-left-radius: $radius-300;
+      border-bottom-left-radius: $radius-300;
     }
   }
   .content {
@@ -38,8 +38,8 @@
 
       @include large {
         display: block;
-        border-top-right-radius: $radius-md;
-        border-bottom-right-radius: $radius-md;
+        border-top-right-radius: $radius-300;
+        border-bottom-right-radius: $radius-300;
       }
     }
   }
