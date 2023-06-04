@@ -11,7 +11,7 @@
 
   .logo {
     a {
-      font-size: $font-size-xl;
+      font-size: $fs-600;
       font-weight: 700;
       color: var(--clr-primary-400);
     }
@@ -44,12 +44,12 @@
       }
 
       .icon {
-        font-size: $font-size-xl + 0.2;
+        font-size: $fs-600 + 0.2;
       }
 
       .icon-close,
       .icon-bar {
-        font-size: $font-size-xxl;
+        font-size: $fs-700;
       }
     }
 
@@ -94,7 +94,7 @@
       color: var(--clr-neutral-100);
       border: 1px solid var(--clr-neutral-400);
       cursor: pointer;
-      font-size: $font-size-base;
+      font-size: $fs-400;
     }
   }
 }

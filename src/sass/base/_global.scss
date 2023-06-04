@@ -1,15 +1,15 @@
 @use '../abstracts' as *;
 
 h2 {
-  font-size: $font-size-h2;
+  font-size: $fs-700;
 
   @include small {
-    font-size: $font-size-lg;
+    font-size: $fs-500;
   }
 }
 
 p {
-  font-size: $font-size-md;
+  font-size: $fs-300;
 }
 
 .pt-section {
@@ -52,7 +52,7 @@ p {
     color: var(--clr-neutral-100);
     border-radius: 0.5rem;
     padding: 0.3rem 1rem;
-    font-size: $font-size-sm;
+    font-size: $fs-200;
     user-select: none;
     z-index: 20;
   }
@@ -90,7 +90,7 @@ p {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: $font-size-xxl;
+      font-size: $fs-700;
       color: var(--clr-neutral-100);
       opacity: 0;
       z-index: 20;
@@ -128,13 +128,13 @@ p {
 
   .name {
     padding-top: 0.438rem;
-    font-size: $font-size-md;
+    font-size: $fs-300;
     font-weight: 500;
   }
 
   .price {
     font-weight: 700;
-    font-size: $font-size-lg;
+    font-size: $fs-500;
     font-weight: 500;
   }
 
@@ -145,7 +145,7 @@ p {
     width: 40px;
     height: 40px;
     border-radius: $radius-500;
-    font-size: $font-size-base;
+    font-size: $fs-400;
   }
 
   // Hover states

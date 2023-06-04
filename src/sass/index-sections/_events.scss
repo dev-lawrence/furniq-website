@@ -2,7 +2,7 @@
 
 .events-section {
   p {
-    font-size: $font-size-sm;
+    font-size: $fs-200;
   }
   .event {
     position: relative;
@@ -16,7 +16,7 @@
       color: var(--clr-neutral-100);
       border-radius: 0.5rem;
       padding: 0.5rem 1rem;
-      font-size: $font-size-sm;
+      font-size: $fs-200;
       user-select: none;
       transition: background-color 0.2s ease-in-out;
       cursor: pointer;
@@ -52,7 +52,7 @@
       .sub-head {
         text-transform: capitalize;
         color: var(--clr-neutral-900);
-        font-size: $font-size-base;
+        font-size: $fs-400;
         font-weight: 500;
       }
 
@@ -64,7 +64,7 @@
       .date {
         margin-right: 1rem;
         position: relative;
-        font-size: $font-size-sm;
+        font-size: $fs-200;
 
         &::after {
           content: '';
@@ -83,7 +83,7 @@
         color: var(--clr-primary-400);
         font-weight: 500;
         padding-left: 0.3rem;
-        font-size: $font-size-sm;
+        font-size: $fs-200;
       }
     }
   }
