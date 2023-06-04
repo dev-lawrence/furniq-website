@@ -19,8 +19,8 @@
   .splide__arrow {
     margin-left: 0.5rem;
     border: none;
-    background-color: var(--dark-color);
-    color: var(--white);
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-100);
     padding: 0.5rem;
     border-radius: 0.2rem;
     cursor: pointer;
@@ -28,7 +28,7 @@
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
-      background-color: var(--black);
+      background-color: var(--clr-neutral-900);
     }
   }
 

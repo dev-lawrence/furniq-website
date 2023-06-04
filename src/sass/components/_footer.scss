@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 #footer-section {
-  background-color: var(--dark-color);
+  background-color: var(--clr-neutral-400);
   padding: 5rem 0 2rem;
   position: relative;
 
@@ -12,15 +12,15 @@
 
   a {
     text-transform: capitalize;
-    color: var(--white);
+    color: var(--clr-neutral-100);
   }
 
   p {
-    color: var(--white);
+    color: var(--clr-neutral-100);
   }
 
   h3 {
-    color: var(--white);
+    color: var(--clr-neutral-100);
     text-transform: capitalize;
     margin-bottom: 1rem;
   }
@@ -42,7 +42,7 @@
       transition: color 0.2s ease-in-out;
 
       &:hover {
-        color: var(--white);
+        color: var(--clr-neutral-100);
       }
     }
   }
@@ -88,8 +88,8 @@
       bottom: 1rem;
       right: 1rem;
       z-index: 100;
-      background-color: var(--black);
-      color: var(--white);
+      background-color: var(--clr-neutral-900);
+      color: var(--clr-neutral-100);
       opacity: 0;
       visibility: hidden;
       height: 40px;
@@ -111,7 +111,7 @@
       }
 
       &:hover {
-        background-color: var(--primary-color);
+        background-color: var(--clr-primary-400);
         opacity: 1;
       }
     }

@@ -1,16 +1,10 @@
 :root {
-  --primary-color: #000000;
-  --secondary-color: hsl(29, 42%, 63%);
-  --accent-color: hsl(145, 10%, 33%);
-  --text-color: hsl(0, 0%, 20%);
-  --white: #fff;
-  --black: #000;
-  --bg-color: #f7f7f7;
-  --light-color: #f0f0f0;
-  --dark-color: hsl(0, 0%, 11%);
-  --link-color: hsl(201, 56%, 36%);
-  --success-color: hsl(120, 100%, 25%);
-  --error-color: hsl(0, 100%, 50%);
-  --warning-color: hsl(39, 100%, 50%);
-  --info-color: hsl(0, 0%, 24%);
+  --clr-primary-400: #dc143c;
+  --clr-primary-100: #ea748b;
+
+  --clr-neutral-100: #fff;
+  --clr-neutral-200: #f0f0f0;
+  --clr-neutral-300: #f1f1f1;
+  --clr-neutral-400: #1c1c1c;
+  --clr-neutral-900: #000;
 }

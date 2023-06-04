@@ -10,7 +10,7 @@
       max-width: 600px;
       margin-right: auto;
       padding-top: 6.5rem;
-      color: var(--black);
+      color: var(--clr-neutral-900);
 
       h1 {
         font-size: $font-size-h1;
@@ -68,7 +68,7 @@
 
       &:hover img {
         transform: scale(1.1);
-        background-color: var(--white);
+        background-color: var(--clr-neutral-100);
         border-radius: $radius-500;
       }
     }

@@ -13,7 +13,7 @@
       top: 1rem;
       letter-spacing: 1px;
       background-color: rgba($color: #000000, $alpha: 0.4);
-      color: var(--white);
+      color: var(--clr-neutral-100);
       border-radius: 0.5rem;
       padding: 0.5rem 1rem;
       font-size: $font-size-sm;
@@ -22,7 +22,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: var(--black);
+        background-color: var(--clr-neutral-900);
       }
     }
 
@@ -45,13 +45,13 @@
 
     &-title {
       padding: 2rem 1rem;
-      background-color: var(--white);
+      background-color: var(--clr-neutral-100);
       border-bottom-right-radius: $radius-sm;
       border-bottom-left-radius: $radius-sm;
 
       .sub-head {
         text-transform: capitalize;
-        color: var(--black);
+        color: var(--clr-neutral-900);
         font-size: $font-size-base;
         font-weight: 500;
       }
@@ -71,7 +71,7 @@
           position: absolute;
           top: 0.6rem;
           right: -0.7rem;
-          background-color: var(--accent-color);
+          background-color: var(--clr-primary-400);
           height: 0.25rem;
           width: 0.25rem;
           border-radius: $radius-500;
@@ -80,14 +80,10 @@
 
       .author {
         position: relative;
-        color: var(--accent-color);
+        color: var(--clr-primary-400);
+        font-weight: 500;
         padding-left: 0.3rem;
-        transition: color 0.2s ease-in-out;
         font-size: $font-size-sm;
-
-        &:hover {
-          color: var(--black);
-        }
       }
     }
   }

@@ -1,8 +1,8 @@
 @use '../abstracts' as *;
 
 .btn {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
   padding: 0.8rem 1.5rem;
   font-size: $font-size-md;
   border-radius: 0.6rem;
