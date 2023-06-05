@@ -83,7 +83,7 @@
   }
 
   .page-up {
-    a {
+    span {
       position: fixed;
       bottom: 1rem;
       right: 1rem;
@@ -98,6 +98,7 @@
       text-align: center;
       @include flex(center, center);
       border-radius: $radius-500;
+      cursor: pointer;
       transition: opacity 0.2s ease-in, background-color 0.2s ease-in;
 
       .up-icon {

@@ -41,50 +41,52 @@ const Footer = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Repellat quos rem ullam, placeat amet.
               </p>
-              <Link className="btn">read more</Link>
+              <Link to={'/'} className="btn">
+                read more
+              </Link>
             </div>
             <div className="quick-menu menu--links m-b">
               <h3>quick menu</h3>
               <li>
-                <Link>Customer Reviews</Link>
+                <Link to={'/'}>Customer Reviews</Link>
               </li>
               <li>
-                <Link>Wholesale or Trade</Link>
+                <Link to={'/'}>Wholesale or Trade</Link>
               </li>
               <li>
-                <Link>Careers</Link>
+                <Link to={'/'}>Careers</Link>
               </li>
               <li>
-                <Link>contact</Link>
+                <Link to={'/'}>contact</Link>
               </li>
             </div>
             <div className="other-links menu--links m-b">
               <h3>other links</h3>
               <li>
-                <Link href="#">Shipping & Delivery</Link>
+                <Link to={'/'}>Shipping & Delivery</Link>
               </li>
               <li>
-                <Link href="#">Returns & Exchanges</Link>
+                <Link to={'/'}>Returns & Exchanges</Link>
               </li>
               <li>
-                <Link href="#">Privacy Policy</Link>
+                <Link to={'/'}>Privacy Policy</Link>
               </li>
               <li>
-                <Link href="#">Terms of Service</Link>
+                <Link to={'/'}>Terms of Service</Link>
               </li>
             </div>
             <div className="social-links m-b">
               <h3>social icons</h3>
-              <Link>
+              <Link to={'/'}>
                 <FacebookIcon />
               </Link>
-              <Link>
+              <Link to={'/'}>
                 <TwitterIcon />
               </Link>
-              <Link>
+              <Link to={'/'}>
                 <InstagramIcon />
               </Link>
-              <Link>
+              <Link to={'/'}>
                 <YouTubeIcon />
               </Link>
             </div>
@@ -100,9 +102,9 @@ const Footer = () => {
         </div>
 
         <div onClick={handleScrollToTop} className="page-up">
-          <Link to="#" className={showScrollArrow ? 'showArrow' : ''}>
+          <span className={showScrollArrow ? 'showArrow' : ''}>
             <KeyboardDoubleArrowUpIcon className="up-icon" />
-          </Link>
+          </span>
         </div>
       </section>
     </>

@@ -9,7 +9,11 @@ const Card = ({ item }) => {
       <div className="product">
         {isNew && <span className="status">New</span>}
 
-        <Link to={'product/' + id} className="preview">
+        <Link
+          to={`product/${id}`}
+          onClick={() => window.top(0, 0)}
+          className="preview"
+        >
           <div className="overlay"></div>
           <RemoveRedEyeIcon className="eye" />
           <img src={img} alt={alt} />

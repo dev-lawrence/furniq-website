@@ -1,11 +1,30 @@
+import { useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { items } from '../data/AllProductsData';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import mainImg from '../assets/img/table1.webp';
-import smallImg1 from '../assets/img/table2.webp';
-import smallImg2 from '../assets/img/table4.webp';
-import smallImg3 from '../assets/img/table5.webp';
-
 const ProductDetails = () => {
+  const { name } = useParams();
+  const product = items.filter((item) => item.id === parseInt(name));
+  const { img, alt, title, price, description, relatedImgs } = product[0];
+  const [image, setImage] = useState(img);
+  const [quantity, setQuantity] = useState(1);
+
+  // Change Image
+  const changeImage = (event) => {
+    setImage(event.target.src);
+  };
+
+  // Function to Increase Quantity
+  const increaseQuantity = () => {
+    quantity >= 1 && setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  // Function to Reduce Quantity
+  const reduceQuantity = () => {
+    quantity > 1 && setQuantity((prevQuantity) => prevQuantity - 1);
+  };
+
   return (
     <>
       <Header />
@@ -14,24 +33,20 @@ const ProductDetails = () => {
           <div className="d-grid">
             <div className="images">
               <div className="main-img">
-                <img src={mainImg} alt="" />
+                <img src={image} alt={alt} />
               </div>
               <div className="small-imgs">
-                <img src={smallImg1} alt="" />
-                <img src={smallImg2} alt="" />
-                <img src={smallImg3} alt="" />
+                {relatedImgs.map((img, index) => (
+                  <img onClick={changeImage} key={index} src={img} />
+                ))}
               </div>
             </div>
 
             <div className="details">
-              <h3 className="mb-50">Pocket cotton sweatshirt</h3>
-              <p className="mb-100">
-                Nam tempus turpis at metus scelerisque placerat nulla deumantos
-                solicitud felis. Pellentesque diam dolor, elementum etos
-                lobortis des mollis ut...
-              </p>
+              <h3 className="mb-50">{title}</h3>
+              <p className="mb-100 description">{description}</p>
               <div className="delivery"></div>
-              <div className="price mb-100">$495.00</div>
+              <div className="price mb-100">${price}.00</div>
               <div className="d-flex mb-100">
                 <p className="text-bold mb-50">Colors:</p>
                 <div className="colors">
@@ -42,22 +57,24 @@ const ProductDetails = () => {
               </div>
 
               <div className="quantity">
+                <p className="text-bold mb-50">Quantity:</p>
                 <div className="d-flex">
-                  <p className="text-bold mb-50">Quantity:</p>
-
                   <div className="buttons">
-                    <button>+</button>
-                    <span>1</span>
-                    <button>-</button>
+                    <button onClick={reduceQuantity}>-</button>
+                    <span>{quantity}</span>
+                    <button onClick={increaseQuantity}>+</button>
                   </div>
-                </div>
 
-                <button className="btn">add to cart</button>
+                  <Link to={'#'}>
+                    <button className="btn">add to cart</button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
