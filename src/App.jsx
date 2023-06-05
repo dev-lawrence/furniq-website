@@ -14,14 +14,14 @@ import RootLayout from './layouts/RootLayout';
 // pages
 import Home from './pages/Home';
 import Shop from './pages/Shop';
-import Products from './pages/Products';
+import ProductDetails from './pages/ProductDetails';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="shop" element={<Shop />} />
-      <Route path="products/:id" element={<Products />} />
+      <Route path="product/:name" element={<ProductDetails />} />
     </Route>
   )
 );

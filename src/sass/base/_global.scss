@@ -12,6 +12,7 @@ p {
   font-size: $fs-300;
 }
 
+// Utility classes
 .pt-section {
   padding-top: 5rem;
 }
@@ -25,6 +26,10 @@ p {
   margin-bottom: 0;
 }
 
+.mb-50 {
+  margin-bottom: 0.8rem;
+}
+
 .mb-100 {
   margin-bottom: 1rem;
 }
@@ -35,6 +40,10 @@ p {
 
 .mb-200 {
   margin-bottom: 2rem;
+}
+
+.text-bold {
+  font-weight: 500;
 }
 
 // products

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { items } from '../data/AllProductsData';
 import Card from './Card';
 import FilterProducts from './FilterProducts';
+import { Link } from 'react-router-dom';
 
 const FeaturedProducts = () => {
   const [selectedProduct, setSelectedProduct] = useState('all');

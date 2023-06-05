@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+.product-details {
+  padding-top: 9rem;
+
+  img {
+    border-radius: $radius-300;
+  }
+
+  .main-img {
+    margin-bottom: 1rem;
+  }
+
+  .small-imgs {
+    @include flex(center, flex-start);
+    gap: 1rem;
+
+    img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+
+  // Details
+  .details {
+    margin-top: 3rem;
+
+    h3 {
+      font-size: $fs-600;
+    }
+
+    p {
+      font-size: $fs-300;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: $fs-600;
+      font-weight: 500;
+      color: var(--clr-primary-400);
+    }
+
+    .colors {
+      @include flex(center, flex-start);
+      gap: 1rem;
+    }
+
+    .color {
+      width: 25px;
+      height: 25px;
+      border-radius: $radius-500;
+    }
+
+    .purple {
+      background-color: rebeccapurple;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .orange {
+      background-color: orange;
+    }
+
+    .buttons {
+      @include flex(center, space-between);
+      width: 8rem;
+      border: 1px solid #bebdbd;
+      margin-bottom: 2rem;
+
+      button {
+        padding: 0.4rem 1rem;
+        font-size: $fs-500;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@include large {
+  .product-details {
+    .d-grid {
+      @include grid(repeat(2, 1fr), 1rem);
+    }
+  }
+}
