@@ -64,7 +64,7 @@ const Home = () => {
           </section>
 
           {/* Trending Section */}
-          <Trending />
+          <Trending title="Trending Now" />
 
           {/* Services */}
           <div className="services pt-section">

@@ -1,19 +1,16 @@
 import { items } from '../data/AllProductsData';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
-import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import Card from './Card';
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
-const Trending = () => {
+const Trending = ({ title }) => {
   const filteredItems = items.filter((item) => item.id >= 7);
-
   return (
     <>
       <section className="trending pt-section">
         <div className="d-flex">
           <div className="title">
-            <h2>Trending Now</h2>
+            <h2>{title}</h2>
           </div>
         </div>
 

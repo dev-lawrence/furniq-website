@@ -57,7 +57,7 @@ const Footer = () => {
                 <Link to={'/'}>Careers</Link>
               </li>
               <li>
-                <Link to={'/'}>contact</Link>
+                <Link to={'/'}>Contact</Link>
               </li>
             </div>
             <div className="other-links menu--links m-b">

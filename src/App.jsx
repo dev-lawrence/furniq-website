@@ -14,7 +14,7 @@ import RootLayout from './layouts/RootLayout';
 // pages
 import Home from './pages/Home';
 import Shop from './pages/Shop';
-import ProductDetails from './pages/ProductDetails';
+import ProductDetails from './pages/Product';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

@@ -57,7 +57,7 @@ export const items = [
     alt: 'couch',
     price: 99,
     isNew: true,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img8, Chair1, Chair2, Chair3],
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ export const items = [
     alt: 'table',
     price: 129,
     isNew: true,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img15, Chair1, Chair2, Chair3],
   },
   {
     id: 4,
@@ -83,7 +83,7 @@ export const items = [
     alt: 'chair',
     price: 149,
     isNew: true,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img5, Chair1, Chair2, Chair3],
   },
   {
     id: 5,
@@ -95,7 +95,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'bed',
     price: 89,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img21, Chair1, Chair2, Chair3],
   },
   {
     id: 6,
@@ -107,7 +107,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'couch',
     price: 109,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img12, Chair1, Chair2, Chair3],
   },
   {
     id: 7,
@@ -119,7 +119,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'chair',
     price: 109,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img7, Chair1, Chair2, Chair3],
   },
   {
     id: 8,
@@ -131,7 +131,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'chair',
     price: 60,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img2, Chair1, Chair2, Chair3],
   },
   {
     id: 9,
@@ -144,7 +144,7 @@ export const items = [
     alt: 'table',
     price: 80,
     isNew: true,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img17, Chair1, Chair2, Chair3],
   },
   {
     id: 10,
@@ -156,7 +156,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'couch',
     price: 200,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img10, Chair1, Chair2, Chair3],
   },
   {
     id: 11,
@@ -168,7 +168,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'couch',
     price: 90,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img11, Chair1, Chair2, Chair3],
   },
   {
     id: 12,
@@ -180,7 +180,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'chair',
     price: 70,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img6, Chair1, Chair2, Chair3],
   },
   {
     id: 13,
@@ -193,7 +193,7 @@ export const items = [
     alt: 'bed',
     price: 150,
     isNew: true,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img20, Chair1, Chair2, Chair3],
   },
   {
     id: 14,
@@ -205,7 +205,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'table',
     price: 120,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img18, Chair1, Chair2, Chair3],
   },
   {
     id: 15,
@@ -217,7 +217,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'chair',
     price: 95,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img3, Chair1, Chair2, Chair3],
   },
   {
     id: 16,
@@ -229,7 +229,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'bed',
     price: 180,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img22, Chair1, Chair2, Chair3],
   },
   {
     id: 17,
@@ -241,7 +241,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'chair',
     price: 85,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img4, Chair1, Chair2, Chair3],
   },
   {
     id: 18,
@@ -253,7 +253,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'couch',
     price: 250,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img13, Chair1, Chair2, Chair3],
   },
   {
     id: 19,
@@ -265,7 +265,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'table',
     price: 110,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img19, Chair1, Chair2, Chair3],
   },
   {
     id: 20,
@@ -277,7 +277,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'chair',
     price: 45,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img9, Chair1, Chair2, Chair3],
   },
   {
     id: 21,
@@ -285,11 +285,11 @@ export const items = [
     description:
       'Storage platform beds offer a practical solution for those in need of extra storage space in their bedrooms. These beds come with built-in drawers or compartments underneath the mattress, allowing you to store items such as bedding, clothing, or personal belongings. Storage platform beds are stylish and functional, making them a great choice for optimizing space in smaller bedrooms.',
     img: Img23,
-    title: 'Storage Platform Bed',
+    title: 'Storage  Bed',
     icon: <ShoppingCartRoundedIcon />,
     alt: 'bed',
     price: 210,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img23, Chair1, Chair2, Chair3],
   },
   {
     id: 22,
@@ -301,7 +301,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'couch',
     price: 320,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img14, Chair1, Chair2, Chair3],
   },
   {
     id: 23,
@@ -313,7 +313,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'table',
     price: 75,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img16, Chair1, Chair2, Chair3],
   },
   {
     id: 24,
@@ -325,7 +325,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'chair',
     price: 300,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img24, Chair1, Chair2, Chair3],
   },
   {
     id: 25,
@@ -337,7 +337,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'bed',
     price: 180,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img25, Chair1, Chair2, Chair3],
   },
   {
     id: 26,
@@ -349,7 +349,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'chair',
     price: 55,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img26, Chair1, Chair2, Chair3],
   },
 
   {
@@ -362,7 +362,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'table',
     price: 95,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img27, Chair1, Chair2, Chair3],
   },
   {
     id: 28,
@@ -374,7 +374,7 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'couch',
     price: 175,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img28, Chair1, Chair2, Chair3],
   },
   {
     id: 29,
@@ -386,6 +386,6 @@ export const items = [
     icon: <ShoppingCartRoundedIcon />,
     alt: 'chair',
     price: 120,
-    relatedImgs: [Chair1, Chair2, Chair3],
+    relatedImgs: [Img29, Chair1, Chair2, Chair3],
   },
 ];
