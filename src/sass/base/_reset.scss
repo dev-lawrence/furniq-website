@@ -32,7 +32,8 @@ span {
   text-decoration: none;
 }
 
-input {
+input,
+textarea {
   font-family: $secondary-font;
   width: 100%;
 }

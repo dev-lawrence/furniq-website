@@ -138,7 +138,8 @@
     }
 
     .description,
-    .add-info {
+    .add-info,
+    .review {
       padding-top: 4rem;
     }
 
@@ -182,6 +183,72 @@
 
       td {
         text-align: right;
+      }
+    }
+
+    .review {
+      .user-review {
+        span {
+          color: var(--clr-primary-400);
+        }
+
+        max-width: 450px;
+        margin-right: auto;
+      }
+
+      h4 {
+        font-size: $fs-500;
+      }
+
+      h4,
+      p {
+        margin-bottom: 1rem;
+      }
+
+      .form {
+        padding-top: 4rem;
+
+        @include large {
+          padding-top: 0;
+        }
+
+        input {
+          height: 2.688rem;
+          margin-top: 0.5rem;
+        }
+
+        textarea {
+          margin-bottom: 1rem;
+        }
+
+        input,
+        textarea {
+          padding: 0.7rem;
+          width: 100%;
+          border-radius: 0.2rem;
+          padding-left: 0.5rem;
+          border: 1px solid #ced4da;
+        }
+
+        .rating {
+          @include flex(center, flex-start);
+          margin-block: 2rem;
+
+          h4 {
+            margin-bottom: 0;
+            margin-right: 0.5rem;
+          }
+
+          .stars {
+            @include flex(center, flex-start);
+
+            .star {
+              font-size: $fs-500;
+              color: #f5c136;
+              cursor: pointer;
+            }
+          }
+        }
       }
     }
   }

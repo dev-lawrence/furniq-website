@@ -12,7 +12,7 @@ const Category = () => {
           <div className="grid-one">
             <Link to="#" className="category-content">
               <div className="overlay"></div>
-              <img src={TableImg} alt="" />
+              <img loading="lazy" src={TableImg} alt="" />
               <p className="description">Tables</p>
             </Link>
           </div>
@@ -20,7 +20,7 @@ const Category = () => {
           <div className="grid-two">
             <Link to="#" className="category-content">
               <div className="overlay"></div>
-              <img src={ChairImg} alt="" />
+              <img loading="lazy" src={ChairImg} alt="" />
               <p className="description">Chairs</p>
             </Link>
           </div>
@@ -28,7 +28,7 @@ const Category = () => {
           <div className="grid-three">
             <Link to="#" className="category-content">
               <div className="overlay"></div>
-              <img src={BedImg} alt="" />
+              <img loading="lazy" src={BedImg} alt="" />
               <p className="description">Bed</p>
             </Link>
           </div>
@@ -36,7 +36,7 @@ const Category = () => {
           <div className="grid-four">
             <Link to="#" className="category-content">
               <div className="overlay"></div>
-              <img src={CouchImg} alt="" />
+              <img loading="lazy" src={CouchImg} alt="" />
               <p className="description">Couch</p>
             </Link>
           </div>

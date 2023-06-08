@@ -4,6 +4,7 @@ import { items } from '../data/AllProductsData';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Trending from '../components/Trending';
+import Review from '../components/Review';
 
 const Product = () => {
   const { name } = useParams();
@@ -151,6 +152,9 @@ const Product = () => {
                 </table>
               </div>
             )}
+
+            {/* Review */}
+            {activeTab === 'reviews' && <Review />}
           </div>
 
           <Trending title="Related Products" />
