@@ -91,10 +91,14 @@
 
       button {
         position: relative;
-        margin-inline: 1rem;
+        margin-inline: 0.5rem;
         font-size: $fs-300;
         font-weight: 500;
         transition: all 0.2s ease-in-out;
+
+        @include medium {
+          margin-inline: 1rem;
+        }
 
         &::after {
           content: '';
