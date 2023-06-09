@@ -16,7 +16,7 @@ const Card = ({ item }) => {
         >
           <div className="overlay"></div>
           <RemoveRedEyeIcon className="eye" />
-          <img loading="lazy" src={img} alt={alt} />
+          <img src={img} alt={alt} />
         </Link>
 
         <div className="description">

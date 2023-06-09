@@ -187,6 +187,15 @@
     }
 
     .review {
+      .no-review {
+        font-size: 1.1rem;
+        font-style: italic;
+
+        @include large {
+          transform: translateY(5rem);
+        }
+      }
+
       .user-review {
         span {
           color: var(--clr-primary-400);
@@ -194,13 +203,17 @@
 
         max-width: 450px;
         margin-right: auto;
+
+        &:not(:last-child) {
+          margin-bottom: 3rem;
+        }
       }
 
       h4 {
         font-size: $fs-500;
+        margin-bottom: 0.5rem;
       }
 
-      h4,
       p {
         margin-bottom: 1rem;
       }

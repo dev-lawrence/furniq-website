@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Trending from '../components/Trending';
 import Review from '../components/Review';
+const LOCAL_STORAGE_KEY = 'reviews.furniqReviews';
 
 const Product = () => {
   const { name } = useParams();
@@ -13,6 +14,10 @@ const Product = () => {
   const [image, setImage] = useState(img);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('description');
+  const [reviews, setReviews] = useState(() => {
+    const storedReviews = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return storedReviews ? JSON.parse(storedReviews) : [];
+  });
 
   // Change Image
   const changeImage = (event) => {
@@ -96,7 +101,7 @@ const Product = () => {
                 onClick={() => setActiveTab('reviews')}
                 className={`${activeTab === 'reviews' ? 'active' : ''}`}
               >
-                Reviews
+                Reviews({reviews.length})
               </button>
             </div>
 
@@ -129,32 +134,40 @@ const Product = () => {
             {activeTab === 'add-info' && (
               <div className="add-info">
                 <table>
-                  <tr>
-                    <th>Brand</th>
-                    <td>Magisso</td>
-                  </tr>
-                  <tr>
-                    <th>Height</th>
-                    <td>74 cm</td>
-                  </tr>
-                  <tr>
-                    <th>Width</th>
-                    <td>105 cm</td>
-                  </tr>
-                  <tr>
-                    <th>Depth</th>
-                    <td>45 cm</td>
-                  </tr>
-                  <tr>
-                    <th>Material</th>
-                    <td>Solid oak</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <th>Brand</th>
+                      <td>Magisso</td>
+                    </tr>
+                    <tr>
+                      <th>Height</th>
+                      <td>74 cm</td>
+                    </tr>
+                    <tr>
+                      <th>Width</th>
+                      <td>105 cm</td>
+                    </tr>
+                    <tr>
+                      <th>Depth</th>
+                      <td>45 cm</td>
+                    </tr>
+                    <tr>
+                      <th>Material</th>
+                      <td>Solid oak</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             )}
 
             {/* Review */}
-            {activeTab === 'reviews' && <Review />}
+            {activeTab === 'reviews' && (
+              <Review
+                reviews={reviews}
+                setReviews={setReviews}
+                LOCAL_STORAGE_KEY={LOCAL_STORAGE_KEY}
+              />
+            )}
           </div>
 
           <Trending title="Related Products" />
