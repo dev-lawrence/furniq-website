@@ -1,8 +1,14 @@
-import { useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 const Review = ({ reviews, setReviews, LOCAL_STORAGE_KEY }) => {
+  const [rating, setRating] = useState(0);
+
+  const handleRatingChange = (star) => {
+    setRating(star);
+  };
+
   const nameRef = useRef();
   const emailRef = useRef();
   const reviewRef = useRef();
@@ -29,6 +35,7 @@ const Review = ({ reviews, setReviews, LOCAL_STORAGE_KEY }) => {
       name: name,
       email: email,
       reviewMessage: reviewMessage,
+      rating: rating,
     };
 
     setReviews((prevReviews) => {
@@ -38,14 +45,34 @@ const Review = ({ reviews, setReviews, LOCAL_STORAGE_KEY }) => {
     nameRef.current.value = null;
     emailRef.current.value = null;
     reviewRef.current.value = null;
-
-    console.log(reviewDate);
+    setRating(0);
   };
 
   // save todo to local storage
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(reviews));
-  }, [reviews]);
+  }, [reviews, rating]);
+
+  // Helper function to generate star icons
+  const generateStarIcons = (numStars) => {
+    const stars = [];
+
+    [1, 2, 3, 4, 5].forEach((star) => {
+      stars.push(
+        star <= numStars ? (
+          <StarIcon className="star" key={star} />
+        ) : (
+          <StarBorderIcon className="star" key={star} />
+        )
+      );
+    });
+
+    return stars;
+  };
+
+  const generateStarClasses = (star) => {
+    return star <= rating ? 'star' : 'star';
+  };
 
   return (
     <div className="review">
@@ -59,6 +86,7 @@ const Review = ({ reviews, setReviews, LOCAL_STORAGE_KEY }) => {
                 <span>{date}</span>
                 <h4>{name}</h4>
                 <p>{reviewMessage}</p>
+                <p>{generateStarIcons(rating)}</p>
               </div>
             ))}
           </div>
@@ -74,11 +102,15 @@ const Review = ({ reviews, setReviews, LOCAL_STORAGE_KEY }) => {
             <h4>Your Rating: </h4>
 
             <div className="stars">
-              <StarBorderIcon className="star" />
-              <StarBorderIcon className="star" />
-              <StarBorderIcon className="star" />
-              <StarBorderIcon className="star" />
-              <StarBorderIcon className="star" />
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  key={star}
+                  className={generateStarClasses(star)}
+                  onClick={() => handleRatingChange(star)}
+                >
+                  {star <= rating ? <StarIcon /> : <StarBorderIcon />}
+                </span>
+              ))}
             </div>
           </div>
 

@@ -258,6 +258,7 @@
 
           .stars {
             @include flex(center, flex-start);
+            transform: translateY(0.3rem);
 
             .star {
               font-size: $fs-500;
