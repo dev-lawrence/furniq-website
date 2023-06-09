@@ -12,7 +12,7 @@ const Cart = ({ cartClick, handleCartClick }) => {
           <div className="content">
             <div>
               <h3>Your cart is empty</h3>
-              <a className="cart-btn" href="#">
+              <a className="cart-btn" onClick={handleCartClick} href="#">
                 Continue Shopping
               </a>
             </div>
