@@ -51,27 +51,20 @@ const Review = ({ reviews, setReviews, LOCAL_STORAGE_KEY }) => {
   // save todo to local storage
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(reviews));
-  }, [reviews, rating]);
+  }, [reviews]);
 
   // Helper function to generate star icons
-  const generateStarIcons = (numStars) => {
+  const generateStarIcons = (rating) => {
     const stars = [];
-
     [1, 2, 3, 4, 5].forEach((star) => {
       stars.push(
-        star <= numStars ? (
-          <StarIcon className="star" key={star} />
-        ) : (
-          <StarBorderIcon className="star" key={star} />
-        )
+        <span key={star} className="star">
+          {star <= rating ? <StarIcon /> : <StarBorderIcon />}
+        </span>
       );
     });
 
     return stars;
-  };
-
-  const generateStarClasses = (star) => {
-    return star <= rating ? 'star' : 'star';
   };
 
   return (
@@ -81,7 +74,7 @@ const Review = ({ reviews, setReviews, LOCAL_STORAGE_KEY }) => {
           <span className="no-review">There are no reviews yet.</span>
         ) : (
           <div>
-            {reviews.map(({ date, name, reviewMessage }, index) => (
+            {reviews.map(({ date, name, reviewMessage, rating }, index) => (
               <div key={index} className="user-review">
                 <span>{date}</span>
                 <h4>{name}</h4>
@@ -105,7 +98,7 @@ const Review = ({ reviews, setReviews, LOCAL_STORAGE_KEY }) => {
               {[1, 2, 3, 4, 5].map((star) => (
                 <span
                   key={star}
-                  className={generateStarClasses(star)}
+                  className="star"
                   onClick={() => handleRatingChange(star)}
                 >
                   {star <= rating ? <StarIcon /> : <StarBorderIcon />}

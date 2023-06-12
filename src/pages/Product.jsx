@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Trending from '../components/Trending';
 import Review from '../components/Review';
+import BreadCrumbs from '../components/BreadCrumbs';
 const LOCAL_STORAGE_KEY = 'reviews.furniqReviews';
 
 const Product = () => {
@@ -37,8 +38,11 @@ const Product = () => {
   return (
     <>
       <Header />
+
       <section className="product-page">
         <div className="container">
+          <BreadCrumbs name={name} />
+          <hr className="breadcrumbs-line" />
           <div className="d-grid">
             <div className="images">
               <div className="main-img">
@@ -81,7 +85,7 @@ const Product = () => {
             </div>
           </div>
 
-          <hr />
+          <hr className="line" />
 
           <div className="other-information">
             <div className="info">

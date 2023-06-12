@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .product-page {
-  padding-top: 9rem;
+  padding-top: 7rem;
   margin-bottom: 4rem;
 
   h3 {
@@ -77,7 +77,7 @@
     }
   }
 
-  hr {
+  .line {
     margin-top: 5rem;
   }
 
@@ -191,6 +191,11 @@
     }
 
     .review {
+      .star {
+        font-size: $fs-500;
+        color: #f5c136;
+      }
+
       .no-review {
         font-size: 1.1rem;
         font-style: italic;
@@ -201,10 +206,6 @@
       }
 
       .user-review {
-        span {
-          color: var(--clr-primary-400);
-        }
-
         max-width: 450px;
         margin-right: auto;
 
@@ -261,14 +262,42 @@
             transform: translateY(0.3rem);
 
             .star {
-              font-size: $fs-500;
-              color: #f5c136;
               cursor: pointer;
             }
           }
         }
       }
     }
+  }
+
+  .breadcrumbs {
+    display: inline-block;
+    margin-bottom: 1rem;
+
+    &-line {
+      margin-bottom: 5rem;
+    }
+
+    .home,
+    .category {
+      color: var(--clr-neutral-900);
+    }
+
+    .category {
+      text-transform: capitalize;
+    }
+
+    .crumb {
+      color: #51545f;
+    }
+  }
+
+  .separator {
+    margin: 0 0.5rem;
+  }
+
+  hr {
+    border-color: #ffffff;
   }
 }
 
