@@ -36,14 +36,14 @@ const BreadCrumbs = ({ name }) => {
         return null; // Skip rendering the product crumb
       }
 
-      return (
-        <div key={crumb} className="breadcrumbs">
-          <Link className="bread" to={currentLink}>
-            {crumb}
-          </Link>
-          <span className="separator">{separator}</span>
-        </div>
-      );
+      //   return (
+      //     <div key={crumb} className="breadcrumbs">
+      //       <Link className="bread" to={currentLink}>
+      //         {crumb}
+      //       </Link>
+      //       <span className="separator">{separator}</span>
+      //     </div>
+      //   );
     });
 
   const additionalCrumb = (
