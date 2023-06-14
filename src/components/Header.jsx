@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -10,10 +10,18 @@ import CartContext from '../CartContext';
 
 const Header = ({ notify }) => {
   const { items: cartItems } = useContext(CartContext);
-
   const [toggleSearch, setToggleSearch] = useState(false);
   const [cartClick, setCartClick] = useState(false);
   const [navClick, setNavClick] = useState(false);
+  const [latestItem, setLatestItem] = useState([]);
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      const lastItem = cartItems[cartItems.length - 1];
+      console.log(lastItem);
+      setLatestItem(lastItem);
+    }
+  }, [cartItems]);
 
   // Handle toggle search
   const handleToggleSearch = () => {
@@ -34,9 +42,7 @@ const Header = ({ notify }) => {
     <>
       <header id="header-section">
         <div className={`notify ${notify ? 'show' : ''}`}>
-          {cartItems.map(({ id, title }) => (
-            <p key={id}>{title} has been added ✅</p>
-          ))}
+          <p>{latestItem.title} has been added ✅</p>
         </div>
         {/* search input */}
         <div
