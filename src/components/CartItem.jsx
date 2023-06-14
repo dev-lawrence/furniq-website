@@ -1,0 +1,60 @@
+import { useState, useContext, useEffect } from 'react';
+import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
+import CartContext from '../CartContext';
+
+const CartItem = ({ item }) => {
+  const { id, img, alt, title, price } = item;
+  const { items, addToCart, removeFromCart, reduceCartQuantity } =
+    useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    const cartItem = items.find((item) => item.id === id);
+    if (cartItem) {
+      setQuantity(cartItem.quantity);
+    }
+  }, [items, id]);
+
+  // Function to Increase Quantity
+  const increaseQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+    addToCart(id, img, alt, title, price);
+  };
+
+  // Function to Reduce Quantity
+  const reduceQuantity = () => {
+    if (quantity > 1) {
+      reduceCartQuantity(id);
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    } else {
+      removeFromCart(id);
+    }
+  };
+
+  // calculate the price
+  const calculatePrice = (quantity, price) => {
+    return quantity * price;
+  };
+
+  return (
+    <>
+      <div className="cart-products-product">
+        <img src={img} alt={alt} />
+        <div className="cart-product-details">
+          <h5 className="name">{title}</h5>
+          <h4 className="price">${calculatePrice(quantity, price)}</h4>
+          <div className="buttons">
+            <button onClick={reduceQuantity}>-</button>
+            <span>{quantity}</span>
+            <button onClick={increaseQuantity}>+</button>
+          </div>
+          <div onClick={() => removeFromCart(id)}>
+            <DeleteRoundedIcon className="delete" />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default CartItem;

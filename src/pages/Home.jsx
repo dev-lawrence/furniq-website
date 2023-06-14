@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -13,9 +14,19 @@ import Newsletter from '../components/Newsletter';
 import Category from '../components/Category';
 
 const Home = () => {
+  const [notify, setNotify] = useState(false);
+
+  const showNotify = () => {
+    setNotify(true);
+
+    setTimeout(() => {
+      setNotify(false);
+    }, 3000);
+  };
+
   return (
     <>
-      <Header />
+      <Header notify={notify} showNotify={showNotify} />
       <section className="home">
         <div className="hero">
           {/* // Not in use at the moment */}
@@ -39,7 +50,7 @@ const Home = () => {
           <Category />
 
           {/* Featured Products */}
-          <FeaturedProducts />
+          <FeaturedProducts showNotify={showNotify} />
 
           {/* Banner Section */}
           <section className="banner pt-section">

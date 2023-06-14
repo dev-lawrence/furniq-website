@@ -3,8 +3,9 @@ import { items } from '../data/AllProductsData';
 import Card from './Card';
 import FilterProducts from './FilterProducts';
 
-const FeaturedProducts = () => {
+const FeaturedProducts = ({ showNotify }) => {
   const [selectedProduct, setSelectedProduct] = useState('all');
+
   const handleFilterChange = (category) => {
     setSelectedProduct(category);
   };
@@ -29,7 +30,7 @@ const FeaturedProducts = () => {
 
         <div className="products">
           {filteredItems.map((item) => {
-            return <Card item={item} key={item.id} />;
+            return <Card item={item} key={item.id} showNotify={showNotify} />;
           })}
         </div>
       </section>

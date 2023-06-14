@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { items } from '../data/AllProductsData';
 import Header from '../components/Header';
@@ -7,11 +7,12 @@ import Trending from '../components/Trending';
 import Review from '../components/Review';
 import BreadCrumbs from '../components/BreadCrumbs';
 const LOCAL_STORAGE_KEY = 'reviews.furniqReviews';
+import CartContext from '../CartContext';
 
 const Product = () => {
   const { name } = useParams();
   const product = items.filter((item) => item.id === parseInt(name));
-  const { img, alt, title, price, description, relatedImgs } = product[0];
+  const { id, img, alt, title, price, description, relatedImgs } = product[0];
   const [image, setImage] = useState(img);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('description');
@@ -19,21 +20,43 @@ const Product = () => {
     const storedReviews = localStorage.getItem(LOCAL_STORAGE_KEY);
     return storedReviews ? JSON.parse(storedReviews) : [];
   });
+  const { addToCart, removeFromCart, reduceCartQuantity } =
+    useContext(CartContext);
 
   // Change Image
   const changeImage = (event) => {
     setImage(event.target.src);
   };
 
+  // useEffect(() => {
+  //   const cartItem = items.find((item) => item.id === id);
+  //   if (cartItem) {
+  //     setQuantity(cartItem.quantity);
+  //   }
+  // }, [items, id]);
+
   // Function to Increase Quantity
   const increaseQuantity = () => {
-    quantity >= 1 && setQuantity((prevQuantity) => prevQuantity + 1);
+    setQuantity((prevQuantity) => prevQuantity + 1);
+    addToCart(id, img, alt, title, price);
   };
 
   // Function to Reduce Quantity
   const reduceQuantity = () => {
-    quantity > 1 && setQuantity((prevQuantity) => prevQuantity - 1);
+    if (quantity > 1) {
+      reduceCartQuantity(id);
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    } else {
+      removeFromCart(id);
+    }
   };
+  // const reduceQuantity = () => {
+  //   if (quantity > 1) {
+  //     reduceCartQuantity(id);
+  //     setQuantity((prevQuantity) => prevQuantity - 1);
+  //     // removeFromCart(id);
+  //   }
+  // };
 
   return (
     <>
@@ -73,11 +96,11 @@ const Product = () => {
 
               <div className="quantity">
                 <div className="d-flex">
-                  <Link to={'#'}>
+                  <Link onClick={() => addToCart(id, img, alt, title, price)}>
                     <button className="btn-outline">add to cart</button>
                   </Link>
 
-                  <Link to={'#'}>
+                  <Link>
                     <button className="btn">buy now</button>
                   </Link>
                 </div>

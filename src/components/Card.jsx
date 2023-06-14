@@ -1,8 +1,11 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import CartContext from '../CartContext';
 
-const Card = ({ item }) => {
+const Card = ({ item, showNotify }) => {
   const { id, img, alt, title, price, icon, isNew } = item;
+  const { addToCart } = useContext(CartContext);
 
   return (
     <>
@@ -25,7 +28,12 @@ const Card = ({ item }) => {
             <h4 className="price">${price}</h4>
           </div>
 
-          <Link>
+          <Link
+            onClick={() => {
+              addToCart(id, img, alt, title, price);
+              showNotify();
+            }}
+          >
             <span className="cart">{icon}</span>
           </Link>
         </div>

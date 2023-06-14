@@ -1,12 +1,16 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import Cart from './Cart';
+import CartList from './CartList';
 import NavBar from './NavBar';
-const Header = () => {
+import CartContext from '../CartContext';
+
+const Header = ({ notify }) => {
+  const { items } = useContext(CartContext);
+
   const [toggleSearch, setToggleSearch] = useState(false);
   const [cartClick, setCartClick] = useState(false);
   const [navClick, setNavClick] = useState(false);
@@ -29,6 +33,9 @@ const Header = () => {
   return (
     <>
       <header id="header-section">
+        <div className={`notify ${notify ? 'show' : ''}`}>
+          <p>Item has been added ✅</p>
+        </div>
         {/* search input */}
         <div
           className={`search-input ${toggleSearch ? 'showSearchInput' : ''}`}
@@ -60,6 +67,7 @@ const Header = () => {
                 onClick={handleCartClick}
               >
                 <LocalMallRoundedIcon className="icon" />
+                {items.length >= 1 && <span>{items.length}</span>}
               </button>
 
               <button className="toggle-menu icon-btn" onClick={handleNavClick}>
@@ -72,7 +80,8 @@ const Header = () => {
             </div>
 
             {/* Cart Menu */}
-            <Cart cartClick={cartClick} handleCartClick={handleCartClick} />
+
+            <CartList cartClick={cartClick} handleCartClick={handleCartClick} />
 
             {/* NavBar Menu */}
             <NavBar navClick={navClick} />

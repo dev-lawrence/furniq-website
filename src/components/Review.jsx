@@ -48,7 +48,7 @@ const Review = ({ reviews, setReviews, LOCAL_STORAGE_KEY }) => {
     setRating(0);
   };
 
-  // save todo to local storage
+  // save reviews to local storage
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(reviews));
   }, [reviews]);
