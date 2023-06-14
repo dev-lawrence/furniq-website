@@ -28,13 +28,6 @@ const Product = () => {
     setImage(event.target.src);
   };
 
-  // useEffect(() => {
-  //   const cartItem = items.find((item) => item.id === id);
-  //   if (cartItem) {
-  //     setQuantity(cartItem.quantity);
-  //   }
-  // }, [items, id]);
-
   // Function to Increase Quantity
   const increaseQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);

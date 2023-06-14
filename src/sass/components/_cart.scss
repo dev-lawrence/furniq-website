@@ -35,7 +35,8 @@
 
     .content {
       @include flex(flex-start, center);
-      flex-direction: column;
+      height: 70%;
+      overflow-y: auto;
 
       .cart-products {
         width: 100%;
@@ -46,7 +47,7 @@
           border-radius: $radius-400;
           padding: 1.5rem;
           @include flex(center, flex-start);
-          gap: 4rem;
+          gap: 3rem;
 
           img {
             width: 90px;
@@ -93,29 +94,6 @@
         }
       }
 
-      .sub-total {
-        padding-top: 1rem;
-        span {
-          font-weight: 900;
-        }
-      }
-
-      .checkout {
-        width: 100%;
-        padding-top: 2rem;
-
-        .cta {
-          background-color: var(--clr-neutral-900);
-          color: var(--clr-neutral-100);
-          padding: 0.6rem 1.8rem;
-          font-size: $fs-300;
-          border-radius: 0.6rem;
-          font-weight: 600;
-          width: 100%;
-          text-transform: uppercase;
-        }
-      }
-
       .empty {
         text-align: center;
         position: absolute;
@@ -133,6 +111,33 @@
           color: var(--clr-neutral-100);
           padding: 1rem 2rem;
           border-radius: 0.4rem;
+        }
+      }
+    }
+
+    .subtotal-container {
+      width: 100%;
+
+      .subtotal {
+        padding-top: 1rem;
+        span {
+          font-weight: 900;
+        }
+      }
+
+      .checkout {
+        width: 100%;
+        padding-top: 1rem;
+
+        .cta {
+          background-color: var(--clr-neutral-900);
+          color: var(--clr-neutral-100);
+          padding: 0.6rem 1.8rem;
+          font-size: $fs-300;
+          border-radius: 0.6rem;
+          font-weight: 600;
+          width: 100%;
+          text-transform: uppercase;
         }
       }
     }

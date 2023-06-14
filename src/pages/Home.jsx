@@ -21,7 +21,7 @@ const Home = () => {
 
     setTimeout(() => {
       setNotify(false);
-    }, 3000);
+    }, 1000);
   };
 
   return (

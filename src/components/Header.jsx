@@ -9,7 +9,7 @@ import NavBar from './NavBar';
 import CartContext from '../CartContext';
 
 const Header = ({ notify }) => {
-  const { items } = useContext(CartContext);
+  const { items: cartItems } = useContext(CartContext);
 
   const [toggleSearch, setToggleSearch] = useState(false);
   const [cartClick, setCartClick] = useState(false);
@@ -34,7 +34,9 @@ const Header = ({ notify }) => {
     <>
       <header id="header-section">
         <div className={`notify ${notify ? 'show' : ''}`}>
-          <p>Item has been added ✅</p>
+          {cartItems.map(({ id, title }) => (
+            <p key={id}>{title} has been added ✅</p>
+          ))}
         </div>
         {/* search input */}
         <div
@@ -67,7 +69,7 @@ const Header = ({ notify }) => {
                 onClick={handleCartClick}
               >
                 <LocalMallRoundedIcon className="icon" />
-                {items.length >= 1 && <span>{items.length}</span>}
+                {cartItems.length >= 1 && <span>{cartItems.length}</span>}
               </button>
 
               <button className="toggle-menu icon-btn" onClick={handleNavClick}>
