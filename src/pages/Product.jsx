@@ -8,25 +8,38 @@ import Review from '../components/Review';
 import BreadCrumbs from '../components/BreadCrumbs';
 const LOCAL_STORAGE_KEY = 'reviews.furniqReviews';
 import CartContext from '../CartContext';
+import NotificationContext from '../NotificationContext';
 
 const Product = () => {
   const { name } = useParams();
   const product = items.filter((item) => item.id === parseInt(name));
   const { id, img, alt, title, price, description, relatedImgs } = product[0];
   const [image, setImage] = useState(img);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
   const [activeTab, setActiveTab] = useState('description');
   const [reviews, setReviews] = useState(() => {
     const storedReviews = localStorage.getItem(LOCAL_STORAGE_KEY);
     return storedReviews ? JSON.parse(storedReviews) : [];
   });
-  const { addToCart, removeFromCart, reduceCartQuantity } =
-    useContext(CartContext);
+  const {
+    items: cartItems,
+    addToCart,
+    removeFromCart,
+    reduceCartQuantity,
+  } = useContext(CartContext);
+  const { notify, showNotify } = useContext(NotificationContext);
 
   // Change Image
   const changeImage = (event) => {
     setImage(event.target.src);
   };
+
+  useEffect(() => {
+    const cartItem = cartItems.find((item) => item.id === id);
+    if (cartItem) {
+      setQuantity(cartItem.quantity);
+    }
+  }, [cartItems, id]);
 
   // Function to Increase Quantity
   const increaseQuantity = () => {
@@ -43,17 +56,10 @@ const Product = () => {
       removeFromCart(id);
     }
   };
-  // const reduceQuantity = () => {
-  //   if (quantity > 1) {
-  //     reduceCartQuantity(id);
-  //     setQuantity((prevQuantity) => prevQuantity - 1);
-  //     // removeFromCart(id);
-  //   }
-  // };
 
   return (
     <>
-      <Header />
+      <Header notify={notify} />
 
       <section className="product-page">
         <div className="container">
@@ -190,7 +196,7 @@ const Product = () => {
             )}
           </div>
 
-          <Trending title="Related Products" />
+          <Trending title="Related Products" showNotify={showNotify} />
         </div>
       </section>
 

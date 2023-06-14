@@ -3,7 +3,7 @@ import Card from './Card';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
-const Trending = ({ title }) => {
+const Trending = ({ title, showNotify }) => {
   const filteredItems = items.filter((item) => item.id >= 7);
   return (
     <>
@@ -35,7 +35,7 @@ const Trending = ({ title }) => {
           {filteredItems.map((item) => {
             return (
               <SplideSlide key={item.id}>
-                <Card item={item} />
+                <Card item={item} showNotify={showNotify} />
               </SplideSlide>
             );
           })}

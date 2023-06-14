@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -12,17 +12,10 @@ import Trending from '../components/Trending';
 import Event from '../components/Event';
 import Newsletter from '../components/Newsletter';
 import Category from '../components/Category';
+import NotificationContext from '../NotificationContext';
 
 const Home = () => {
-  const [notify, setNotify] = useState(false);
-
-  const showNotify = () => {
-    setNotify(true);
-
-    setTimeout(() => {
-      setNotify(false);
-    }, 1000);
-  };
+  const { notify, showNotify } = useContext(NotificationContext);
 
   return (
     <>
@@ -75,7 +68,7 @@ const Home = () => {
           </section>
 
           {/* Trending Section */}
-          <Trending title="Trending Now" />
+          <Trending title="Trending Now" showNotify={showNotify} />
 
           {/* Services */}
           <div className="services pt-section">

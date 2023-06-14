@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { CartProvider } from './CartContext';
+import { NotificationProvider } from './NotificationContext';
 // styles
 import './sass/main.scss';
 
@@ -31,7 +32,9 @@ const App = () => {
   return (
     <>
       <CartProvider>
-        <RouterProvider router={router} />
+        <NotificationProvider>
+          <RouterProvider router={router} />
+        </NotificationProvider>
       </CartProvider>
     </>
   );

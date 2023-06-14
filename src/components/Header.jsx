@@ -18,7 +18,6 @@ const Header = ({ notify }) => {
   useEffect(() => {
     if (cartItems.length > 0) {
       const lastItem = cartItems[cartItems.length - 1];
-      console.log(lastItem);
       setLatestItem(lastItem);
     }
   }, [cartItems]);
