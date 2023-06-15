@@ -4,6 +4,7 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CartList from './CartList';
 import NavBar from './NavBar';
 import CartContext from '../CartContext';
@@ -60,6 +61,9 @@ const Header = ({ notify }) => {
               <Link to="/">Furniq</Link>
             </div>
 
+            {/* NavBar Menu */}
+            <NavBar navClick={navClick} />
+
             {/* <!--NAV BUTTONS--> */}
             <div className="menu-buttons">
               <button
@@ -67,6 +71,10 @@ const Header = ({ notify }) => {
                 onClick={handleToggleSearch}
               >
                 <SearchRoundedIcon className="icon" />
+              </button>
+
+              <button className="toggle-account icon-btn">
+                <AccountCircleIcon className="icon" />
               </button>
 
               <button
@@ -87,11 +95,7 @@ const Header = ({ notify }) => {
             </div>
 
             {/* Cart Menu */}
-
             <CartList cartClick={cartClick} handleCartClick={handleCartClick} />
-
-            {/* NavBar Menu */}
-            <NavBar navClick={navClick} />
           </div>
         </div>
       </header>

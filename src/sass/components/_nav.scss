@@ -5,7 +5,7 @@
   cursor: pointer;
   font-size: $fs-600;
 
-  @include extra-large {
+  @include large {
     display: none;
   }
 }
@@ -19,10 +19,11 @@
   width: 100%;
   height: 100vh;
   overflow: auto;
+  z-index: 100;
   transform: translateX(200.25rem);
   transition: transform 0.5s ease-in-out;
 
-  @include extra-large {
+  @include large {
     position: relative;
     transform: translateX(0);
     height: 100%;
@@ -43,11 +44,12 @@
   width: 60%;
   padding: 4rem 2rem 1.625rem;
 
-  @include extra-large {
+  @include large {
     height: 100%;
     width: 100%;
-    @include flex(center, flex-end);
+    @include flex(center, center);
     padding-block: 0;
+    padding-inline: 0;
   }
 
   @include small {
@@ -58,9 +60,9 @@
     text-transform: capitalize;
     margin-bottom: 1rem;
 
-    @include extra-large {
+    @include large {
       margin-bottom: 0;
-      margin-left: 1.8rem;
+      padding-inline: 1.2rem;
     }
   }
 
@@ -69,5 +71,18 @@
     font-size: $fs-400;
     transition: color 0.2s ease-in-out;
     font-weight: 500;
+    transform: color 0.3s ease-in-out;
+
+    @include large {
+      font-size: $fs-300;
+    }
+
+    &:hover {
+      color: var(--clr-primary-400);
+    }
+  }
+
+  .active {
+    color: var(--clr-primary-400);
   }
 }

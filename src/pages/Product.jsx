@@ -1,8 +1,6 @@
 import { useState, useContext, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { items } from '../data/AllProductsData';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Trending from '../components/Trending';
 import Review from '../components/Review';
 import BreadCrumbs from '../components/BreadCrumbs';
@@ -27,7 +25,7 @@ const Product = () => {
     removeFromCart,
     reduceCartQuantity,
   } = useContext(CartContext);
-  const { notify, showNotify } = useContext(NotificationContext);
+  const { showNotify } = useContext(NotificationContext);
 
   // Change Image
   const changeImage = (event) => {
@@ -59,8 +57,6 @@ const Product = () => {
 
   return (
     <>
-      <Header notify={notify} />
-
       <section className="product-page">
         <div className="container">
           <BreadCrumbs name={name} />
@@ -95,7 +91,12 @@ const Product = () => {
 
               <div className="quantity">
                 <div className="d-flex">
-                  <Link onClick={() => addToCart(id, img, alt, title, price)}>
+                  <Link
+                    onClick={() => {
+                      addToCart(id, img, alt, title, price);
+                      showNotify();
+                    }}
+                  >
                     <button className="btn-outline">add to cart</button>
                   </Link>
 
@@ -199,8 +200,6 @@ const Product = () => {
           <Trending title="Related Products" showNotify={showNotify} />
         </div>
       </section>
-
-      <Footer />
     </>
   );
 };

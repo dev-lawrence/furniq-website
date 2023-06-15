@@ -43,8 +43,17 @@
         margin-right: 0;
       }
 
+      @include large {
+        margin-right: 1rem;
+        margin-left: 0;
+      }
+
       .icon {
         font-size: $fs-600 + 0.2;
+
+        @include large {
+          font-size: $fs-600;
+        }
       }
 
       .icon-close,
@@ -55,7 +64,8 @@
 
     .toggle-menu,
     .toggle-cart,
-    .toggle-search {
+    .toggle-search,
+    .toggle-account {
       display: grid;
     }
 
@@ -75,8 +85,10 @@
       }
     }
 
-    @include extra-large {
-      display: none;
+    @include large {
+      .toggle-menu {
+        display: none;
+      }
     }
   }
 
@@ -116,7 +128,7 @@
       color: var(--clr-neutral-100);
       border: 1px solid var(--clr-neutral-400);
       cursor: pointer;
-      font-size: $fs-400;
+      font-size: $fs-300;
     }
   }
 }

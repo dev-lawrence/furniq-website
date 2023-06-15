@@ -15,11 +15,10 @@ import Category from '../components/Category';
 import NotificationContext from '../NotificationContext';
 
 const Home = () => {
-  const { notify, showNotify } = useContext(NotificationContext);
+  const { showNotify } = useContext(NotificationContext);
 
   return (
     <>
-      <Header notify={notify} showNotify={showNotify} />
       <section className="home">
         <div className="hero">
           {/* // Not in use at the moment */}

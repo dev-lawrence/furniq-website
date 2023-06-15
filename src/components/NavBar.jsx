@@ -10,19 +10,19 @@ const Navbar = ({ navClick }) => {
           </li>
 
           <li>
-            <NavLink to="/shop">Shop</NavLink>
+            <NavLink to="shop">Shop</NavLink>
           </li>
 
           <li>
-            <NavLink to="/">Blog</NavLink>
+            <NavLink to="blog">Blog</NavLink>
           </li>
 
           <li>
-            <NavLink to="/">About</NavLink>
+            <NavLink to="about">About</NavLink>
           </li>
 
           <li>
-            <NavLink to="/">Contact</NavLink>
+            <NavLink to="contact">Contact</NavLink>
           </li>
         </ul>
       </nav>

@@ -2,6 +2,7 @@ import { createContext, useState } from 'react';
 
 const NotificationContext = createContext();
 
+// Hide the notification in the global css
 export function NotificationProvider({ children }) {
   const [notify, setNotify] = useState(false);
 
