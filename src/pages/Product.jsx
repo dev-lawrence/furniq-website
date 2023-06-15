@@ -13,7 +13,7 @@ const Product = () => {
   const product = items.filter((item) => item.id === parseInt(name));
   const { id, img, alt, title, price, description, relatedImgs } = product[0];
   const [image, setImage] = useState(img);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('description');
   const [reviews, setReviews] = useState(() => {
     const storedReviews = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -48,10 +48,7 @@ const Product = () => {
   // Function to Reduce Quantity
   const reduceQuantity = () => {
     if (quantity > 1) {
-      reduceCartQuantity(id);
       setQuantity((prevQuantity) => prevQuantity - 1);
-    } else {
-      removeFromCart(id);
     }
   };
 
