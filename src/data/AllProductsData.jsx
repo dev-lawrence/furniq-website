@@ -28,6 +28,7 @@ import Img26 from '../assets/img/bed6.webp';
 import Img27 from '../assets/img/bed7.webp';
 import Img28 from '../assets/img/bed8.webp';
 import Img29 from '../assets/img/bed9.webp';
+import Img30 from '../assets/img/table7.webp';
 import Chair1 from '../assets/img/chair5.webp';
 import Chair2 from '../assets/img/chair6.webp';
 import Chair3 from '../assets/img/chair7.webp';
@@ -388,5 +389,18 @@ export const items = [
     alt: 'bed',
     price: 120,
     relatedImgs: [Img29, Chair1, Chair2, Chair3],
+  },
+
+  {
+    id: 30,
+    category: 'table',
+    description:
+      'Restaurant Table offer a unique and versatile option for various spaces. With no sharp corners, they are ideal for small spaces and create a more intimate dining or gathering experience. Round tables come in different sizes and materials, from compact bistro tables to larger dining tables. They can enhance the aesthetics of your room and promote better conversation flow during meals or socializing.',
+    img: Img30,
+    title: 'Restaurant Table',
+    icon: <ShoppingCartRoundedIcon />,
+    alt: 'table',
+    price: 110,
+    relatedImgs: [Img30, Chair1, Chair2, Chair3],
   },
 ];

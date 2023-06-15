@@ -1,6 +1,14 @@
 @use '../abstracts' as *;
 
 .category {
+  .mb {
+    margin-bottom: 2rem;
+
+    @include medium {
+      margin-bottom: 0;
+    }
+  }
+
   &-grid {
     @include medium {
       @include grid(repeat(2, 1fr), 1rem);
@@ -27,6 +35,7 @@
 
   &-content {
     position: relative;
+    overflow: hidden;
 
     &:hover .overlay {
       opacity: 0.6;
@@ -34,6 +43,11 @@
 
     &:hover .description {
       background-color: transparent;
+      bottom: 3rem;
+    }
+
+    &:hover .quantity {
+      bottom: 1rem;
     }
   }
 
@@ -53,7 +67,18 @@
     background-color: var(--clr-neutral-900);
     padding: 0.4rem 1.5rem;
     border-radius: $radius-300;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.4s ease-in-out, bottom 0.4s ease-in-out;
+  }
+
+  .quantity {
+    text-align: center;
+    position: absolute;
+    bottom: -2rem;
+    left: 2.2rem;
+    font-weight: 500;
+    color: var(--clr-neutral-100);
+    z-index: 20;
+    transition: bottom 0.4s ease-in-out;
   }
 
   .overlay {

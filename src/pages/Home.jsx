@@ -1,7 +1,5 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import BannerImg from '../assets/img/hero-bg4.webp';
 import Service1 from '../assets/img/services1.svg';
 import Service2 from '../assets/img/services2.svg';
@@ -21,8 +19,6 @@ const Home = () => {
     <>
       <section className="home">
         <div className="hero">
-          {/* // Not in use at the moment */}
-          {/* <div className="overlay"></div> */}
           <div className="container">
             <div className="content">
               <h1>Discover the Perfect Furniture Pieces for Your Home</h1>
@@ -106,10 +102,7 @@ const Home = () => {
 
         {/* Newsletter Section */}
         <Newsletter />
-
-        <div className="pt-section"></div>
       </section>
-      <Footer />
     </>
   );
 };

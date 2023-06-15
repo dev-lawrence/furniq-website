@@ -11,23 +11,34 @@ import './sass/main.scss';
 
 // layouts
 import RootLayout from './layouts/RootLayout';
-import ShopLayout from './layouts/ShopLayout';
+import CategoryLayout from './layouts/CategoryLayout';
 
 // pages
 import Home from './pages/Home';
-import ProductDetails from './pages/Product';
+import Shop from './pages/Shop';
 import Blog from './pages/Blog';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Tables from './pages/categories/Tables';
+import Chairs from './pages/categories/Chairs';
+import Beds from './pages/categories/Beds';
+import Couches from './pages/categories/Couches';
+import ProductDetails from './pages/Product';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
+      <Route path="shop" element={<Shop />} />
       <Route path="blog" element={<Blog />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
-      <Route path="shop" element={<ShopLayout />}></Route>
+      <Route path="category" element={<CategoryLayout />}>
+        <Route path="tables" element={<Tables />} />
+        <Route path="chairs" element={<Chairs />} />
+        <Route path="beds" element={<Beds />} />
+        <Route path="couches" element={<Couches />} />
+      </Route>
       <Route path="product/:name" element={<ProductDetails />} />
     </Route>
   )
