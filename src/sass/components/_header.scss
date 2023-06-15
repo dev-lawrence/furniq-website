@@ -53,6 +53,12 @@
       }
     }
 
+    .toggle-menu,
+    .toggle-cart,
+    .toggle-search {
+      display: grid;
+    }
+
     .toggle-cart {
       position: relative;
 
