@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import TableImg from '../assets/img/table7.webp';
-import ChairImg from '../assets/img/chair1.webp';
-import BedImg from '../assets/img/bed1.webp';
-import CouchImg from '../assets/img/couch1.webp';
+import TableImg from '../assets/img/table8.webp';
+import ChairImg from '../assets/img/chair8.webp';
+import BedImg from '../assets/img/bed10.webp';
+import CouchImg from '../assets/img/couch8.webp';
 import { items } from '../data/AllProductsData';
 
 const Category = () => {

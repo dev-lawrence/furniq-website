@@ -22,7 +22,6 @@ const Trending = ({ title, showNotify }) => {
             drag: 'free',
             mediaQuery: 'min',
             speed: 2000,
-            autoplay: true,
             breakpoints: {
               768: {
                 perPage: 3,
