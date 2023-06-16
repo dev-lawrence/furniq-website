@@ -1,28 +1,38 @@
 import { NavLink } from 'react-router-dom';
 
-const Navbar = ({ navClick }) => {
+const Navbar = ({ navClick, handleNavClick }) => {
   return (
     <>
       <nav className={`nav ${navClick ? 'showMenu' : ''}`}>
         <ul className="menu">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" onClick={handleNavClick}>
+              Home
+            </NavLink>
           </li>
 
           <li>
-            <NavLink to="shop">Shop</NavLink>
+            <NavLink to="shop" onClick={handleNavClick}>
+              Shop
+            </NavLink>
           </li>
 
           <li>
-            <NavLink to="blog">Blog</NavLink>
+            <NavLink to="blog" onClick={handleNavClick}>
+              Blog
+            </NavLink>
           </li>
 
           <li>
-            <NavLink to="about">About</NavLink>
+            <NavLink to="about" onClick={handleNavClick}>
+              About
+            </NavLink>
           </li>
 
           <li>
-            <NavLink to="contact">Contact</NavLink>
+            <NavLink to="contact" onClick={handleNavClick}>
+              Contact
+            </NavLink>
           </li>
         </ul>
       </nav>

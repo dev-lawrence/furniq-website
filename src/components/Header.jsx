@@ -62,7 +62,7 @@ const Header = ({ notify }) => {
             </div>
 
             {/* NavBar Menu */}
-            <NavBar navClick={navClick} />
+            <NavBar navClick={navClick} handleNavClick={handleNavClick} />
 
             {/* <!--NAV BUTTONS--> */}
             <div className="menu-buttons">
