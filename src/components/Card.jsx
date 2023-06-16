@@ -13,7 +13,7 @@ const Card = ({ item, showNotify }) => {
         {isNew && <span className="status">New</span>}
 
         <Link
-          to={`product/${id}`}
+          to={`/product/${id}`}
           onClick={() => window.top(0, 0)}
           className="preview"
         >

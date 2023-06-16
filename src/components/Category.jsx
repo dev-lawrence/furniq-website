@@ -23,7 +23,7 @@ const Category = () => {
         <div className="category-grid">
           <div className="grid-one mb">
             <Link
-              to="category/tables"
+              to="/category/tables"
               className="category-content"
               onClick={() => window.top(0, 0)}
             >
