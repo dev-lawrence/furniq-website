@@ -48,7 +48,10 @@ const Product = () => {
   // Function to Reduce Quantity
   const reduceQuantity = () => {
     if (quantity > 1) {
+      reduceCartQuantity(id);
       setQuantity((prevQuantity) => prevQuantity - 1);
+    } else {
+      removeFromCart(id);
     }
   };
 
@@ -77,7 +80,7 @@ const Product = () => {
               <div className="price mb-100">${price}.00</div>
               <div className="flex">
                 <div className="mb-200 d-flex">
-                  <p className="text-bold">Quantity:</p>
+                  <p className="text-bold">Quantity </p>
                   <div className="buttons">
                     <button onClick={reduceQuantity}>-</button>
                     <span>{quantity}</span>

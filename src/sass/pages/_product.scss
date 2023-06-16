@@ -61,13 +61,17 @@
 
     .buttons {
       @include flex(center, space-between);
-      width: 8rem;
-      border: 1px solid #bebdbd;
+      width: 5.5rem;
 
       button {
-        padding: 0.4rem 1rem;
-        font-size: $fs-500;
+        height: 25px;
+        width: 25px;
+        line-height: 25px;
+        font-size: $fs-400;
         font-weight: 600;
+        background-color: var(--clr-neutral-900);
+        color: var(--clr-neutral-100);
+        border-radius: $radius-500;
       }
     }
 
