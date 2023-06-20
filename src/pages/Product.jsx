@@ -153,7 +153,7 @@ const Product = () => {
                   </p>
                 </div>
 
-                <img src={image} alt="" />
+                <img src={img} alt="" />
               </div>
             )}
 
