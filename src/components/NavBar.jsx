@@ -18,14 +18,14 @@ const Navbar = ({ navClick, handleNavClick }) => {
           </li>
 
           <li>
-            <NavLink to="blog" onClick={handleNavClick}>
-              Blog
+            <NavLink to="about" onClick={handleNavClick}>
+              About
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="about" onClick={handleNavClick}>
-              About
+            <NavLink to="blog" onClick={handleNavClick}>
+              Blog
             </NavLink>
           </li>
 

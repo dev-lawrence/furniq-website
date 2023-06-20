@@ -19,3 +19,16 @@
   background-position: center center;
   background-attachment: $attachment;
 }
+
+@mixin img($br) {
+  overflow: hidden;
+  border-radius: $br;
+
+  img {
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
