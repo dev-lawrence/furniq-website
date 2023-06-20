@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { items } from '../data/AllProductsData';
+import { HomeMaxOutlined } from '@mui/icons-material';
 
 const BreadCrumbs = ({ name }) => {
   const location = useLocation();
@@ -33,23 +34,14 @@ const BreadCrumbs = ({ name }) => {
 
       // Check if it's the product page
       if (crumb === 'product') {
-        return null; // Skip rendering the product crumb
+        return null;
       }
-
-      //   return (
-      //     <div key={crumb} className="breadcrumbs">
-      //       <Link className="bread" to={currentLink}>
-      //         {crumb}
-      //       </Link>
-      //       <span className="separator">{separator}</span>
-      //     </div>
-      //   );
     });
 
   const additionalCrumb = (
     <div key="product1" className="breadcrumbs">
       <Link className="home" to="/">
-        Home
+        <i className="fa-solid fa-house home-icon"></i> Home
       </Link>
       <span className="separator">{separator}</span>
     </div>
