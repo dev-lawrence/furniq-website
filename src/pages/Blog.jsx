@@ -1,364 +1,353 @@
+import Hero from '../components/Hero';
+import BlogImg1 from '../assets/img/hero-bg4.webp';
+import BlogImg2 from '../assets/img/newsletter.webp';
+import BlogImg3 from '../assets/img/shopping.webp';
+import BlogImg4 from '../assets/img/couch10.webp';
+import BlogImg5 from '../assets/img/chair9.webp';
+import BlogImg6 from '../assets/img/table11.webp';
+import { Link } from 'react-router-dom';
+import BreadCrumbs from '../components/BreadCrumbs';
+
 const Blog = () => {
   return (
-    <section id="blog-section">
-      <div className="blog-line"></div>
-      <div className="container">
-        <div className="content grid">
-          {/* ROW 1 */}
-          <div className="row-1">
-            <div className="row">
-              <div className="blog-img">
-                <a href="#" className="img">
-                  <img aria-label="food" src="./img/blog-05.jpg.webp" alt="" />
-                </a>
-                <span className="date">
-                  <strong>28</strong>
-                  <br />
-                  <p>Nov, 2021</p>
-                </span>
-              </div>
-              <div className="text">
-                <h3>
-                  <a href="#">cooking recipe delicious</a>
-                </h3>
-                <ul>
-                  <span className="ml">
-                    by Admin
-                    <span className="border-right">|</span>
+    <section className="blog-section">
+      <Hero text="Blog" />
+      <div className="pt-section">
+        <div className="container">
+          <BreadCrumbs />
+        </div>
+        <div className="blog-line"></div>
+        <div className="container">
+          <div className="content grid">
+            {/* ROW 1 */}
+            <div className="row-1">
+              <div className="row">
+                <div className="blog-img">
+                  <Link to={'#'} className="img">
+                    <img aria-label="man-reading" src={BlogImg1} alt="" />
+                  </Link>
+                  <span className="date">
+                    <strong>28</strong>
+                    <br />
+                    <p>Jan, 2023</p>
                   </span>
-                  <span className="ml">
-                    24 November, 2021
-                    <span className="border-right">|</span>
-                  </span>
-                  <span className="ml">
-                    Cooking, Food
-                    <span className="border-right">|</span>
-                  </span>
-                  <span>8 Comments</span>
-                </ul>
-                <p>
-                  className aptent taciti sociosqu ad litora torquent per
-                  conubia nostra, per inceptos himenaeos. Fusce eget dictum
-                  tortor. Donec dictum vitae sapien eu varius
-                </p>
-                <a href="#" className="btn">
-                  <span>continue reading</span>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="row">
-              <div className="blog-img">
-                <a href="#" className="img">
-                  <img aria-label="food" src="./img/blog-06.jpg.webp" alt="" />
-                </a>
-                <span className="date">
-                  <strong>28</strong>
-                  <br />
-                  <p>Nov, 2021</p>
-                </span>
-              </div>
-              <div className="text">
-                <h3>
-                  <a href="#">pizza is prepared fresh</a>
-                </h3>
-                <ul>
-                  <span className="ml">
-                    by Admin
-                    <span className="border-right">|</span>
-                  </span>
-                  <span className="ml">
-                    24 November, 2021
-                    <span className="border-right">|</span>
-                  </span>
-                  <span className="ml">
-                    Cooking, Food
-                    <span className="border-right">|</span>
-                  </span>
-                  <span>8 Comments</span>
-                </ul>
-                <p>
-                  className aptent taciti sociosqu ad litora torquent per
-                  conubia nostra, per inceptos himenaeos. Fusce eget dictum
-                  tortor. Donec dictum vitae sapien eu varius
-                </p>
-                <a href="#" className="btn">
-                  <span>continue reading</span>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="row">
-              <div className="blog-img">
-                <a href="#" className="img">
-                  <img aria-label="food" src="./img/blog-04.jpg.webp" alt="" />
-                </a>
-                <span className="date">
-                  <strong>28</strong>
-                  <br />
-                  <p>Nov, 2021</p>
-                </span>
-              </div>
-              <div className="text">
-                <h3>
-                  <a href="#">style the wedding party</a>
-                </h3>
-                <ul>
-                  <span className="ml">
-                    by Admin
-                    <span className="border-right">|</span>
-                  </span>
-                  <span className="ml">
-                    24 November, 2021
-                    <span className="border-right">|</span>
-                  </span>
-                  <span className="ml">
-                    Cooking, Food
-                    <span className="border-right">|</span>
-                  </span>
-                  <span>8 Comments</span>
-                </ul>
-                <p>
-                  className aptent taciti sociosqu ad litora torquent per
-                  conubia nostra, per inceptos himenaeos. Fusce eget dictum
-                  tortor. Donec dictum vitae sapien eu varius
-                </p>
-                <a href="#" className="btn">
-                  <span>continue reading</span>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="row">
-              <div className="blog-img">
-                <a href="#" className="img">
-                  <img aria-label="food" src="./img/blog-07.jpg.webp" alt="" />
-                </a>
-                <span className="date">
-                  <strong>28</strong>
-                  <br />
-                  <p>Nov, 2021</p>
-                </span>
-              </div>
-              <div className="text">
-                <h3>
-                  <a href="#">best places for wine</a>
-                </h3>
-                <ul>
-                  <span className="ml">
-                    by Admin
-                    <span className="border-right">|</span>
-                  </span>
-                  <span className="ml">
-                    24 November, 2021
-                    <span className="border-right">|</span>
-                  </span>
-                  <span className="ml">
-                    Cooking, Food
-                    <span className="border-right">|</span>
-                  </span>
-                  <span>8 Comments</span>
-                </ul>
-                <p>
-                  className aptent taciti sociosqu ad litora torquent per
-                  conubia nostra, per inceptos himenaeos. Fusce eget dictum
-                  tortor. Donec dictum vitae sapien eu varius
-                </p>
-                <a href="#" className="btn">
-                  <span>continue reading</span>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="row">
-              <div className="blog-img">
-                <a href="#" className="img">
-                  <img aria-label="food" src="./img/blog-10.jpg.webp" alt="" />
-                </a>
-                <span className="date">
-                  <strong>28</strong>
-                  <br />
-                  <p>Nov, 2021</p>
-                </span>
-              </div>
-              <div className="text">
-                <h3>
-                  <a href="#">best places for wine</a>
-                </h3>
-                <ul>
-                  <span className="ml">
-                    by Admin
-                    <span className="border-right">|</span>
-                  </span>
-                  <span className="ml">
-                    24 November, 2021
-                    <span className="border-right">|</span>
-                  </span>
-                  <span className="ml">
-                    Cooking, Food
-                    <span className="border-right">|</span>
-                  </span>
-                  <span>8 Comments</span>
-                </ul>
-                <p>
-                  className aptent taciti sociosqu ad litora torquent per
-                  conubia nostra, per inceptos himenaeos. Fusce eget dictum
-                  tortor. Donec dictum vitae sapien eu varius
-                </p>
-                <a href="#" className="btn">
-                  <span>continue reading</span>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* ROW 2 */}
-          <div className="row row-2">
-            <div className="search">
-              <form className="form" netlify>
-                <input type="text" className="key" placeholder="search" />
-                <div className="icon">
-                  <i className="fas fa-search"></i>
                 </div>
-              </form>
-            </div>
-
-            {/* CATEGORIES */}
-            <div className="categories">
-              <h3>categories</h3>
-              <ul className="links">
-                <li>
-                  <a href="#">cooking recipe</a>
-                </li>
-                <li>
-                  <a href="#">delicious</a>
-                </li>
-                <li>
-                  <a href="#">events design</a>
-                </li>
-                <li>
-                  <a href="#">restaurant place</a>
-                </li>
-                <li className="press">
-                  <a href="#">wordpress</a>
-                </li>
-              </ul>
-            </div>
-
-            {/* POPULAR */}
-            <div className="popular">
-              <h3>most popular</h3>
-              <div className="link">
-                <a href="#" className="img">
-                  <img
-                    src="./img/xblog-11.jpg.pagespeed.ic.sgA-9AnkBO.webp"
-                    alt=""
-                  />
-                </a>
                 <div className="text">
-                  <a href="#">best places for wine</a>
-                  <p>3 days ago</p>
+                  <h3>
+                    <Link to="#">6 Must-Have Modern Home Furniture</Link>
+                  </h3>
+                  <ul>
+                    <span className="ml">
+                      by Admin
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      28 January, 2023
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      Furnitures
+                      <span className="border-right">|</span>
+                    </span>
+                    <span>8 Comments</span>
+                  </ul>
+                  <p>
+                    Embark on a journey of transforming your living space with
+                    these six essential furniture pieces designed to infuse your
+                    home with a perfect blend of contemporary style and
+                    functional practicality
+                  </p>
+                  <Link href="#" className="btn">
+                    <span>continue reading</span>
+                    <i className="fas fa-arrow-right arrow"></i>
+                  </Link>
                 </div>
               </div>
-
-              <div className="link">
-                <a href="#" className="img">
-                  <img
-                    src="./img/xblog-12.jpg.pagespeed.ic.2c1L0xfjJT.webp"
-                    alt=""
-                  />
-                </a>
+              <div className="row">
+                <div className="blog-img">
+                  <a href="#" className="img">
+                    <img aria-label="table" src={BlogImg2} alt="" />
+                  </a>
+                  <span className="date">
+                    <strong>20</strong>
+                    <br />
+                    <p>Feb, 2023</p>
+                  </span>
+                </div>
                 <div className="text">
-                  <a href="#">eggs and cheese</a>
-                  <p>Nov 23, 2021</p>
+                  <h3>
+                    <Link to="#">Space-Saving Ideas for Small Furniture</Link>
+                  </h3>
+                  <ul>
+                    <span className="ml">
+                      by Admin
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      20 February, 2021
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      Table, Couch
+                      <span className="border-right">|</span>
+                    </span>
+                    <span>8 Comments</span>
+                  </ul>
+                  <p>
+                    Embrace the challenge of limited space with these ingenious
+                    space-saving ideas designed to optimize every inch of your
+                    compact living area
+                  </p>
+                  <Link href="#" className="btn">
+                    <span>continue reading</span>
+                    <i className="fas fa-arrow-right arrow"></i>
+                  </Link>
                 </div>
               </div>
-
-              <div className="link">
-                <a href="#" className="img">
-                  <img
-                    src="./img/xblog-13.jpg.pagespeed.ic.VruNEPjREB.webp"
-                    alt=""
-                  />
-                </a>
+              <div className="row">
+                <div className="blog-img">
+                  <a href="#" className="img">
+                    <img aria-label="cart" src={BlogImg3} alt="" />
+                  </a>
+                  <span className="date">
+                    <strong>18</strong>
+                    <br />
+                    <p>Mar, 2023</p>
+                  </span>
+                </div>
                 <div className="text">
-                  <a href="#">style the wedding party</a>
-                  <p>Nov 24,2021</p>
+                  <h3>
+                    <a href="#">Impress Guests: 6 Stunning Dining Sets</a>
+                  </h3>
+                  <ul>
+                    <span className="ml">
+                      by Admin
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      18 March, 2023
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      Shopping
+                      <span className="border-right">|</span>
+                    </span>
+                    <span>8 Comments</span>
+                  </ul>
+                  <p>
+                    Elevate your dining experience to new heights of
+                    sophistication and allure with these six stunning dining
+                    room furniture sets. From elegant formal designs to chic
+                    contemporary styles, each set exudes its own unique
+                    character and charm.
+                  </p>
+                  <Link href="#" className="btn">
+                    <span>continue reading</span>
+                    <i className="fas fa-arrow-right arrow"></i>
+                  </Link>
                 </div>
               </div>
-
-              <div className="link">
-                <a href="#" className="img">
-                  <img
-                    src="./img/xblog-14.jpg.pagespeed.ic.OncQIA1Jr-.webp"
-                    alt=""
-                  />
-                </a>
+              <div className="row">
+                <div className="blog-img">
+                  <a href="#" className="img">
+                    <img aria-label="couch" src={BlogImg4} alt="" />
+                  </a>
+                  <span className="date">
+                    <strong>24</strong>
+                    <br />
+                    <p>Mar, 2021</p>
+                  </span>
+                </div>
                 <div className="text">
-                  <a href="#">cooking recipe delicious</a>
-                  <p>Dec 3, 2021</p>
+                  <h3>
+                    <a href="#">Eco-Friendly Brands</a>
+                  </h3>
+                  <ul>
+                    <span className="ml">
+                      by Admin
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      24 March, 2023
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      Couch
+                      <span className="border-right">|</span>
+                    </span>
+                    <span>8 Comments</span>
+                  </ul>
+                  <p>
+                    Embrace a conscious approach to furnishing your home with
+                    these six commendable eco-friendly furniture brands. Each
+                    brand is committed to sustainable practices, utilizing
+                    environmentally friendly materials, reducing carbon
+                    footprint, and promoting ethical manufacturing processes.
+                  </p>
+                  <Link href="#" className="btn">
+                    <span>continue reading</span>
+                    <i className="fas fa-arrow-right arrow"></i>
+                  </Link>
                 </div>
               </div>
-
-              <div className="link">
-                <a href="#" className="img">
-                  <img
-                    src="./img/xblog-15.jpg.pagespeed.ic.gdG3IUSktM.webp"
-                    alt=""
-                  />
-                </a>
+              <div className="row">
+                <div className="blog-img">
+                  <a href="#" className="img">
+                    <img aria-label="chair" src={BlogImg5} alt="" />
+                  </a>
+                  <span className="date">
+                    <strong>28</strong>
+                    <br />
+                    <p>Jan, 2023</p>
+                  </span>
+                </div>
                 <div className="text">
-                  <a href="#">pizza is prepared fresh</a>
-                  <p>Dec 10, 2021</p>
+                  <h3>
+                    <a href="#">Cozy and Stylish: 6 Comfortable Picks</a>
+                  </h3>
+                  <ul>
+                    <span className="ml">
+                      by Admin
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      24 January, 2023
+                      <span className="border-right">|</span>
+                    </span>
+                    <span className="ml">
+                      chair
+                      <span className="border-right">|</span>
+                    </span>
+                    <span>8 Comments</span>
+                  </ul>
+                  <p>
+                    Indulge in the luxurious comfort and impeccable style
+                    offered by these carefully curated furniture picks. Dive
+                    into plush sofas, ergonomic chairs, and sumptuous bedding
+                    that invite you to unwind and relax in utmost tranquility.
+                  </p>
+                  <Link href="#" className="btn">
+                    <span>continue reading</span>
+                    <i className="fas fa-arrow-right arrow"></i>
+                  </Link>
                 </div>
               </div>
             </div>
-
-            {/* ARCHIVE */}
-            <div className="archive">
-              <h3>archive</h3>
-              <ul className="links">
-                <div className="flex">
-                  <a href="#">july 2021</a>
-                  <p>(9)</p>
+            {/* ROW 2 */}
+            <div className="row row-2">
+              <div className="search">
+                <form className="form" netlify="true">
+                  <input type="text" className="key" placeholder="search" />
+                  <div className="icon">
+                    <i className="fas fa-search"></i>
+                  </div>
+                </form>
+              </div>
+              {/* CATEGORIES */}
+              <div className="categories">
+                <h3>categories</h3>
+                <ul className="links">
+                  <li>
+                    <Link to="#">Table</Link>
+                  </li>
+                  <li>
+                    <Link to="#">Chair</Link>
+                  </li>
+                  <li>
+                    <Link to="#">Couch</Link>
+                  </li>
+                  <li className="press">
+                    <Link to="#">Bed</Link>
+                  </li>
+                </ul>
+              </div>
+              {/* POPULAR */}
+              <div className="popular">
+                <h3>most popular</h3>
+                <div className="link">
+                  <Link to="#" className="img">
+                    <img src={BlogImg2} alt="" />
+                  </Link>
+                  <div className="text">
+                    <Link to="#">style your home</Link>
+                    <p>3 days ago</p>
+                  </div>
                 </div>
-
-                <div className="flex">
-                  <a href="#">june 2021</a>
-                  <p>(39)</p>
+                <div className="link">
+                  <Link to="#" className="img">
+                    <img src={BlogImg6} alt="" />
+                  </Link>
+                  <div className="text">
+                    <Link to="#">Couch and chairs</Link>
+                    <p>3 days ago</p>
+                  </div>
                 </div>
-
-                <div className="flex">
-                  <a href="#">may 2021</a>
-                  <p>(29)</p>
+                <div className="link">
+                  <Link to="#" className="img">
+                    <img src={BlogImg5} alt="" />
+                  </Link>
+                  <div className="text">
+                    <Link to="#">style your home</Link>
+                    <p>3 days ago</p>
+                  </div>
                 </div>
-
-                <div className="flex">
-                  <a href="#">april 2021</a>
-                  <p>(35)</p>
+                <div className="link">
+                  <Link to="#" className="img">
+                    <img src={BlogImg3} alt="" />
+                  </Link>
+                  <div className="text">
+                    <Link to="#">Couch and chairs</Link>
+                    <p>5 days ago</p>
+                  </div>
                 </div>
-
-                <div className="flex">
-                  <a href="#">march 2021</a>
-                  <p>(22)</p>
+                <div className="link">
+                  <Link to="#" className="img">
+                    <img src={BlogImg4} alt="" />
+                  </Link>
+                  <div className="text">
+                    <Link to="#">Couch and chairs</Link>
+                    <p>10 days ago</p>
+                  </div>
                 </div>
-
-                <div className="flex">
-                  <a href="#">february 2021</a>
-                  <p>(32)</p>
-                </div>
-
-                <div className="flex">
-                  <a href="#">january 2021</a>
-                  <p>(21)</p>
-                </div>
-
-                <div className="flex">
-                  <a href="#">december 2021</a>
-                  <p>(26)</p>
-                </div>
-              </ul>
+              </div>
+              {/* ARCHIVE */}
+              <div className="archive">
+                <h3>archive</h3>
+                <ul className="links">
+                  <div className="flex">
+                    <Link to="#">july 2021</Link>
+                    <p>(9)</p>
+                  </div>
+                  <div className="flex">
+                    <Link to="#">june 2021</Link>
+                    <p>(39)</p>
+                  </div>
+                  <div className="flex">
+                    <Link to="#">may 2021</Link>
+                    <p>(29)</p>
+                  </div>
+                  <div className="flex">
+                    <Link to="#">april 2021</Link>
+                    <p>(35)</p>
+                  </div>
+                  <div className="flex">
+                    <Link to="#">march 2021</Link>
+                    <p>(22)</p>
+                  </div>
+                  <div className="flex">
+                    <Link to="#">february 2021</Link>
+                    <p>(32)</p>
+                  </div>
+                  <div className="flex">
+                    <Link to="#">january 2021</Link>
+                    <p>(21)</p>
+                  </div>
+                  <div className="flex">
+                    <Link to="#">december 2021</Link>
+                    <p>(26)</p>
+                  </div>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

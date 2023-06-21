@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { items } from '../data/AllProductsData';
-import { HomeMaxOutlined } from '@mui/icons-material';
 
 const BreadCrumbs = ({ name }) => {
   const location = useLocation();

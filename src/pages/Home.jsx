@@ -26,7 +26,7 @@ const Home = () => {
                 Experience Quality Craftsmanship and Timeless Designs for Every
                 Room in Your Home.
               </p>
-              <Link className="btn cta" to="/">
+              <Link className="btn cta" to="/shop">
                 Shop Now
               </Link>
             </div>
