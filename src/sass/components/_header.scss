@@ -93,6 +93,8 @@
   }
 
   .search-input {
+    max-width: 800px;
+    margin-inline: auto;
     opacity: 0;
     visibility: hidden;
     max-height: 0;

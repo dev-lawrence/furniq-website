@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
@@ -15,6 +15,8 @@ const Header = ({ notify }) => {
   const [cartClick, setCartClick] = useState(false);
   const [navClick, setNavClick] = useState(false);
   const [latestItem, setLatestItem] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -26,6 +28,19 @@ const Header = ({ notify }) => {
   // Handle toggle search
   const handleToggleSearch = () => {
     setToggleSearch((prevToggleSearch) => !prevToggleSearch);
+    if (!toggleSearch) {
+      setSearchQuery('');
+    }
+  };
+
+  // Handle search
+  const handleSearch = (event) => {
+    event.preventDefault();
+    if (searchQuery.trim() !== '') {
+      navigate(`/shop?query=${encodeURIComponent(searchQuery)}`);
+    } else {
+      navigate('/');
+    }
   };
 
   // Handle cart click
@@ -45,15 +60,20 @@ const Header = ({ notify }) => {
           <p>{latestItem.title} has been added ✅</p>
         </div>
         {/* search input */}
-        <div
+        <form
+          onSubmit={handleSearch}
           className={`search-input ${toggleSearch ? 'showSearchInput' : ''}`}
         >
-          <input type="text" placeholder="Search Items" />
-          <button className="icon">
+          <input
+            type="text"
+            value={searchQuery}
+            placeholder="Search Items"
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button className="icon" onClick={handleSearch}>
             <SearchRoundedIcon />
           </button>
-        </div>
-
+        </form>
         <div className="container">
           <div className="content d-flex">
             {/* Logo */}

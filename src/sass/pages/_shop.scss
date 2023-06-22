@@ -9,6 +9,12 @@
     width: 100%;
   }
 
+  .searched-item {
+    strong {
+      text-transform: uppercase;
+    }
+  }
+
   .heading-flex {
     @include flex(center, space-between);
     margin: 2rem 0 3rem;
@@ -61,6 +67,7 @@
   }
 
   .shop-flex {
+    position: relative;
     .sidebar {
       background-color: var(--clr-neutral-100);
       border-radius: 0.4rem;
@@ -103,13 +110,20 @@
 }
 
 // Breakpoints
-@include extra-large {
+@include large {
   .shop-flex {
     @include flex(flex-start, space-between);
     gap: 2rem;
 
     .sidebar {
       width: 50%;
+    }
+
+    .no-img {
+      position: absolute;
+      top: -2rem;
+      left: 63%;
+      width: 320px;
     }
   }
 }
