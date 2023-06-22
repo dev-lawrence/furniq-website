@@ -7,11 +7,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import BreadCrumbs from '../components/BreadCrumbs';
 import ShopCategory from '../components/ShopCategory';
 import Pagination from '../components/Pagination';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import NoItem from '../assets/img/Empty-pana.svg';
 
 const Shop = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get('query');
 
@@ -51,6 +52,8 @@ const Shop = () => {
   const handleFilterChange = (category) => {
     setSelectedProduct(category);
     setCurrentPage(1); // Reset current page when filter option changes
+    searchParams.delete('query');
+    navigate(`${location.pathname}?${searchParams.toString()}`);
   };
 
   // Logic for pagination
