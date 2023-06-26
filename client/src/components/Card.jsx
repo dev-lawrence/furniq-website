@@ -28,14 +28,14 @@ const Card = ({ item, showNotify }) => {
             <h4 className="price">${price}</h4>
           </div>
 
-          <Link
+          <button
             onClick={() => {
               addToCart(id, img, alt, title, price);
               showNotify();
             }}
           >
             <span className="cart">{icon}</span>
-          </Link>
+          </button>
         </div>
       </div>
     </>

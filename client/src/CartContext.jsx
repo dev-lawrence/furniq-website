@@ -47,9 +47,20 @@ export function CartProvider({ children }) {
     setItems(updatedItems);
   };
 
+  // reset cart to zero on success page
+  const resetCart = () => {
+    setItems([]);
+  };
+
   return (
     <CartContext.Provider
-      value={{ items, addToCart, removeFromCart, reduceCartQuantity }}
+      value={{
+        items,
+        addToCart,
+        removeFromCart,
+        reduceCartQuantity,
+        resetCart,
+      }}
     >
       {children}
     </CartContext.Provider>
