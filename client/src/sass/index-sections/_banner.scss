@@ -24,6 +24,10 @@
       @include flex(flex-start, center);
       flex-direction: column;
 
+      @include small {
+        padding-inline: 2rem;
+      }
+
       h2,
       p {
         margin-bottom: 1.2rem;

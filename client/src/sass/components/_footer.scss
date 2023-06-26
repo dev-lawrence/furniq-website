@@ -68,6 +68,11 @@
 
     .author {
       padding-left: 0.5rem;
+      transition: color 0.2s ease-in;
+
+      &:hover {
+        color: var(--clr-primary-400);
+      }
     }
   }
 
@@ -127,6 +132,14 @@
     .other-links {
       margin-left: 0;
     }
+
+    .quick-menu {
+      justify-self: flex-end;
+    }
+
+    .social-links {
+      justify-self: flex-end;
+    }
   }
 
   @include large {
@@ -134,12 +147,7 @@
       @include grid(repeat(4, 1fr), 2rem);
     }
 
-    .quick-menu,
     .other-links {
-      justify-self: flex-end;
-    }
-
-    .social-links {
       justify-self: flex-end;
     }
   }

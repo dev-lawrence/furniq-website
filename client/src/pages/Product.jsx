@@ -89,7 +89,7 @@ const Product = () => {
                 </div>
               </div>
 
-              <div className="quantity">
+              <div className="buy-btn">
                 <div className="d-flex">
                   <Link
                     onClick={() => {

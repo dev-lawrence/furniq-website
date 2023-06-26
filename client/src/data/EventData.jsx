@@ -29,7 +29,7 @@ export const events = [
     id: 3,
     img: EventImg3,
     title: '10 Colored garden seats',
-    author: 'Lawrence Stixx',
+    author: 'Stixx',
     date: 'March 29th, 2023',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat.',
     label: 'Furniture',

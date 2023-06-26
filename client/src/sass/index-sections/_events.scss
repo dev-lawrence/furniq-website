@@ -1,6 +1,12 @@
 @use '../abstracts' as *;
 
 .events-section {
+  @include small {
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
   p {
     font-size: $fs-200;
   }

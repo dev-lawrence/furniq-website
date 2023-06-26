@@ -17,6 +17,10 @@
         line-height: 1.2;
         margin-bottom: 0.5rem;
 
+        @include small {
+          font-size: $fs-700;
+        }
+
         @include extra-large {
           font-size: 3.125rem;
         }

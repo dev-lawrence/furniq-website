@@ -95,7 +95,7 @@ const Footer = () => {
             <p>
               Copyright © 2022 All Rights Reserved | This template is made by
               <Link to="/" className="author">
-                dev lawrence
+                Dev lawrence
               </Link>
             </p>
           </div>

@@ -4,6 +4,7 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
+import { useEffect } from 'react';
 import { CartProvider } from './CartContext';
 import { NotificationProvider } from './NotificationContext';
 // styles
@@ -25,7 +26,10 @@ import Chairs from './pages/categories/Chairs';
 import Beds from './pages/categories/Beds';
 import Couches from './pages/categories/Couches';
 import ProductDetails from './pages/Product';
-import SearchResults from './pages/SearchResults';
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,12 +47,17 @@ const router = createBrowserRouter(
         <Route path="couches" element={<Couches />} />
       </Route>
       <Route path="product/:name" element={<ProductDetails />} />
-      <Route path="search" element={<SearchResults />} />
     </Route>
   )
 );
 
 const App = () => {
+  useEffect(() => {
+    router.subscribe(() => {
+      scrollToTop();
+    });
+  }, []);
+
   return (
     <>
       <CartProvider>

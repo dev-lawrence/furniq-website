@@ -2,7 +2,20 @@
 
 .trending {
   .title {
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
+
+    @include small {
+      margin-bottom: 1rem;
+
+      h2 {
+        max-width: 30px;
+        margin-left: auto;
+      }
+    }
+
+    @include extra-small {
+      margin-bottom: 0rem;
+    }
   }
 
   .d-flex {
@@ -12,8 +25,12 @@
 
   .splide__arrows {
     position: absolute;
-    top: -4.5rem;
+    top: -4.6rem;
     right: 0;
+
+    @include medium {
+      top: -4.4rem;
+    }
   }
 
   .splide__arrow {

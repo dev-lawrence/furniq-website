@@ -3,6 +3,12 @@
 .featured-product {
   .title {
     margin-bottom: 1.5rem;
+
+    @include small {
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 
   .products {

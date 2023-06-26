@@ -5,6 +5,12 @@
   object-fit: cover;
   margin-top: 5rem;
 
+  @include small {
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
   .content {
     max-width: 37.5rem;
     margin-inline: auto;
@@ -12,15 +18,21 @@
   }
 
   form {
-    @include flex(center, space-between);
+    @include flex(center, center);
+    flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 1rem;
 
     input {
       height: 2.875rem;
+      width: 100%;
       padding-left: 0.5rem;
       border-radius: $radius-400;
       border: 1.5px solid var(--clr-neutral-400);
+    }
+
+    button {
+      width: 100%;
     }
   }
 }

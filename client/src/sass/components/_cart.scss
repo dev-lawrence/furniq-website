@@ -14,6 +14,10 @@
   transition: transform 0.5s cubic-bezier(0.35, 0.82, 0.8, 1);
   z-index: 100;
 
+  @include small {
+    width: 100%;
+  }
+
   @include medium {
     width: 60%;
   }
@@ -53,6 +57,11 @@
           padding: 1.5rem;
           @include flex(center, flex-start);
           gap: 3rem;
+
+          @include small {
+            padding-inline: 1rem;
+            gap: 1rem;
+          }
 
           img {
             width: 90px;
@@ -134,20 +143,16 @@
         }
       }
 
-      .checkout {
+      .cta {
+        margin-top: 1rem;
+        background-color: var(--clr-neutral-900);
+        color: var(--clr-neutral-100);
+        padding: 0.6rem 1.8rem;
+        font-size: $fs-300;
+        border-radius: 0.6rem;
+        font-weight: 600;
         width: 100%;
-        padding-top: 1rem;
-
-        .cta {
-          background-color: var(--clr-neutral-900);
-          color: var(--clr-neutral-100);
-          padding: 0.6rem 1.8rem;
-          font-size: $fs-300;
-          border-radius: 0.6rem;
-          font-weight: 600;
-          width: 100%;
-          text-transform: uppercase;
-        }
+        text-transform: uppercase;
       }
     }
   }

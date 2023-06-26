@@ -5,6 +5,8 @@
 
   .d-flex {
     @include flex(center, center);
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .filter-btn {
@@ -17,7 +19,7 @@
     cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: 0.3rem;
-    margin-left: 1rem;
+    // margin-left: 1rem;
     text-transform: capitalize;
     transition: background-color 0.2s ease-in;
 

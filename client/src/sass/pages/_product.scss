@@ -78,6 +78,19 @@
     .d-flex {
       @include flex(center, flex-start);
       gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @include small {
+      .buy-btn {
+        a {
+          width: 100%;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 
@@ -92,6 +105,7 @@
     .info {
       @include flex(center, center);
       flex-wrap: wrap;
+      gap: 0.5rem;
 
       button {
         position: relative;

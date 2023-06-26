@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import EmptyCart from './EmptyCart';
-import { Link } from 'react-router-dom';
 import CartContext from '../CartContext';
 import CartItem from './CartItem';
+import PayButton from './PayButton';
 
 const CartList = ({ cartClick, handleCartClick }) => {
   const { items } = useContext(CartContext);
@@ -42,9 +42,7 @@ const CartList = ({ cartClick, handleCartClick }) => {
                 <span>Subtotal: ${calculateSubTotal()}</span>
               </div>
 
-              <Link to={'#'} className="checkout">
-                <button className="cta">Checkout</button>
-              </Link>
+              <PayButton amount={calculateSubTotal()} items={items} />
             </div>
           )}
         </div>
