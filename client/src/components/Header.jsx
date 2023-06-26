@@ -4,7 +4,7 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CartList from './CartList';
 import NavBar from './NavBar';
 import CartContext from '../CartContext';
@@ -14,6 +14,7 @@ const Header = ({ notify }) => {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [cartClick, setCartClick] = useState(false);
   const [navClick, setNavClick] = useState(false);
+  const [overlay, setOverlay] = useState(false);
   const [latestItem, setLatestItem] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
@@ -45,17 +46,34 @@ const Header = ({ notify }) => {
 
   // Handle cart click
   const handleCartClick = () => {
-    setCartClick((prevCartClick) => !prevCartClick);
+    setCartClick(!cartClick);
+    setOverlay((prevOverlay) => !prevOverlay);
+    document.body.classList.add('fixed-body');
+  };
+
+  const handleCartClose = () => {
+    setCartClick(false);
+    setOverlay(false);
+    document.body.classList.remove('fixed-body');
   };
 
   // Handle nav Click
   const handleNavClick = () => {
     setNavClick((prevNavClick) => !prevNavClick);
+    setOverlay((prevOverlay) => !prevOverlay);
+    document.body.classList.add('fixed-body');
+  };
+
+  const handleNavClose = () => {
+    setNavClick(false);
+    setOverlay(false);
+    document.body.classList.remove('fixed-body');
   };
 
   return (
     <>
       <header id="header-section">
+        <div className={`overlay ${overlay ? 'show-overlay' : ''}`}></div>
         <div className={`notify ${notify ? 'show' : ''}`}>
           <p>{latestItem.title} has been added ✅</p>
         </div>
@@ -82,7 +100,7 @@ const Header = ({ notify }) => {
             </div>
 
             {/* NavBar Menu */}
-            <NavBar navClick={navClick} handleNavClick={handleNavClick} />
+            <NavBar navClick={navClick} handleNavClose={handleNavClose} />
 
             {/* <!--NAV BUTTONS--> */}
             <div className="menu-buttons">
@@ -92,10 +110,10 @@ const Header = ({ notify }) => {
               >
                 <SearchRoundedIcon className="icon" />
               </button>
-
+              {/* 
               <button className="toggle-account icon-btn">
                 <AccountCircleIcon className="icon" />
-              </button>
+              </button> */}
 
               <button
                 className="toggle-cart icon-btn"
@@ -105,7 +123,10 @@ const Header = ({ notify }) => {
                 {cartItems.length >= 1 && <span>{cartItems.length}</span>}
               </button>
 
-              <button className="toggle-menu icon-btn" onClick={handleNavClick}>
+              <button
+                className="toggle-menu icon-btn"
+                onClick={navClick ? handleNavClose : handleNavClick}
+              >
                 {navClick ? (
                   <CloseRoundedIcon className="icon-close" />
                 ) : (
@@ -115,7 +136,7 @@ const Header = ({ notify }) => {
             </div>
 
             {/* Cart Menu */}
-            <CartList cartClick={cartClick} handleCartClick={handleCartClick} />
+            <CartList cartClick={cartClick} handleCartClose={handleCartClose} />
           </div>
         </div>
       </header>

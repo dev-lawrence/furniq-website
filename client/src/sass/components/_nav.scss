@@ -50,6 +50,7 @@
     @include flex(center, center);
     padding-block: 0;
     padding-inline: 0;
+    background-color: transparent;
   }
 
   @include small {

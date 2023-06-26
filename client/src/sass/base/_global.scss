@@ -1,5 +1,11 @@
 @use '../abstracts' as *;
 
+.fixed-body {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+
 h2 {
   font-size: $fs-650;
   line-height: 1.3;

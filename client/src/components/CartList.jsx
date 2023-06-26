@@ -4,7 +4,7 @@ import CartContext from '../CartContext';
 import CartItem from './CartItem';
 import PayButton from './PayButton';
 
-const CartList = ({ cartClick, handleCartClick }) => {
+const CartList = ({ cartClick, handleCartClose }) => {
   const { items } = useContext(CartContext);
   const cartNotEmpty = Array.isArray(items) && items.length !== 0;
 
@@ -22,7 +22,7 @@ const CartList = ({ cartClick, handleCartClick }) => {
     <>
       <div className={`cart-container ${cartClick ? 'showCart' : ''}`}>
         <div className="cart">
-          <button className="close" onClick={handleCartClick}>
+          <button className="close" onClick={handleCartClose}>
             <span>Back to store 🏃‍♂️</span>
           </button>
 
@@ -31,7 +31,7 @@ const CartList = ({ cartClick, handleCartClick }) => {
               {cartNotEmpty ? (
                 items.map((item) => <CartItem item={item} key={item.id} />)
               ) : (
-                <EmptyCart handleCartClick={handleCartClick} />
+                <EmptyCart handleCartClick={handleCartClose} />
               )}
             </div>
           </div>
