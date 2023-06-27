@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { CartProvider } from './CartContext';
 import { NotificationProvider } from './NotificationContext';
+
 // styles
 import './sass/main.scss';
 

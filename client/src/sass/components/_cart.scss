@@ -8,7 +8,6 @@
   right: 0;
   width: 90%;
   height: 100vh;
-  overflow: auto;
   z-index: 1000;
   transform: translateX(60.25rem);
   transition: transform 0.5s cubic-bezier(0.35, 0.82, 0.8, 1);
@@ -49,6 +48,7 @@
     .content {
       @include flex(flex-start, center);
       height: 70%;
+      overflow-x: hidden;
       overflow-y: auto;
 
       .cart-products {
@@ -58,7 +58,9 @@
           position: relative;
           background-color: var(--clr-neutral-100);
           border-radius: $radius-400;
-          padding: 1.5rem;
+          margin-bottom: 1.1rem;
+          padding: 1rem;
+
           @include flex(center, flex-start);
           gap: 3rem;
 
@@ -101,9 +103,9 @@
             }
           }
 
-          &:not(:last-child) {
-            margin-bottom: 1rem;
-          }
+          // &:not(:last-child) {
+          //   margin-bottom: 1rem;
+          // }
 
           .delete {
             position: absolute;
