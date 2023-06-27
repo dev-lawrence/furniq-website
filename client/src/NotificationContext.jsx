@@ -1,8 +1,7 @@
-import { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 const NotificationContext = createContext();
 
-// Hide the notification in the global css
 export function NotificationProvider({ children }) {
   const [notify, setNotify] = useState(false);
 
@@ -11,8 +10,9 @@ export function NotificationProvider({ children }) {
 
     setTimeout(() => {
       setNotify(false);
-    }, 1000);
+    }, 2000);
   };
+
   return (
     <NotificationContext.Provider value={{ notify, showNotify }}>
       {children}

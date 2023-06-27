@@ -1,4 +1,5 @@
-import { useContext, useState, useEffect } from 'react';
+// REAL CODE
+import { useContext, useEffect, useState } from 'react';
 import EmptyCart from './EmptyCart';
 import CartContext from '../CartContext';
 import CartItem from './CartItem';
@@ -23,9 +24,11 @@ const CartList = ({ cartClick, handleCartClose }) => {
 
   const calculateSubTotal = () => {
     let subtotal = 0;
+
     items.forEach((item) => {
       subtotal += item.quantity * item.price;
     });
+
     return subtotal.toFixed(2);
   };
 
@@ -39,10 +42,10 @@ const CartList = ({ cartClick, handleCartClose }) => {
 
           <div className="content">
             <motion.div
-              className="cart-products"
               initial={{ opacity: 0 }}
               animate={{ opacity: showItems ? 1 : 0 }}
               transition={{ duration: 0.3 }}
+              className="cart-products"
             >
               {cartNotEmpty ? (
                 items.map((item, index) => (
@@ -73,6 +76,7 @@ const CartList = ({ cartClick, handleCartClose }) => {
               <div className="subtotal">
                 <span>Subtotal: ${calculateSubTotal()}</span>
               </div>
+
               <PayButton items={items} />
             </div>
           )}
@@ -84,24 +88,35 @@ const CartList = ({ cartClick, handleCartClose }) => {
 
 export default CartList;
 
-// REAL CODEO
-// import { useContext } from 'react';
+// TEST ANIMATION
+// import { useContext, useState, useEffect } from 'react';
 // import EmptyCart from './EmptyCart';
 // import CartContext from '../CartContext';
 // import CartItem from './CartItem';
 // import PayButton from './PayButton';
+// import { motion } from 'framer-motion';
 
 // const CartList = ({ cartClick, handleCartClose }) => {
 //   const { items } = useContext(CartContext);
 //   const cartNotEmpty = Array.isArray(items) && items.length !== 0;
+//   const [showItems, setShowItems] = useState(false);
+
+//   useEffect(() => {
+//     if (cartClick) {
+//       const timeout = setTimeout(() => {
+//         setShowItems(true);
+//       }, 500);
+//       return () => clearTimeout(timeout);
+//     } else {
+//       setShowItems(false);
+//     }
+//   }, [cartClick]);
 
 //   const calculateSubTotal = () => {
 //     let subtotal = 0;
-
 //     items.forEach((item) => {
 //       subtotal += item.quantity * item.price;
 //     });
-
 //     return subtotal.toFixed(2);
 //   };
 
@@ -114,15 +129,34 @@ export default CartList;
 //           </button>
 
 //           <div className="content">
-//             <motion className="cart-products">
+//             <motion.div
+//               className="cart-products"
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: showItems ? 1 : 0 }}
+//               transition={{ duration: 0.3 }}
+//             >
 //               {cartNotEmpty ? (
 //                 items.map((item, index) => (
-//                   <CartItem item={item} key={item.id} index={index} />
+//                   <motion.div
+//                     key={item.id}
+//                     initial={{ opacity: 0, y: 20 }}
+//                     animate={{
+//                       opacity: showItems ? 1 : 0,
+//                       y: showItems ? 0 : 20,
+//                     }}
+//                     transition={{
+//                       type: 'tween',
+//                       duration: 0.3,
+//                       delay: index * 0.3,
+//                     }}
+//                   >
+//                     <CartItem item={item} />
+//                   </motion.div>
 //                 ))
 //               ) : (
 //                 <EmptyCart handleCartClick={handleCartClose} />
 //               )}
-//             </motion>
+//             </motion.div>
 //           </div>
 
 //           {cartNotEmpty && (
@@ -130,7 +164,6 @@ export default CartList;
 //               <div className="subtotal">
 //                 <span>Subtotal: ${calculateSubTotal()}</span>
 //               </div>
-
 //               <PayButton items={items} />
 //             </div>
 //           )}

@@ -8,6 +8,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import CartList from './CartList';
 import NavBar from './NavBar';
 import CartContext from '../CartContext';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = ({ notify }) => {
   const { items: cartItems } = useContext(CartContext);
@@ -15,9 +16,11 @@ const Header = ({ notify }) => {
   const [cartClick, setCartClick] = useState(false);
   const [navClick, setNavClick] = useState(false);
   const [overlay, setOverlay] = useState(false);
-  const [latestItem, setLatestItem] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [latestItem, setLatestItem] = useState(null);
   const navigate = useNavigate();
+
+  console.log(latestItem);
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -72,11 +75,23 @@ const Header = ({ notify }) => {
 
   return (
     <>
+      <AnimatePresence>
+        {notify && (
+          <motion.div
+            initial={{ opacity: 0, top: -100 }}
+            animate={{ opacity: 1, top: 30 }}
+            exit={{ opacity: 0, top: -100 }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="notify"
+          >
+            <p> ✅ {latestItem.title} added to your cart </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <header id="header-section">
         <div className={`overlay ${overlay ? 'show-overlay' : ''}`}></div>
-        <div className={`notify ${notify ? 'show' : ''}`}>
-          <p>{latestItem.title} has been added ✅</p>
-        </div>
+
         {/* search input */}
         <form
           onSubmit={handleSearch}

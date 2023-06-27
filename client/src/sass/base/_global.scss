@@ -178,23 +178,18 @@ p {
 }
 
 .notify {
-  display: none;
-  position: absolute;
-  top: 1rem;
+  position: fixed;
+  top: 2rem;
+  max-width: 70%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: black;
-  color: white;
-  width: 80%;
-  padding: 1rem 1.5rem;
-  border-radius: $radius-300;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.show {
-  opacity: 1;
-  z-index: 10;
+  text-align: center;
+  z-index: 700;
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-900);
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 // Bg-text style for all hero images
