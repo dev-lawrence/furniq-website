@@ -5,12 +5,12 @@ const NotificationContext = createContext();
 export function NotificationProvider({ children }) {
   const [notify, setNotify] = useState(false);
 
-  const showNotify = () => {
-    setNotify(true);
+  const showNotify = (message) => {
+    setNotify(message);
 
     setTimeout(() => {
       setNotify(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (

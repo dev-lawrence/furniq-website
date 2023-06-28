@@ -52,11 +52,11 @@ const router = createBrowserRouter(
 const App = () => {
   return (
     <>
-      <CartProvider>
-        <NotificationProvider>
+      <NotificationProvider>
+        <CartProvider>
           <RouterProvider router={router} />
-        </NotificationProvider>
-      </CartProvider>
+        </CartProvider>
+      </NotificationProvider>
     </>
   );
 };

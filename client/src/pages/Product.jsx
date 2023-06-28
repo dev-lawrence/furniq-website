@@ -94,7 +94,7 @@ const Product = () => {
                   <Link
                     onClick={() => {
                       addToCart(id, img, alt, title, price);
-                      showNotify();
+                      showNotify;
                     }}
                   >
                     <button className="btn-outline">add to cart</button>

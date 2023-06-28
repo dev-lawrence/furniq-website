@@ -31,7 +31,7 @@ const Card = ({ item, showNotify }) => {
           <button
             onClick={() => {
               addToCart(id, img, alt, title, price);
-              showNotify();
+              showNotify;
             }}
           >
             <span className="cart">{icon}</span>

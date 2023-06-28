@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -8,26 +8,16 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import CartList from './CartList';
 import NavBar from './NavBar';
 import CartContext from '../CartContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import Notification from './Notification';
 
-const Header = ({ notify }) => {
+const Header = () => {
   const { items: cartItems } = useContext(CartContext);
   const [toggleSearch, setToggleSearch] = useState(false);
   const [cartClick, setCartClick] = useState(false);
   const [navClick, setNavClick] = useState(false);
   const [overlay, setOverlay] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [latestItem, setLatestItem] = useState(null);
   const navigate = useNavigate();
-
-  console.log(latestItem);
-
-  useEffect(() => {
-    if (cartItems.length > 0) {
-      const lastItem = cartItems[cartItems.length - 1];
-      setLatestItem(lastItem);
-    }
-  }, [cartItems]);
 
   // Handle toggle search
   const handleToggleSearch = () => {
@@ -75,20 +65,7 @@ const Header = ({ notify }) => {
 
   return (
     <>
-      <AnimatePresence>
-        {notify && (
-          <motion.div
-            initial={{ opacity: 0, top: -100 }}
-            animate={{ opacity: 1, top: 30 }}
-            exit={{ opacity: 0, top: -100 }}
-            transition={{ type: 'tween', duration: 0.3 }}
-            className="notify"
-          >
-            <p> ✅ {latestItem.title} added to your cart </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
+      <Notification />
       <header id="header-section">
         <div className={`overlay ${overlay ? 'show-overlay' : ''}`}></div>
 

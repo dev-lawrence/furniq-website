@@ -1,10 +1,11 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 import { useLocalStorage } from './hooks/useLocalStorage';
-
+import NotificationContext from './NotificationContext';
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [items, setItems] = useLocalStorage('furniq-cart', []);
+  const { showNotify } = useContext(NotificationContext);
 
   // add to cart
   const addToCart = (id, img, alt, title, price) => {
@@ -12,6 +13,7 @@ export function CartProvider({ children }) {
     if (existingItem) {
       const updatedItems = items.map((item) => {
         if (item.id === id) {
+          showNotify(`Increased ${title} quantity`);
           return { ...item, quantity: item.quantity + 1 };
         }
 
@@ -24,6 +26,8 @@ export function CartProvider({ children }) {
         ...prevItems,
         { id, img, alt, title, price, quantity: 1 },
       ]);
+
+      showNotify(`${title} added to your cart`);
     }
   };
 
@@ -36,6 +40,7 @@ export function CartProvider({ children }) {
   const reduceCartQuantity = (id) => {
     const updatedItems = items.map((item) => {
       if (item.id === id) {
+        showNotify(`Reduced ${item.title} item quantity`);
         const updatedQuantity = item.quantity - 1;
         if (updatedQuantity < 1) {
           removeFromCart(id);
