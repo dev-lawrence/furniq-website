@@ -9,8 +9,15 @@ import ShopCategory from '../components/ShopCategory';
 import Pagination from '../components/Pagination';
 import { useLocation, useNavigate } from 'react-router-dom';
 import NoItem from '../assets/img/Empty-pana.svg';
+const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
+import useFetchData from '../hooks/useFetchData';
+import { Loading } from '../components/Loading';
 
 const Shop = () => {
+  const { data, loading, error } = useFetchData(
+    VITE_API_URL + '/products?populate=*',
+    VITE_API_TOKEN
+  );
   const location = useLocation();
   const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
@@ -22,7 +29,19 @@ const Shop = () => {
   const [itemsPerPage] = useState(6);
 
   const { showNotify } = useContext(NotificationContext);
-  let sortedItems = [...items];
+
+  if (!Array.isArray(data)) {
+    return (
+      <>
+        <section className="shop">
+          <Hero text="Shop" />
+          <Loading />
+        </section>
+      </>
+    );
+  }
+
+  let sortedData = [...data];
 
   const handleSortChange = (event) => {
     setSortOption(event.target.value);
@@ -30,24 +49,26 @@ const Shop = () => {
   };
 
   if (sortOption === 'hightolow') {
-    sortedItems.sort((a, b) => b.price - a.price);
+    sortedData.sort((a, b) => b.attributes?.price - a.attributes?.price);
   }
 
   if (sortOption === 'lowtohigh') {
-    sortedItems.sort((a, b) => a.price - b.price);
+    sortedData.sort((a, b) => a.attributes?.price - b.attributes?.price);
   }
 
   if (sortOption === 'sortbynewest') {
-    sortedItems = sortedItems.filter((item) => item.isNew === true);
+    sortedData = sortedData.filter((item) => item.attributes?.isNew === true);
   }
 
   const filteredItems = searchQuery
-    ? sortedItems.filter((item) =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    ? sortedData.filter((item) =>
+        item.attributes?.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : selectedProduct === 'all'
-    ? sortedItems
-    : sortedItems.filter((item) => item.category === selectedProduct);
+    ? sortedData
+    : sortedData.filter(
+        (item) => item.attributes?.category === selectedProduct
+      );
 
   const handleFilterChange = (category) => {
     setSelectedProduct(category);
@@ -71,7 +92,7 @@ const Shop = () => {
       <section className="shop">
         <Hero text="Shop" />
         <div className="container pt-section">
-          <BreadCrumbs />
+          {/* <BreadCrumbs /> */}
           {searchQuery && (
             <p className="searched-item">
               {totalLength} search results for <strong>"{searchQuery}"</strong>

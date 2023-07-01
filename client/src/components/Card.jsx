@@ -1,25 +1,38 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+// import { items } from '../data/AllProductsData';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CartContext from '../CartContext';
+import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
+const { VITE_UPLOAD_URL } = import.meta.env;
 
 const Card = ({ item, showNotify }) => {
-  const { id, img, alt, title, price, icon, isNew } = item;
-  const { addToCart } = useContext(CartContext);
+  const { attributes } = item;
+  const alt = attributes?.alt;
+  const title = attributes?.title;
+  const price = attributes?.price;
+  const isNew = attributes?.isNew;
 
+  const imageUrl = `${VITE_UPLOAD_URL}${
+    attributes?.img &&
+    attributes?.img.data &&
+    attributes?.img.data.attributes &&
+    attributes?.img.data.attributes.url
+  }`;
+  const { addToCart } = useContext(CartContext);
   return (
     <>
       <div className="product">
         {isNew && <span className="status">New</span>}
 
         <Link
-          to={`/product/${id}`}
+          to={`/product/${item.id}`}
           onClick={() => window.top(0, 0)}
           className="preview"
         >
           <div className="overlay"></div>
           <RemoveRedEyeIcon className="eye" />
-          <img src={img} alt={alt} />
+          <img src={imageUrl} alt={alt} />
         </Link>
 
         <div className="description">
@@ -30,11 +43,13 @@ const Card = ({ item, showNotify }) => {
 
           <button
             onClick={() => {
-              addToCart(id, img, alt, title, price);
+              addToCart(item.id, imageUrl, alt, title, price);
               showNotify;
             }}
           >
-            <span className="cart">{icon}</span>
+            <span className="cart">
+              <ShoppingCartRoundedIcon />
+            </span>
           </button>
         </div>
       </div>

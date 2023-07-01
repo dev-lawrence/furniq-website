@@ -50,7 +50,7 @@ const Home = () => {
                     Furniq Products are all made to standard sizes so that you
                     can mix and match them freely.
                   </p>
-                  <Link className="btn cta" to="/">
+                  <Link className="btn cta" to="/shop">
                     Shop Now
                   </Link>
                 </div>

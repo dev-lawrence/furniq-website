@@ -37,7 +37,6 @@ export const items = [
   {
     id: 1,
     category: 'chair',
-    path: 'chairs',
     description:
       'Chairs provide comfortable seating options for various purposes. Whether you need a chair for your living room, office, or dining area, a chair is a versatile piece of furniture that offers both functionality and style. From vintage armchairs to minimalist bar stools, chairs come in various designs to suit different preferences and interior styles.',
     img: Img1,

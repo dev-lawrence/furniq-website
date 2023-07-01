@@ -16,12 +16,12 @@
     "@mui/material": "^5.13.2",
     "@splidejs/react-splide": "^0.7.12",
     "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
     "formik": "^2.4.2",
     "framer-motion": "^10.12.17",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
-    "react-stripe-checkout": "^2.6.3",
     "yup": "^1.2.0"
   },
   "devDependencies": {

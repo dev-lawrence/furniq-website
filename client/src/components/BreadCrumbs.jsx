@@ -1,11 +1,18 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { items } from '../data/AllProductsData';
+// import { items } from '../data/AllProductsData';
+const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
+import useFetchData from '../hooks/useFetchData';
 
 const BreadCrumbs = ({ name }) => {
   const location = useLocation();
-  const product = items.find((item) => item.id === parseInt(name));
-  const { title, category } = product || {};
+  const { data, loading, error } = useFetchData(
+    VITE_API_URL + `/products/${name}?populate=*`,
+    VITE_API_TOKEN
+  );
+  // const product = data?.find((item) => item.id === parseInt(name));
+
+  // const { title, category } = product || {};
 
   let currentLink = '';
   let separator = ' > ';
@@ -20,13 +27,13 @@ const BreadCrumbs = ({ name }) => {
       if (index === array.length - 1) {
         return (
           <div key={crumb} className="breadcrumbs">
-            {category && (
+            {data?.attributes?.category && (
               <>
-                <span className="category">{category}'s</span>
+                <span className="category">{data?.attributes?.category}'s</span>
                 <span className="separator">{separator}</span>
               </>
             )}
-            <span className="crumb">{title || crumb}</span>
+            <span className="crumb">{data?.attributes?.title || crumb}</span>
           </div>
         );
       }

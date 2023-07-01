@@ -1,19 +1,35 @@
 import { useState } from 'react';
-import { items } from '../data/AllProductsData';
 import Card from './Card';
 import FilterProducts from './FilterProducts';
+// import { items } from '../data/AllProductsData';
+const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
+import useFetchData from '../hooks/useFetchData';
+import { Loading } from './Loading';
 
 const FeaturedProducts = ({ showNotify }) => {
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetchData(VITE_API_URL + '/products?populate=*', VITE_API_TOKEN);
+
   const [selectedProduct, setSelectedProduct] = useState('all');
 
   const handleFilterChange = (category) => {
     setSelectedProduct(category);
   };
 
+  // const filteredItems =
+  //   selectedProduct === 'all'
+  //     ? items.filter((item) => item.id <= 3)
+  //     : items.filter((item) => item.category === selectedProduct);
+
   const filteredItems =
     selectedProduct === 'all'
-      ? items.filter((item) => item.id <= 9)
-      : items.filter((item) => item.category === selectedProduct);
+      ? products
+      : products
+          .filter((item) => item?.attributes?.category === selectedProduct)
+          .filter((item) => item?.id <= 3);
 
   return (
     <>
@@ -28,10 +44,24 @@ const FeaturedProducts = ({ showNotify }) => {
           selectedProduct={selectedProduct}
         />
 
-        <div className="products">
+        {/* <div className="products">
           {filteredItems.map((item) => {
             return <Card item={item} key={item.id} showNotify={showNotify} />;
           })}
+        </div> */}
+
+        <div className="products">
+          {loading ? (
+            <Loading />
+          ) : error ? (
+            <p>Error: {error}</p>
+          ) : (
+            filteredItems.map((item) => {
+              return (
+                <Card item={item} key={item?.id} showNotify={showNotify} />
+              );
+            })
+          )}
         </div>
       </section>
     </>

@@ -7,9 +7,9 @@ import { motion } from 'framer-motion';
 
 const CartList = ({ cartClick, handleCartClose }) => {
   const { items } = useContext(CartContext);
+
   const cartNotEmpty = Array.isArray(items) && items.length !== 0;
   const [showItems, setShowItems] = useState(false);
-
   useEffect(() => {
     if (cartClick) {
       const timeout = setTimeout(() => {
@@ -49,7 +49,7 @@ const CartList = ({ cartClick, handleCartClose }) => {
               {cartNotEmpty ? (
                 items.map((item, index) => (
                   <motion.div
-                    key={item.id}
+                    key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{
                       opacity: showItems ? 1 : 0,
@@ -65,7 +65,7 @@ const CartList = ({ cartClick, handleCartClose }) => {
                   </motion.div>
                 ))
               ) : (
-                <EmptyCart handleCartClick={handleCartClose} />
+                <EmptyCart handleCartClose={handleCartClose} />
               )}
             </motion.div>
           </div>

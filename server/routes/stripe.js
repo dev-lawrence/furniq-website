@@ -8,6 +8,7 @@ const router = express.Router();
 
 router.post('/create-checkout-session', async (req, res) => {
   const line_items = req.body.items;
+  console.log(line_items);
 
   const formattedLineItems = line_items.map(
     ({ title, description, price, quantity }) => {

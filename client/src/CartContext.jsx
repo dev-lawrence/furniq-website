@@ -4,9 +4,8 @@ import NotificationContext from './NotificationContext';
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [items, setItems] = useLocalStorage('furniq-cart', []);
+  const [items, setItems] = useLocalStorage('furniq-cart', null);
   const { showNotify } = useContext(NotificationContext);
-
   // add to cart
   const addToCart = (id, img, alt, title, price) => {
     const existingItem = items.find((item) => item.id === id);

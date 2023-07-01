@@ -1,10 +1,18 @@
-import { items } from '../data/AllProductsData';
 import Card from './Card';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
-
+import { items } from '../data/AllProductsData';
+import useFetchData from '../hooks/useFetchData';
+import { Loading } from './Loading';
+const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 const Trending = ({ title, showNotify }) => {
-  const filteredItems = items.filter((item) => item.id >= 7);
+  // const filteredItems = items.filter((item) => item.id >= 7);
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetchData(VITE_API_URL + '/products?populate=*', VITE_API_TOKEN);
+  const filteredItems = products?.filter((item) => item.id <= 3);
   return (
     <>
       <section className="trending pt-section">
@@ -33,13 +41,19 @@ const Trending = ({ title, showNotify }) => {
             },
           }}
         >
-          {filteredItems.map((item) => {
-            return (
-              <SplideSlide key={item.id}>
-                <Card item={item} showNotify={showNotify} />
-              </SplideSlide>
-            );
-          })}
+          {loading ? (
+            <Loading />
+          ) : error ? (
+            <p>Error: {error}</p>
+          ) : (
+            filteredItems.map((item) => {
+              return (
+                <SplideSlide key={item.id}>
+                  <Card item={item} showNotify={showNotify} />
+                </SplideSlide>
+              );
+            })
+          )}
         </Splide>
       </section>
     </>

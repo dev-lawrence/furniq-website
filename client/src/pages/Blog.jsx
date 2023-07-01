@@ -13,9 +13,7 @@ const Blog = () => {
     <section className="blog-section">
       <Hero text="Blog" />
       <div className="pt-section">
-        <div className="container">
-          <BreadCrumbs />
-        </div>
+        <div className="container">{/* <BreadCrumbs /> */}</div>
         <div className="blog-line"></div>
         <div className="container">
           <div className="content grid">

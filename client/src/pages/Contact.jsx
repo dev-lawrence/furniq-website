@@ -50,7 +50,7 @@ const Contact = () => {
       <section className="contact">
         <Hero text="contact us" />
         <div className="container pt-section">
-          <BreadCrumbs />
+          {/* <BreadCrumbs /> */}
           <div className="content d-grid">
             <div className="form-content">
               <form onSubmit={formik.handleSubmit} className="form">
