@@ -1,18 +1,16 @@
 import Card from './Card';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
-import { items } from '../data/AllProductsData';
 import useFetchData from '../hooks/useFetchData';
 import { Loading } from './Loading';
 const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 const Trending = ({ title, showNotify }) => {
-  // const filteredItems = items.filter((item) => item.id >= 7);
   const {
     data: products,
     loading,
     error,
   } = useFetchData(VITE_API_URL + '/products?populate=*', VITE_API_TOKEN);
-  const filteredItems = products?.filter((item) => item.id <= 3);
+  const filteredItems = products?.filter((item) => item.id >= 7);
   return (
     <>
       <section className="trending pt-section">
@@ -29,7 +27,7 @@ const Trending = ({ title, showNotify }) => {
             gap: '2rem',
             drag: 'free',
             mediaQuery: 'min',
-            speed: 2000,
+            speed: 1000,
             breakpoints: {
               768: {
                 perPage: 3,

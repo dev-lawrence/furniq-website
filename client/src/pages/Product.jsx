@@ -11,18 +11,17 @@ const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 const { VITE_UPLOAD_URL } = import.meta.env;
 import useFetchData from '../hooks/useFetchData';
 import { Loading } from '../components/Loading';
+import PageBreadCrumbs from '../components/PageBreadCrumbs';
 
 const Product = () => {
-  const { name } = useParams();
+  const { id } = useParams();
 
   const { data, loading, error } = useFetchData(
-    VITE_API_URL + `/products/${name}?populate=*`,
+    VITE_API_URL + `/products/${id}?populate=*`,
     VITE_API_TOKEN
   );
 
   const imageUrl = `${VITE_UPLOAD_URL}${data?.attributes?.img?.data?.attributes?.url}`;
-  // const product = items.filter((item) => item.id === parseInt(name));
-  // const { id } = product[0];
   const [image, setImage] = useState(0);
 
   const [quantity, setQuantity] = useState(1);
@@ -85,13 +84,12 @@ const Product = () => {
           <p>Error: {error}</p>
         ) : (
           <div className="container">
-            {/* <BreadCrumbs name={name} /> */}
-            {name && <BreadCrumbs name={name} />}
+            <BreadCrumbs id={id} />
             <hr className="breadcrumbs-line" />
             <div className="d-grid">
               <div className="images">
                 <div className="main-img">
-                  <img src={getImageUrl()} alt={data?.attributes.alt} />
+                  <img src={getImageUrl()} alt={data?.attributes?.alt} />
                 </div>
                 <div className="small-imgs">
                   {data?.attributes?.relatedImgs?.data.map((img, index) => {
@@ -101,7 +99,7 @@ const Product = () => {
                         onClick={() => setImage(index)}
                         key={index}
                         src={otherImgs}
-                        alt={data?.attributes.alt}
+                        alt={data?.attributes?.alt}
                       />
                     );
                   })}
@@ -109,12 +107,14 @@ const Product = () => {
               </div>
 
               <div className="details">
-                <h3 className="mb-50">{data?.attributes.title}</h3>
+                <h3 className="mb-50">{data?.attributes?.title}</h3>
                 <p className="mb-100 description">
-                  {data?.attributes.description}
+                  {data?.attributes?.description}
                 </p>
                 <div className="delivery"></div>
-                <div className="price mb-100">${data?.attributes.price}.00</div>
+                <div className="price mb-100">
+                  ${data?.attributes?.price}.00
+                </div>
                 <div className="flex">
                   <div className="mb-200 d-flex">
                     <p className="text-bold">Quantity </p>
@@ -138,6 +138,7 @@ const Product = () => {
                           data?.attributes?.price
                         );
                         showNotify;
+                        console.log(imageUrl);
                       }}
                     >
                       <button className="btn-outline">add to cart</button>

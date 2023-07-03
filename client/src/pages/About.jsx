@@ -1,17 +1,14 @@
 import Hero from '../components/Hero';
-import BreadCrumbs from '../components/BreadCrumbs';
 import AboutImg1 from '../assets/img/couch10.webp';
 import AboutImg2 from '../assets/img/chair10.webp';
-import { useParams } from 'react-router-dom';
-import useFetchData from '../hooks/useFetchData';
-const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
+import PageBreadCrumbs from '../components/PageBreadCrumbs';
 
 const About = () => {
   return (
     <section className="about">
       <Hero text="About" />
       <div className="container pt-section">
-        {/* <BreadCrumbs/> */}
+        <PageBreadCrumbs />
         <div className="content grid">
           <div className="about-info">
             <h2>about us</h2>

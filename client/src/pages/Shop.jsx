@@ -1,10 +1,8 @@
 import { useContext, useState } from 'react';
 import Hero from '../components/Hero';
-import { items } from '../data/AllProductsData';
 import Card from '../components/Card';
 import NotificationContext from '../NotificationContext';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import BreadCrumbs from '../components/BreadCrumbs';
 import ShopCategory from '../components/ShopCategory';
 import Pagination from '../components/Pagination';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -12,9 +10,10 @@ import NoItem from '../assets/img/Empty-pana.svg';
 const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 import useFetchData from '../hooks/useFetchData';
 import { Loading } from '../components/Loading';
+import PageBreadCrumbs from '../components/PageBreadCrumbs';
 
 const Shop = () => {
-  const { data, loading, error } = useFetchData(
+  const { data } = useFetchData(
     VITE_API_URL + '/products?populate=*',
     VITE_API_TOKEN
   );
@@ -45,7 +44,7 @@ const Shop = () => {
 
   const handleSortChange = (event) => {
     setSortOption(event.target.value);
-    setCurrentPage(1); // Reset current page when sorting option changes
+    setCurrentPage(1);
   };
 
   if (sortOption === 'hightolow') {
@@ -57,17 +56,19 @@ const Shop = () => {
   }
 
   if (sortOption === 'sortbynewest') {
-    sortedData = sortedData.filter((item) => item.attributes?.isNew === true);
+    sortedData = sortedData.filter((item) => item?.attributes?.isNew === true);
   }
 
   const filteredItems = searchQuery
     ? sortedData.filter((item) =>
-        item.attributes?.title.toLowerCase().includes(searchQuery.toLowerCase())
+        item?.attributes?.title
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
       )
     : selectedProduct === 'all'
     ? sortedData
     : sortedData.filter(
-        (item) => item.attributes?.category === selectedProduct
+        (item) => item?.attributes?.category === selectedProduct
       );
 
   const handleFilterChange = (category) => {
@@ -93,6 +94,7 @@ const Shop = () => {
         <Hero text="Shop" />
         <div className="container pt-section">
           {/* <BreadCrumbs /> */}
+          <PageBreadCrumbs />
           {searchQuery && (
             <p className="searched-item">
               {totalLength} search results for <strong>"{searchQuery}"</strong>

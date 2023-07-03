@@ -4,6 +4,7 @@ import Card from './Card';
 import Hero from './Hero';
 import useFetchData from '../hooks/useFetchData';
 import { Loading } from './Loading';
+import PageBreadCrumbs from './PageBreadCrumbs';
 const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 
 const TableItems = () => {
@@ -25,7 +26,7 @@ const TableItems = () => {
             {loading ? (
               <Loading />
             ) : error ? (
-              <p>Error: {error}</p>
+              <p>Error: {error.message}</p>
             ) : (
               filteredItems.map((item) => {
                 return (

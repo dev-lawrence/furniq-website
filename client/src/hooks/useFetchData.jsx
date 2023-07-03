@@ -1,53 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 const useFetchData = (apiUrl, authToken) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(apiUrl, {
+        headers: {
+          Authorization: 'bearer ' + authToken,
+        },
+      });
+      return response.data.data;
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Check if data is already cached
-        const cachedData = localStorage.getItem('cachedData');
-        if (cachedData) {
-          setData(JSON.parse(cachedData));
-          setLoading(false);
-          return;
-        }
+  const { data, isLoading, isError } = useQuery(['data', apiUrl], fetchData);
 
-        // Fetch data from the API
-        const response = await axios.get(apiUrl, {
-          headers: {
-            Authorization: 'bearer ' + authToken,
-          },
-        });
-        const responseData = response.data.data;
-
-        // Cache the data
-        localStorage.setItem('cachedData', JSON.stringify(responseData));
-
-        // Update state
-        setData(responseData);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [apiUrl, authToken]);
-
-  return { data, loading, error };
+  return { data, loading: isLoading, error: isError };
 };
 
 export default useFetchData;
 
-// import { useEffect, useState } from 'react';
-// import axios from 'axios';
-
+// REAL CODE
 // const useFetchData = (apiUrl, authToken) => {
 //   const [data, setData] = useState(null);
 //   const [loading, setLoading] = useState(true);

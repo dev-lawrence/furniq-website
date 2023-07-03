@@ -2,7 +2,7 @@ import Hero from '../components/Hero';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-import BreadCrumbs from '../components/BreadCrumbs';
+import PageBreadCrumbs from '../components/PageBreadCrumbs';
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ const Contact = () => {
       <section className="contact">
         <Hero text="contact us" />
         <div className="container pt-section">
-          {/* <BreadCrumbs /> */}
+          <PageBreadCrumbs />
           <div className="content d-grid">
             <div className="form-content">
               <form onSubmit={formik.handleSubmit} className="form">

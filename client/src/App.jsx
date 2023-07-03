@@ -25,7 +25,7 @@ import Tables from './pages/categories/Tables';
 import Chairs from './pages/categories/Chairs';
 import Beds from './pages/categories/Beds';
 import Couches from './pages/categories/Couches';
-import ProductDetails from './pages/Product';
+import Product from './pages/Product';
 import CheckoutSuccess from './pages/CheckoutSuccess';
 
 const router = createBrowserRouter(
@@ -44,7 +44,7 @@ const router = createBrowserRouter(
         <Route path="beds" element={<Beds />} />
         <Route path="couches" element={<Couches />} />
       </Route>
-      <Route path="product/:name" element={<ProductDetails />} />
+      <Route path="product/:id" element={<Product />} />
     </Route>
   )
 );

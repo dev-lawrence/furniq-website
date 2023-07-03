@@ -3,18 +3,26 @@ import TableImg from '../assets/img/table8.webp';
 import ChairImg from '../assets/img/chair8.webp';
 import BedImg from '../assets/img/bed10.webp';
 import CouchImg from '../assets/img/couch8.webp';
-import { items } from '../data/AllProductsData';
+const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
+import useFetchData from '../hooks/useFetchData';
 
 const Category = () => {
-  const tableQuantity = items.filter(
-    (item) => item.category === 'table'
+  const { data: items } = useFetchData(
+    VITE_API_URL + '/products?populate=*',
+    VITE_API_TOKEN
+  );
+
+  const tableQuantity = items?.filter(
+    (item) => item?.attributes?.category === 'chair'
   ).length;
-  const chairQuantity = items.filter(
-    (item) => item.category === 'chair'
+  const chairQuantity = items?.filter(
+    (item) => item?.attributes?.category === 'chair'
   ).length;
-  const bedQuantity = items.filter((item) => item.category === 'bed').length;
-  const couchQuantity = items.filter(
-    (item) => item.category === 'couch'
+  const bedQuantity = items?.filter(
+    (item) => item?.attributes?.category === 'bed'
+  ).length;
+  const couchQuantity = items?.filter(
+    (item) => item?.attributes?.category === 'couch'
   ).length;
 
   return (
@@ -25,7 +33,7 @@ const Category = () => {
             <Link
               to="/category/tables"
               className="category-content"
-              onClick={() => window.top(0, 0)}
+              onClick={() => window.scrollTo(0, 0)}
             >
               <div className="overlay"></div>
               <img loading="lazy" src={TableImg} alt="table" />
@@ -38,7 +46,7 @@ const Category = () => {
             <Link
               to="category/chairs"
               className="category-content"
-              onClick={() => window.top(0, 0)}
+              onClick={() => window.scrollTo(0, 0)}
             >
               <div className="overlay"></div>
               <img loading="lazy" src={ChairImg} alt="chair" />
@@ -51,7 +59,7 @@ const Category = () => {
             <Link
               to="category/beds"
               className="category-content"
-              onClick={() => window.top(0, 0)}
+              onClick={() => window.scrollTo(0, 0)}
             >
               <div className="overlay"></div>
               <img loading="lazy" src={BedImg} alt="bed" />
@@ -64,7 +72,7 @@ const Category = () => {
             <Link
               to="category/couches"
               className="category-content"
-              onClick={() => window.top(0, 0)}
+              onClick={() => window.scrollTo(0, 0)}
             >
               <div className="overlay"></div>
               <img loading="lazy" src={CouchImg} alt="couch" />

@@ -26,7 +26,12 @@ const Home = () => {
                 Experience Quality Craftsmanship and Timeless Designs for Every
                 Room in Your Home.
               </p>
-              <Link className="btn cta" to="/shop">
+
+              <Link
+                className="btn cta"
+                onClick={() => window.scrollTo(0, 0)}
+                to="/shop"
+              >
                 Shop Now
               </Link>
             </div>
@@ -50,7 +55,11 @@ const Home = () => {
                     Furniq Products are all made to standard sizes so that you
                     can mix and match them freely.
                   </p>
-                  <Link className="btn cta" to="/shop">
+                  <Link
+                    className="btn cta"
+                    onClick={() => window.scrollTo(0, 0)}
+                    to="/shop"
+                  >
                     Shop Now
                   </Link>
                 </div>

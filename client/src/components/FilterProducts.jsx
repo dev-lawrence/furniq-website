@@ -17,7 +17,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             }`}
             onClick={() => handleFilterChange('chair')}
           >
-            chairs
+            chair
           </button>
           <button
             className={`filter-btn ${
@@ -25,7 +25,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             }`}
             onClick={() => handleFilterChange('table')}
           >
-            tables
+            table
           </button>
           <button
             className={`filter-btn ${

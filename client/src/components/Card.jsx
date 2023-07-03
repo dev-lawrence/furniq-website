@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-// import { items } from '../data/AllProductsData';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CartContext from '../CartContext';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
@@ -27,7 +26,7 @@ const Card = ({ item, showNotify }) => {
 
         <Link
           to={`/product/${item.id}`}
-          onClick={() => window.top(0, 0)}
+          onClick={() => window.scrollTo(0, 0)}
           className="preview"
         >
           <div className="overlay"></div>

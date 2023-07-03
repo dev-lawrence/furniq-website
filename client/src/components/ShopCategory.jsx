@@ -17,7 +17,7 @@ const ShopCategory = ({ selectedProduct, handleFilterChange }) => {
             }`}
             onClick={() => handleFilterChange('table')}
           >
-            Table
+            Tables
           </span>
           <span
             className={`category ${
@@ -25,13 +25,13 @@ const ShopCategory = ({ selectedProduct, handleFilterChange }) => {
             }`}
             onClick={() => handleFilterChange('chair')}
           >
-            Chair
+            Chairs
           </span>
           <span
             className={`category ${selectedProduct === 'bed' ? 'active' : ''}`}
             onClick={() => handleFilterChange('bed')}
           >
-            Bed
+            Beds
           </span>
           <span
             className={`category ${
@@ -39,7 +39,7 @@ const ShopCategory = ({ selectedProduct, handleFilterChange }) => {
             }`}
             onClick={() => handleFilterChange('couch')}
           >
-            Couch
+            Couches
           </span>
         </div>
       </aside>

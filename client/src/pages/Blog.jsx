@@ -6,14 +6,16 @@ import BlogImg4 from '../assets/img/couch10.webp';
 import BlogImg5 from '../assets/img/chair9.webp';
 import BlogImg6 from '../assets/img/table11.webp';
 import { Link } from 'react-router-dom';
-import BreadCrumbs from '../components/BreadCrumbs';
+import PageBreadCrumbs from '../components/PageBreadCrumbs';
 
 const Blog = () => {
   return (
     <section className="blog-section">
       <Hero text="Blog" />
       <div className="pt-section">
-        <div className="container">{/* <BreadCrumbs /> */}</div>
+        <div className="container">
+          <PageBreadCrumbs />
+        </div>
         <div className="blog-line"></div>
         <div className="container">
           <div className="content grid">
@@ -44,7 +46,7 @@ const Blog = () => {
                       <span className="border-right">|</span>
                     </span>
                     <span className="ml">
-                      Furnitures
+                      Furniture's
                       <span className="border-right">|</span>
                     </span>
                     <span>8 Comments</span>

@@ -4,10 +4,10 @@ import { Link, useLocation } from 'react-router-dom';
 const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 import useFetchData from '../hooks/useFetchData';
 
-const BreadCrumbs = ({ name }) => {
+const BreadCrumbs = ({ id }) => {
   const location = useLocation();
   const { data, loading, error } = useFetchData(
-    VITE_API_URL + `/products/${name}?populate=*`,
+    VITE_API_URL + `/products/${id}?populate=*`,
     VITE_API_TOKEN
   );
   // const product = data?.find((item) => item.id === parseInt(name));
@@ -26,7 +26,7 @@ const BreadCrumbs = ({ name }) => {
       // Check if it's the last crumb in the array
       if (index === array.length - 1) {
         return (
-          <div key={crumb} className="breadcrumbs">
+          <div key={index} className="breadcrumbs">
             {data?.attributes?.category && (
               <>
                 <span className="category">{data?.attributes?.category}'s</span>
@@ -45,7 +45,7 @@ const BreadCrumbs = ({ name }) => {
     });
 
   const additionalCrumb = (
-    <div key="product1" className="breadcrumbs">
+    <div className="breadcrumbs">
       <Link className="home" to="/">
         <i className="fa-solid fa-house home-icon"></i> Home
       </Link>
