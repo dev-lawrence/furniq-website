@@ -1,6 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-// import { items } from '../data/AllProductsData';
 import Trending from '../components/Trending';
 import Review from '../components/Review';
 import BreadCrumbs from '../components/BreadCrumbs';
@@ -11,7 +10,6 @@ const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 const { VITE_UPLOAD_URL } = import.meta.env;
 import useFetchData from '../hooks/useFetchData';
 import { Loading } from '../components/Loading';
-import PageBreadCrumbs from '../components/PageBreadCrumbs';
 
 const Product = () => {
   const { id } = useParams();

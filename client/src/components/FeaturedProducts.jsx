@@ -7,7 +7,7 @@ import { Loading } from './Loading';
 
 const FeaturedProducts = ({ showNotify }) => {
   const {
-    data: products,
+    data: items,
     loading,
     error,
   } = useFetchData(VITE_API_URL + '/products?populate=*', VITE_API_TOKEN);
@@ -20,8 +20,8 @@ const FeaturedProducts = ({ showNotify }) => {
 
   const filteredItems =
     selectedProduct === 'all'
-      ? products || []
-      : (products || []).filter((item) => {
+      ? items || []
+      : (items || []).filter((item) => {
           return item?.attributes?.category === selectedProduct;
         });
 

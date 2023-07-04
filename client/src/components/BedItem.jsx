@@ -8,13 +8,13 @@ const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 const BedItem = () => {
   const { showNotify } = useContext(NotificationContext);
   const {
-    data: products,
+    data: items,
     loading,
     error,
   } = useFetchData(VITE_API_URL + '/products?populate=*', VITE_API_TOKEN);
 
   const filteredItems =
-    products?.filter((item) => item?.attributes.category === 'bed') || [];
+    items?.filter((item) => item?.attributes.category === 'bed') || [];
 
   return (
     <>

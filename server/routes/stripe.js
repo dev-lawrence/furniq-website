@@ -11,14 +11,13 @@ router.post('/create-checkout-session', async (req, res) => {
   console.log(line_items);
 
   const formattedLineItems = line_items.map(
-    ({ img, title, description, price, quantity }) => {
+    ({ title, description, price, quantity }) => {
       return {
         price_data: {
           currency: 'usd',
           product_data: {
             name: title,
             description: description,
-            images: [img],
           },
           unit_amount: price * 100,
         },

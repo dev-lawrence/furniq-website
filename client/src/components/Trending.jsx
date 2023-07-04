@@ -6,11 +6,11 @@ import { Loading } from './Loading';
 const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 const Trending = ({ title, showNotify }) => {
   const {
-    data: products,
+    data: items,
     loading,
     error,
   } = useFetchData(VITE_API_URL + '/products?populate=*', VITE_API_TOKEN);
-  const filteredItems = products?.filter((item) => item.id >= 7);
+  const filteredItems = items?.filter((item) => item.id >= 7);
   return (
     <>
       <section className="trending pt-section">

@@ -93,7 +93,6 @@ const Shop = () => {
       <section className="shop">
         <Hero text="Shop" />
         <div className="container pt-section">
-          {/* <BreadCrumbs /> */}
           <PageBreadCrumbs />
           {searchQuery && (
             <p className="searched-item">

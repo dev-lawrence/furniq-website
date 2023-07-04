@@ -27,6 +27,7 @@ import Beds from './pages/categories/Beds';
 import Couches from './pages/categories/Couches';
 import Product from './pages/Product';
 import CheckoutSuccess from './pages/CheckoutSuccess';
+import NotFound from './components/NotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,6 +46,7 @@ const router = createBrowserRouter(
         <Route path="couches" element={<Couches />} />
       </Route>
       <Route path="product/:id" element={<Product />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
