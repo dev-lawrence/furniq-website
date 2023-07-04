@@ -17,6 +17,9 @@
     },
     "items": {
       "type": "json"
+    },
+    "totalPrice": {
+      "type": "decimal"
     }
   }
 }

@@ -85,10 +85,18 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         cancel_url: `${process.env.CLIENT_URL}/`,
       });
 
+      // Calculate the total price based on the line items
+      const totalPrice = lineItems.reduce(
+        (accumulator, item) =>
+          accumulator + item.price_data.unit_amount * item.quantity,
+        0
+      );
+
       await strapi.service("api::order.order").create({
         data: {
           items,
           sessionId: session.id,
+          totalPrice: totalPrice / 100,
         },
       });
 

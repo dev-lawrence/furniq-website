@@ -1,5 +1,7 @@
 import { useContext, useEffect } from 'react';
 import CartContext from '../CartContext';
+import CheckoutImg from '../assets/img/checkout-success.svg';
+import { Link } from 'react-router-dom';
 
 const CheckoutSuccess = () => {
   const { resetCart } = useContext(CartContext);
@@ -9,9 +11,10 @@ const CheckoutSuccess = () => {
   }, []);
 
   return (
-    <div className="pt-section">
-      <h2>Checkout Successful</h2>
-      <p>Thank you for your purchase!</p>
+    <div className="checkout-success">
+      <h2>Your order has been placed 🚀</h2>
+      <img src={CheckoutImg} alt="successful" />
+      <Link>Check your order</Link>
     </div>
   );
 };

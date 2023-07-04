@@ -1,6 +1,7 @@
 import axios from 'axios';
-// const url = 'http://localhost:3000';
 import { loadStripe } from '@stripe/stripe-js';
+import { useState } from 'react';
+import { Spinner } from './Spinner';
 const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
 
 const stripePromise = loadStripe(
@@ -9,8 +10,11 @@ const stripePromise = loadStripe(
 
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + VITE_API_TOKEN;
 const PayButton = ({ items }) => {
+  const [isProcessing, setIsProcessing] = useState(false);
+
   const handleCheckout = async () => {
     try {
+      setIsProcessing(true);
       const stripe = await stripePromise;
 
       const response = await axios.post(VITE_API_URL + '/orders', {
@@ -22,26 +26,19 @@ const PayButton = ({ items }) => {
       });
     } catch (err) {
       console.log(err);
+    } finally {
+      setIsProcessing(false);
     }
   };
 
-  // const handleCheckout = () => {
-  //   axios
-  //     .post(`${url}/stripe/create-checkout-session`, {
-  //       items,
-  //     })
-  //     .then((response) => {
-  //       if (response.data.url) {
-  //         window.location.href = response.data.url;
-  //       }
-  //     })
-  //     .catch((err) => console.log(err.message));
-  // };
-
   return (
     <>
-      <button className="cta" onClick={() => handleCheckout()}>
-        Checkout
+      <button
+        className="cta"
+        onClick={() => handleCheckout()}
+        disabled={isProcessing}
+      >
+        {isProcessing ? <Spinner /> : 'Checkout'}
       </button>
     </>
   );
