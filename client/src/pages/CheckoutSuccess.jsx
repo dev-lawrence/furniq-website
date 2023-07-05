@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import CartContext from '../CartContext';
 import CheckoutImg from '../assets/img/checkout-success.svg';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const CheckoutSuccess = () => {
   const { resetCart } = useContext(CartContext);
@@ -14,7 +14,8 @@ const CheckoutSuccess = () => {
     <div className="checkout-success">
       <h2>Your order has been placed 🚀</h2>
       <img src={CheckoutImg} alt="successful" />
-      <Link>Check your order</Link>
+      {/* To be implemented soon */}
+      {/* <Link to="/order">Check your order</Link> */}
     </div>
   );
 };

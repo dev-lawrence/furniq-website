@@ -28,6 +28,7 @@ import Couches from './pages/categories/Couches';
 import Product from './pages/Product';
 import CheckoutSuccess from './pages/CheckoutSuccess';
 import NotFound from './components/NotFound';
+import Order from './pages/Order';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,6 +40,8 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact />} />
       <Route path="success" element={<Success />} />
       <Route path="checkout-success" element={<CheckoutSuccess />} />
+      {/* To be implemented soon */}
+      {/* <Route path="order" element={<Order />} /> */}
       <Route path="category" element={<CategoryLayout />}>
         <Route path="tables" element={<Tables />} />
         <Route path="chairs" element={<Chairs />} />
