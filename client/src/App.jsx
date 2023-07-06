@@ -28,7 +28,6 @@ import Couches from './pages/categories/Couches';
 import Product from './pages/Product';
 import CheckoutSuccess from './pages/CheckoutSuccess';
 import NotFound from './components/NotFound';
-import Order from './pages/Order';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

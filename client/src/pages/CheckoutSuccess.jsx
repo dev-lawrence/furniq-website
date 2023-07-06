@@ -1,7 +1,6 @@
 import { useContext, useEffect } from 'react';
 import CartContext from '../CartContext';
 import CheckoutImg from '../assets/img/checkout-success.svg';
-// import { Link } from 'react-router-dom';
 
 const CheckoutSuccess = () => {
   const { resetCart } = useContext(CartContext);
