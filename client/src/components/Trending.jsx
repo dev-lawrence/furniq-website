@@ -25,7 +25,7 @@ const Trending = ({ title, showNotify }) => {
             perPage: 1,
             pagination: false,
             gap: '2rem',
-            // drag: 'free',
+            drag: true,
             mediaQuery: 'min',
             speed: 1000,
             breakpoints: {
