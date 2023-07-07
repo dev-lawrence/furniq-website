@@ -136,10 +136,9 @@ const Product = () => {
                           data?.attributes?.price
                         );
                         showNotify;
-                        console.log(imageUrl);
                       }}
                     >
-                      <button className="btn-outline">add to cart</button>
+                      <button className="btn">add to cart</button>
                     </Link>
                   </div>
                 </div>

@@ -81,15 +81,12 @@
       flex-wrap: wrap;
     }
 
-    @include small {
-      .buy-btn {
+    .buy-btn {
+      a {
         width: 100%;
-        a {
-          width: 100%;
 
-          button {
-            width: 100%;
-          }
+        button {
+          width: 100%;
         }
       }
     }
