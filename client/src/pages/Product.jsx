@@ -141,10 +141,6 @@ const Product = () => {
                     >
                       <button className="btn-outline">add to cart</button>
                     </Link>
-
-                    <Link>
-                      <button className="btn">buy now</button>
-                    </Link>
                   </div>
                 </div>
               </div>

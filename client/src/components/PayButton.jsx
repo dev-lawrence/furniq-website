@@ -12,6 +12,33 @@ axios.defaults.headers.common['Authorization'] = 'Bearer ' + VITE_API_TOKEN;
 const PayButton = ({ items }) => {
   const [isProcessing, setIsProcessing] = useState(false);
 
+  // const handleCheckout = async () => {
+  //   try {
+  //     setIsProcessing(true);
+  //     const stripe = await stripePromise;
+
+  //     const response = await axios.post(
+  //       VITE_API_URL + '/orders',
+  //       {
+  //         items,
+  //       },
+  //       {
+  //         headers: {
+  //           Authorization: 'Bearer ' + STRIPE_SECRET_KEY,
+  //         },
+  //       }
+  //     );
+
+  //     await stripe.redirectToCheckout({
+  //       sessionId: response.data.stripeSession.id,
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //   } finally {
+  //     setIsProcessing(false);
+  //   }
+  // };
+
   const handleCheckout = async () => {
     try {
       setIsProcessing(true);
