@@ -180,7 +180,8 @@ p {
 .notify {
   position: fixed;
   top: 2rem;
-  max-width: 70%;
+  width: 70%;
+  max-width: 90%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
