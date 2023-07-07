@@ -11,7 +11,7 @@ const CheckoutSuccess = () => {
 
   return (
     <div className="checkout-success">
-      <h2>Your order has been placed 🚀</h2>
+      <h2>Your order has been placed 🚀🚀</h2>
       <img src={CheckoutImg} alt="successful" />
       {/* To be implemented soon */}
       {/* <Link to="/order">Check your order</Link> */}
