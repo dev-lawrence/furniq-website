@@ -12,16 +12,26 @@
 
 //NAV MENU
 .nav {
-  @include flex(center, flex-end);
+  // @include flex(center, flex-end);
+  // position: fixed;
+  // top: 0;
+  // right: 0;
+  // width: 100%;
+  // height: 100vh;
+  // overflow: auto;
+  // z-index: 100;
+  // transform: translateX(200.25rem);
+  // transition: transform 0.5s ease-in-out;
+
+  @include flex(center, flex-start);
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   overflow: auto;
-  z-index: 100;
-  transform: translateX(200.25rem);
-  transition: transform 0.5s ease-in-out;
+  transform: translateX(-81.25rem);
+  transition: transform 0.6s ease-in-out;
 
   @include large {
     position: relative;
