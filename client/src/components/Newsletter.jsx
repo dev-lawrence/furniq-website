@@ -11,7 +11,12 @@ const Newsletter = () => {
             </p>
           </div>
 
-          <form method="POST" data-netlify="true">
+          <form
+            name="contact"
+            action="/contact"
+            method="POST"
+            data-netlify="true"
+          >
             <input
               type="email"
               name="email"
