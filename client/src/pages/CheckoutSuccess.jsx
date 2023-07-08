@@ -15,6 +15,9 @@ const CheckoutSuccess = () => {
       <img src={CheckoutImg} alt="successful" />
       {/* To be implemented soon */}
       {/* <Link to="/order">Check your order</Link> */}
+      <Link to="/shop">
+        <button className="btn">continue shopping</button>
+      </Link>
     </div>
   );
 };
