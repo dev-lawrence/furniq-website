@@ -39,7 +39,7 @@ export function CartProvider({ children }) {
   const reduceCartQuantity = (id) => {
     const updatedItems = items.map((item) => {
       if (item.id === id) {
-        showNotify(`Reduced ${item.title} item quantity`);
+        showNotify(`Reduced ${item.title} quantity`);
         const updatedQuantity = item.quantity - 1;
         if (updatedQuantity < 1) {
           removeFromCart(id);

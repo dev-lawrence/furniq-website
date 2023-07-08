@@ -13,6 +13,7 @@ const Newsletter = () => {
 
           <form method="POST" data-netlify="true">
             <input type="email" required placeholder="Enter your email" />
+            <input type="hidden" name="form-name" value="newsletter" />
             <button className="btn" type="submit">
               subscribe
             </button>
