@@ -42,27 +42,22 @@ const Header = () => {
   const handleCartClick = () => {
     setCartClick(!cartClick);
     setOverlay((prevOverlay) => !prevOverlay);
-    document.body.classList.add('fixed-body');
   };
 
   const handleCartClose = () => {
     setCartClick(false);
     setOverlay(false);
-    document.body.classList.remove('fixed-body');
   };
 
   // Handle nav Click
   const handleNavClick = () => {
     setNavClick((prevNavClick) => !prevNavClick);
     setOverlay((prevOverlay) => !prevOverlay);
-
-    document.body.classList.add('fixed-body');
   };
 
   const handleNavClose = () => {
     setNavClick(false);
     setOverlay(false);
-    document.body.classList.remove('fixed-body');
   };
 
   return (
