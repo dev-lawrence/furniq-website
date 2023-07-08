@@ -60,10 +60,14 @@ const Shop = () => {
   }
 
   const filteredItems = searchQuery
-    ? sortedData.filter((item) =>
-        item?.attributes?.title
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase())
+    ? sortedData.filter(
+        (item) =>
+          item?.attributes?.title
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase()) ||
+          item?.attributes?.description
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase())
       )
     : selectedProduct === 'all'
     ? sortedData
