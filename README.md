@@ -1,6 +1,8 @@
 # Furniq Website
 
-![Furniq Logo](./client/public/logo.png)
+<div align = 'center'>
+ <img src="./client/public/logo.png" alt="Furniq Logo" style="width: 100px;"/>
+</div>
 
 ## 📃 About the website
 
