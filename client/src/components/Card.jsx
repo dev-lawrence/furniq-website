@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CartContext from '../CartContext';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
-const { VITE_UPLOAD_URL } = import.meta.env;
 
 const Card = ({ item, showNotify }) => {
   const { attributes } = item;
@@ -12,12 +11,13 @@ const Card = ({ item, showNotify }) => {
   const price = attributes?.price;
   const isNew = attributes?.isNew;
 
-  const imageUrl = `${VITE_UPLOAD_URL}${
+  const imageUrl = `${
     attributes?.img &&
     attributes?.img.data &&
     attributes?.img.data.attributes &&
     attributes?.img.data.attributes.url
   }`;
+
   const { addToCart } = useContext(CartContext);
   return (
     <>

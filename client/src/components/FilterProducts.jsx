@@ -17,7 +17,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             }`}
             onClick={() => handleFilterChange('chair')}
           >
-            chair
+            chairs
           </button>
           <button
             className={`filter-btn ${
@@ -25,7 +25,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             }`}
             onClick={() => handleFilterChange('table')}
           >
-            table
+            tables
           </button>
           <button
             className={`filter-btn ${
@@ -33,7 +33,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             }`}
             onClick={() => handleFilterChange('couch')}
           >
-            couch
+            couches
           </button>
           <button
             className={`filter-btn ${
@@ -41,7 +41,7 @@ const FilterProducts = ({ handleFilterChange, selectedProduct }) => {
             }`}
             onClick={() => handleFilterChange('bed')}
           >
-            bed
+            beds
           </button>
         </div>
       </div>

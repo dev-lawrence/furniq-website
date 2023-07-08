@@ -1,10 +1,6 @@
 @use '../abstracts' as *;
 
-.fixed-body {
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-}
+
 
 h2 {
   font-size: $fs-650;
@@ -181,7 +177,6 @@ p {
   position: fixed;
   top: 2rem;
   width: 70%;
-  max-width: 90%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -191,6 +186,10 @@ p {
   padding: 0.5rem 1.2rem;
   border-radius: 0.4rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+  @include medium {
+    max-width: 30%;
+  }
 }
 
 // Bg-text style for all hero images

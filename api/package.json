@@ -12,6 +12,7 @@
   "dependencies": {
     "@strapi/plugin-i18n": "4.11.3",
     "@strapi/plugin-users-permissions": "4.11.3",
+    "@strapi/provider-upload-cloudinary": "^4.11.4",
     "@strapi/strapi": "4.11.3",
     "dotenv": "^16.3.1",
     "pg": "8.8.0",

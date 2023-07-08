@@ -7,7 +7,6 @@ const LOCAL_STORAGE_KEY = 'reviews.furniqReviews';
 import CartContext from '../CartContext';
 import NotificationContext from '../NotificationContext';
 const { VITE_API_URL, VITE_API_TOKEN } = import.meta.env;
-const { VITE_UPLOAD_URL } = import.meta.env;
 import useFetchData from '../hooks/useFetchData';
 import { Loading } from '../components/Loading';
 
@@ -19,7 +18,7 @@ const Product = () => {
     VITE_API_TOKEN
   );
 
-  const imageUrl = `${VITE_UPLOAD_URL}${data?.attributes?.img?.data?.attributes?.url}`;
+  const imageUrl = data?.attributes?.img?.data?.attributes?.url;
   const [image, setImage] = useState(0);
 
   const [quantity, setQuantity] = useState(1);
@@ -68,9 +67,7 @@ const Product = () => {
   // Get the URL of the currently selected image
   const getImageUrl = () => {
     const selectedImage = data?.attributes?.relatedImgs?.data?.[image];
-    return selectedImage
-      ? `${VITE_UPLOAD_URL}${selectedImage?.attributes?.url}`
-      : '';
+    return selectedImage ? selectedImage?.attributes?.url : '';
   };
 
   return (
@@ -91,7 +88,7 @@ const Product = () => {
                 </div>
                 <div className="small-imgs">
                   {data?.attributes?.relatedImgs?.data.map((img, index) => {
-                    const otherImgs = `${VITE_UPLOAD_URL}${img?.attributes?.url}`;
+                    const otherImgs = img?.attributes?.url;
                     return (
                       <img
                         onClick={() => setImage(index)}

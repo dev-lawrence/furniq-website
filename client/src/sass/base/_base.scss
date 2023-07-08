@@ -9,6 +9,13 @@ body {
   text-size-adjust: 100%;
 }
 
+body.fixed-body {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
 .container {
   padding: 0rem 1rem;
 

@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -17,6 +17,7 @@ const Header = () => {
   const [navClick, setNavClick] = useState(false);
   const [overlay, setOverlay] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+
   const navigate = useNavigate();
 
   // Handle toggle search
@@ -54,6 +55,7 @@ const Header = () => {
   const handleNavClick = () => {
     setNavClick((prevNavClick) => !prevNavClick);
     setOverlay((prevOverlay) => !prevOverlay);
+
     document.body.classList.add('fixed-body');
   };
 
