@@ -6,7 +6,7 @@ export const events = [
   {
     id: 1,
     img: EventImg1,
-    title: 'Seating collection inspiration',
+    title: 'Seating collection',
     author: 'John Doe',
     date: 'April 29th, 2023',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat.',
