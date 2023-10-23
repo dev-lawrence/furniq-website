@@ -32,7 +32,7 @@ The Furniq website is built using the following technologies:
 
 ## 📸 Screenshot
 
-![Homepage](./client/src/assets/img/furniq-website.webp)
+![Homepage](./frontend/src/assets/img/furniq-website.webp)
 
 ## 💻 Features
 
