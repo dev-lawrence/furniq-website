@@ -26,8 +26,6 @@ The Furniq website is built using the following technologies:
 - CSS3 (Sass/SCSS)
 - JavaScript
 - React.js
-- Node.js
-- Express.js
 - Sanity (Headless CMS)
 
 ## 📸 Screenshot
